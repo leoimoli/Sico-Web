@@ -1,0 +1,13 @@
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\bin\Debug\Sico.Negocio.exe.config
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\bin\Debug\Sico.Negocio.exe
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\bin\Debug\Sico.Negocio.pdb
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\bin\Debug\Sico.Dao.exe
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\bin\Debug\Sico.Entidades.exe
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\bin\Debug\MySql.Data.dll
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\bin\Debug\Sico.Dao.pdb
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\bin\Debug\Sico.Entidades.pdb
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\obj\Debug\Sico.Negocio.csprojResolveAssemblyReference.cache
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\obj\Debug\Sico.Negocio.Properties.Resources.resources
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\obj\Debug\Sico.Negocio.csproj.GenerateResource.Cache
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\obj\Debug\Sico.Negocio.exe
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Negocio\obj\Debug\Sico.Negocio.pdb

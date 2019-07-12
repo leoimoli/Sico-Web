@@ -1,0 +1,11 @@
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Dao.exe.config
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Dao.exe
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Dao.pdb
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\MySql.Data.DLL
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Entidades.exe
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Entidades.pdb
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.csprojResolveAssemblyReference.cache
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.Properties.Resources.resources
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.csproj.GenerateResource.Cache
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.exe
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.pdb
