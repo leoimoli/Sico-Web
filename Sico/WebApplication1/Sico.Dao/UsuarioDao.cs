@@ -36,7 +36,6 @@ namespace Sico.Dao
             connection.Close();
             return exito;
         }
-
         public static List<CuentaEmailPorUsuario> BuscarCuentaEmailPorUsuario(int idusuarioLogueado)
         {
             connection.Close();

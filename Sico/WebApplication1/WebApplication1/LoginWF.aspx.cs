@@ -30,13 +30,11 @@ namespace WebApplication1
                 else
                 {
                     HttpContext.Current.Session["loginUsuario"] = usuarios.First();
-                    Response.Redirect("DefaultWF.aspx");
-
+                    Response.Redirect("InicioWF.aspx");
                 }
             }
             catch (Exception ex)
             {
-
             }
         }
     }

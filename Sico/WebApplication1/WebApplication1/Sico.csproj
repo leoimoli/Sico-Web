@@ -98,8 +98,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarClienteWF.aspx" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
+    <Content Include="InicioWF.aspx" />
     <Content Include="js\Demo\chart-area-demo.js" />
     <Content Include="js\Demo\chart-bar-demo.js" />
     <Content Include="js\Demo\chart-pie-demo.js" />
@@ -1829,6 +1831,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarClienteWF.aspx.cs">
+      <DependentUpon>AgregarClienteWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarClienteWF.aspx.designer.cs">
+      <DependentUpon>AgregarClienteWF.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Clases_Maestras\AutoCompleClass.cs" />
     <Compile Include="Clases_Maestras\AutoCompleteCausa.cs" />
     <Compile Include="Clases_Maestras\AutoCompleteClassEmailPericia.cs" />
@@ -1841,6 +1850,13 @@
     <Compile Include="Clases_Maestras\ValoresConstantes.cs" />
     <Compile Include="Clases_Maestras\Variables.cs" />
     <Compile Include="Clase_Maestra.cs" />
+    <Compile Include="InicioWF.aspx.cs">
+      <DependentUpon>InicioWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InicioWF.aspx.designer.cs">
+      <DependentUpon>InicioWF.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoginWF.aspx.cs">
       <DependentUpon>LoginWF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
