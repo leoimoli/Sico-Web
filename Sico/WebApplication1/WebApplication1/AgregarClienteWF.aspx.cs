@@ -12,39 +12,50 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarComboCondicion();
-        }
-        private void cmbProvincia_Click(object sender, EventArgs e)
-        {
-            try
+            if (!Page.IsPostBack)
             {
-                string var = cmbProvincia.Text;
-                if (var != "Seleccione")
-                {
-                    var split1 = var.Split(',')[0];
-                    split1 = split1.Trim();
-                    int idProvinciaSeleccionada = Convert.ToInt32(split1);
-
-
-                    List<string> Localidades = new List<string>();
-                    Localidades = ClienteNeg.CargarComboLocalidadesPorIdProvincia(idProvinciaSeleccionada);
-                    cmbLocalidad.Items.Clear();
-                    cmbLocalidad.Text = "Seleccione";
-                    cmbLocalidad.Items.Add("Seleccione");
-                    foreach (string item in Localidades)
-                    {
-                        cmbLocalidad.Text = "Seleccione";
-                        cmbLocalidad.Items.Add(item);
-                    }
-                    this.cmbLocalidad.Enabled = true;
-
-                }
+                CargarComboCondicion();
+                CargarComboProvincia();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            //else
+            //{
+            //    cmbProvincia_SelectedIndexChanged(sender, e);
+            //}
         }
+        //private void cmbProvincia_Click(object sender, EventArgs e)
+        //{
+        //    if (!IsPostBack)
+        //    {
+        //        try
+        //        {
+        //            string var = cmbProvincia.Text;
+        //            if (var != "Seleccione")
+        //            {
+        //                var split1 = var.Split(',')[0];
+        //                split1 = split1.Trim();
+        //                int idProvinciaSeleccionada = Convert.ToInt32(split1);
+
+
+        //                List<string> Localidades = new List<string>();
+        //                Localidades = ClienteNeg.CargarComboLocalidadesPorIdProvincia(idProvinciaSeleccionada);
+        //                cmbLocalidad.Items.Clear();
+        //                cmbLocalidad.Text = "Seleccione";
+        //                cmbLocalidad.Items.Add("Seleccione");
+        //                foreach (string item in Localidades)
+        //                {
+        //                    cmbLocalidad.Text = "Seleccione";
+        //                    cmbLocalidad.Items.Add(item);
+        //                }
+        //                this.cmbLocalidad.Enabled = true;
+
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            throw ex;
+        //        }
+        //    }
+        //}
         #region Funciones
         //private void FuncionesBotonHabilitarBuscar()
         //{
@@ -173,11 +184,14 @@ namespace WebApplication1
             List<string> Provincia = new List<string>();
             Provincia = ClienteNeg.CargarComboProvincia();
             cmbProvincia.Items.Clear();
-            cmbProvincia.Text = "Seleccione";
-            cmbProvincia.Items.Add("Seleccione");
-            foreach (string item in Provincia)
+            //cmbProvincia.Text = "Seleccione";
+            ListItem item = new ListItem("Seleccione", "0");
+            cmbProvincia.Items.Add(item);
+            foreach (var prov in Provincia)
             {
-                cmbProvincia.Text = "Seleccione";
+                string id = prov.Split(',')[0];
+                string nombre = prov.Split(',')[1];
+                item = new ListItem(nombre, id);
                 cmbProvincia.Items.Add(item);
             }
         }
@@ -236,5 +250,34 @@ namespace WebApplication1
         //    return _cliente;
         //}
         #endregion
+        public void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string var = cmbProvincia.SelectedValue; //aca ya tenes el id
+                if (var != "0")
+                {
+                    //var split1 = var.Split(',')[0];
+                    //split1 = split1.Trim();
+                    int idProvinciaSeleccionada = Convert.ToInt32(var);
+                    List<string> Localidades = new List<string>();
+                    Localidades = ClienteNeg.CargarComboLocalidadesPorIdProvincia(idProvinciaSeleccionada);
+                    cmbLocalidad.Items.Clear();
+                    cmbLocalidad.Text = "Seleccione";
+                    cmbLocalidad.Items.Add("Seleccione");
+                    foreach (string item in Localidades)
+                    {
+                        cmbLocalidad.Text = "Seleccione";
+                        cmbLocalidad.Items.Add(item);
+                    }
+                    this.cmbLocalidad.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

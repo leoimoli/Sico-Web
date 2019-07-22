@@ -1,15 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="AgregarClienteWF.aspx.cs" Inherits="WebApplication1.AgregarClienteWF" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="AgregarClienteWF.aspx.cs" Inherits="WebApplication1.AgregarClienteWF" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
-        <label for="lblTitulo" style="font-size: large; color: steelblue; padding-left: 580px">Agregar Clientes</label>
-    </div>
-    <div class="col-md-9 col-sm-9 col-xs-9">
+        <div class="col-md-9 col-sm-9 col-xs-9">
         <div>
             <div class="row">
                 <div class="col-sm-3">
                 </div>
                 <div class="col-sm-9">
+                      <label for="lblTitulo" style="font-size: x-large; color: steelblue"">Agregar Clientes</label>
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="form-group">
@@ -21,7 +19,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblCuit">Cuit:<span class="kv-reqd"> (*)</span></label>
-                                <asp:TextBox class="form-control" ID="txtCuit" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtCuit" runat="server" value="_-________-_" ></asp:TextBox>
                                 <%-- <input type="text" class="form-control" id="txt_AltaJugadorWF_Apellido">--%>
                             </div>
                         </div>
@@ -37,8 +35,8 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblFecha">Fecha:</label>
-                                <%-- <asp:Calendar ID="dtFecha" runat="server"></asp:Calendar>--%>
-                                <input type="text" class="form-control" id="dtFecha">
+                             <input type="text" name="date" placeholder="yyyy-mm-dd" onkeyup="var date = this.value;if (date.match(/^\d{4}$/) !== null) {this.value = date + '-';} else if (date.match(/^\d{4}\-\d{2}$/) !== null) {this.value = date + '-';}" maxlength="10">
+                                <%--<input type="text" class="form-control" id="dtFecha">--%>
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -78,7 +76,9 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblProvincia">Provincia:</label>
-                                <asp:DropDownList class="form-control" ID="cmbProvincia" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="cmbProvincia" runat="server" class="form-control" OnSelectedIndexChanged="cmbProvincia_SelectedIndexChanged" AutoPostBack ="true"></asp:DropDownList>
+                         <%--    <asp:DropDownList ID="ddlUsuarios" runat="server" Height="25px" Width="700px" CssClass="form-control-solid text" OnSelectedIndexChanged="ddlUsuarios_SelectedIndexChanged" AutoPostBack="true">
+                            </asp:DropDownList>--%>
                             </div>
                         </div>
                         <div class="col-sm-3">

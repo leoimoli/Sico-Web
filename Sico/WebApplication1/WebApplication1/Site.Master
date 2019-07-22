@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head runat="server">
+
     <title>SICO / Sistema Contable</title>
     <asp:PlaceHolder runat="server"></asp:PlaceHolder>
     <meta charset="utf-8">
@@ -29,12 +31,13 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 </head>
-
 <body id="page-top">
     <form runat="server">
+        <asp:ScriptManager ID="scriptManagerAjax" runat="server" EnableScriptGlobalization="True"
+            EnableScriptLocalization="True">
+        </asp:ScriptManager>
         <!-- Page Wrapper -->
         <div id="wrapper">
-
             <!-- Sidebar -->
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
