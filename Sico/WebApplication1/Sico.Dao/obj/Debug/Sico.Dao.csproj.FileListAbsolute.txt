@@ -9,3 +9,13 @@ C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Si
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.csproj.GenerateResource.Cache
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.exe
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.pdb
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Dao.exe.config
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Dao.exe
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Dao.pdb
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Entidades.exe
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\bin\Debug\Sico.Entidades.pdb
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.csprojResolveAssemblyReference.cache
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.Properties.Resources.resources
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.csproj.GenerateResource.Cache
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.exe
+C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Dao\obj\Debug\Sico.Dao.pdb

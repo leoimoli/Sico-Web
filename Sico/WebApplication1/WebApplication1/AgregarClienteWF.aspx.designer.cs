@@ -13,13 +13,13 @@ namespace WebApplication1 {
     public partial class AgregarClienteWF {
         
         /// <summary>
-        /// txt_AltaJugadorWF_Nombre control.
+        /// txtNombreRazonSocial control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_AltaJugadorWF_Nombre;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreRazonSocial;
         
         /// <summary>
         /// txtCuit control.
@@ -38,6 +38,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtActividad;
+        
+        /// <summary>
+        /// txtFecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFecha;
         
         /// <summary>
         /// cmbCondicionAntiAfip control.

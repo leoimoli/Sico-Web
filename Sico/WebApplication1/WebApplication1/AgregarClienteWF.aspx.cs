@@ -1,4 +1,6 @@
-﻿using Sico.Negocio;
+﻿using Sico;
+using Sico.Entidades;
+using Sico.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,45 +19,8 @@ namespace WebApplication1
                 CargarComboCondicion();
                 CargarComboProvincia();
             }
-            //else
-            //{
-            //    cmbProvincia_SelectedIndexChanged(sender, e);
-            //}
         }
-        //private void cmbProvincia_Click(object sender, EventArgs e)
-        //{
-        //    if (!IsPostBack)
-        //    {
-        //        try
-        //        {
-        //            string var = cmbProvincia.Text;
-        //            if (var != "Seleccione")
-        //            {
-        //                var split1 = var.Split(',')[0];
-        //                split1 = split1.Trim();
-        //                int idProvinciaSeleccionada = Convert.ToInt32(split1);
 
-
-        //                List<string> Localidades = new List<string>();
-        //                Localidades = ClienteNeg.CargarComboLocalidadesPorIdProvincia(idProvinciaSeleccionada);
-        //                cmbLocalidad.Items.Clear();
-        //                cmbLocalidad.Text = "Seleccione";
-        //                cmbLocalidad.Items.Add("Seleccione");
-        //                foreach (string item in Localidades)
-        //                {
-        //                    cmbLocalidad.Text = "Seleccione";
-        //                    cmbLocalidad.Items.Add(item);
-        //                }
-        //                this.cmbLocalidad.Enabled = true;
-
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw ex;
-        //        }
-        //    }
-        //}
         #region Funciones
         //private void FuncionesBotonHabilitarBuscar()
         //{
@@ -227,28 +192,49 @@ namespace WebApplication1
         //    groupBox1.Enabled = false;
         //    groupBox4.Enabled = false;
         //}
-        //private Cliente CargarEntidad()
-        //{
-        //    Cliente _cliente = new Cliente();
-        //    _cliente.NombreRazonSocial = txtNombreRazonSocial.Text;
-        //    _cliente.Cuit = txtCuit.Text;
-        //    _cliente.Actividad = txtActividad.Text;
-        //    DateTime fecha = dtFechaInscripcion.Value;
-        //    _cliente.FechaDeInscripcion = fecha;
-        //    _cliente.CondicionAntiAfip = cmbCondicionAntiAfip.Text;
-        //    string telefono = txtCodArea.Text + "-" + txtTelefono.Text;
-        //    _cliente.Telefono = telefono;
-        //    _cliente.Email = txtEmail.Text;
-        //    ////// Datos del domicilio
-        //    _cliente.Provincia = cmbProvincia.Text;
-        //    _cliente.Localidad = cmbLocalidad.Text;
-        //    _cliente.Calle = txtCalle.Text;
-        //    _cliente.Altura = txtAltura.Text;
-        //    _cliente.CodigoPostal = txtCodigoPostal.Text;
-        //    int idusuarioLogueado = Sesion.UsuarioLogueado.IdUsuario;
-        //    _cliente.idUsuario = idusuarioLogueado;
-        //    return _cliente;
-        //}
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Sico.Entidades.Cliente _cliente = CargarEntidad();
+            bool Exito = ClienteNeg.GurdarCliente(_cliente);
+            if (Exito == true)
+            {
+                //ProgressBar();
+                const string message2 = "Se registro el cliente exitosamente.";
+                const string caption2 = "Éxito";
+                //var result2 = MessageBox.Show(message2, caption2,
+                //                             MessageBoxButtons.OK,
+                //                             MessageBoxIcon.Asterisk);
+                //LimpiarCampos();
+            }
+            else
+            {
+
+            }
+        }
+
+        private Cliente CargarEntidad()
+        {
+            Cliente _cliente = new Cliente();
+            _cliente.NombreRazonSocial = txtNombreRazonSocial.Text;
+            _cliente.Cuit = txtCuit.Text;
+            _cliente.Actividad = txtActividad.Text;
+            DateTime fecha = Convert.ToDateTime(txtFecha.Text);
+            _cliente.FechaDeInscripcion = fecha;
+            _cliente.CondicionAntiAfip = cmbCondicionAntiAfip.Text;
+            //string telefono = txtCodArea.Text + "-" + txtTelefono.Text;
+            string telefono = txtTelefono.Text;
+            _cliente.Telefono = telefono;
+            _cliente.Email = txtEmail.Text;
+            ////// Datos del domicilio
+            _cliente.Provincia = cmbProvincia.Text;
+            _cliente.Localidad = cmbLocalidad.Text;
+            _cliente.Calle = txtCalle.Text;
+            _cliente.Altura = txtAltura.Text;
+            _cliente.CodigoPostal = txtCodigoPostal.Text;
+            int idusuarioLogueado = Sesion.UsuarioLogueado.IdUsuario;
+            _cliente.idUsuario = idusuarioLogueado;
+            return _cliente;
+        }
         #endregion
         public void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {

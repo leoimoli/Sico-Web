@@ -7,20 +7,19 @@
                 <div class="col-sm-3">
                 </div>
                 <div class="col-sm-9">
-                      <label for="lblTitulo" style="font-size: x-large; color: steelblue"">Agregar Clientes</label>
+                   <%--   <label for="lblTitulo" style="font-size: x-large; color: steelblue"">Agregar Clientes</label>--%>
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Nombre/Razon Social:<span class="kv-reqd"> (*)</span></label>
-                                <asp:TextBox class="form-control" ID="txt_AltaJugadorWF_Nombre" runat="server"></asp:TextBox>
-                                <%--   <input type="text" class="form-control" id="txt_AltaJugadorWF_Nombre">--%>
-                            </div>
+                                <asp:TextBox class="form-control" ID="txtNombreRazonSocial" runat="server"></asp:TextBox>
+                                                       </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblCuit">Cuit:<span class="kv-reqd"> (*)</span></label>
-                                <asp:TextBox class="form-control" ID="txtCuit" runat="server" value="_-________-_" ></asp:TextBox>
-                                <%-- <input type="text" class="form-control" id="txt_AltaJugadorWF_Apellido">--%>
+                                <asp:TextBox class="form-control" ID="txtCuit" runat="server" ></asp:TextBox>
+                           
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -34,14 +33,14 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="lblFecha">Fecha:</label>
-                             <input type="text" name="date" placeholder="yyyy-mm-dd" onkeyup="var date = this.value;if (date.match(/^\d{4}$/) !== null) {this.value = date + '-';} else if (date.match(/^\d{4}\-\d{2}$/) !== null) {this.value = date + '-';}" maxlength="10">
-                                <%--<input type="text" class="form-control" id="dtFecha">--%>
-                            </div>
+                                <label for="lblFecha">Fecha:</label> 
+                                <asp:TextBox class="form-control" ID="txtFecha" runat="server" placeholder="yyyy-mm-dd" onkeyup="var date = this.value;if (date.match(/^\d{4}$/) !== null) {this.value = date + '-';} else if (date.match(/^\d{4}\-\d{2}$/) !== null) {this.value = date + '-';}" maxlength="10"></asp:TextBox>
+                             <%--<input type="text"  name="date" placeholder="yyyy-mm-dd" onkeyup="var date = this.value;if (date.match(/^\d{4}$/) !== null) {this.value = date + '-';} else if (date.match(/^\d{4}\-\d{2}$/) !== null) {this.value = date + '-';}" maxlength="10">--%>
+                                                       </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="lblCondicionAntiAfip">Condición Anti-Afip:<span class="kv-reqd"> (*)</span></label>
+                                <label for="lblCondicionAntiAfip">Con.Anti-Afip:<span class="kv-reqd"> (*)</span></label>
                                 <asp:DropDownList class="form-control" ID="cmbCondicionAntiAfip" runat="server"></asp:DropDownList>
                                 <%--    <input type="text" class="form-control" id="cmbCondicionAntiAfip">--%>
                             </div>
@@ -116,9 +115,9 @@
         <%--////// Botones--%>
         <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 550px">
             <%-- <div class="ln_solid"></div>--%>
-            <button id="btn_AltaJugador_Nuevo" class="btn btn-primary" style="display: none;" onclick="AltaJugador_Nuevo()" type="button">Nuevo</button>
-            <button id="btn_AltaJugador_Siguiente" class="btn btn-success" style="display: none;" onclick="AltaJugador_Siguiente()" type="button">Ficha Tecnica</button>
-            <button id="btnGuardar" class="btn btn-primary" style="display: inline-block;" onclick="AltaJugador_Guardar()" type="button">Guardar</button>
+          <%--  <button id="btn_AltaJugador_Nuevo" class="btn btn-primary" style="display: none;" onclick="AltaJugador_Nuevo()" type="button">Nuevo</button>
+            <button id="btn_AltaJugador_Siguiente" class="btn btn-success" style="display: none;" onclick="AltaJugador_Siguiente()" type="button">Ficha Tecnica</button>--%>
+            <button id="btnGuardar" class="btn btn-primary" style="display: inline-block;" onclick="btnGuardar_Click()" type="button">Guardar</button>
             <button id="btnLimpiar" class="btn btn-primary" style="display: inline-block;" onclick="AltaJugador_Limpiar()" type="button">Limpiar</button>
         </div>
     </div>
