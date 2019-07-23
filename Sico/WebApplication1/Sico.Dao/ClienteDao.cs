@@ -40,6 +40,47 @@ namespace Sico.Dao
             connection.Close();
             return _listaProvincia;
         }
+
+        public static List<Cliente> BuscarClientes()
+        {
+            connection.Close();
+            connection.Open();
+            List<Entidades.Cliente> lista = new List<Entidades.Cliente>();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = connection;
+            DataTable Tabla = new DataTable();
+            MySqlParameter[] oParam = {
+                                      new MySqlParameter()};
+            string proceso = "BuscarClientes";
+            MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+            dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dt.SelectCommand.Parameters.AddRange(oParam);
+            dt.Fill(Tabla);
+            if (Tabla.Rows.Count > 0)
+            {
+                foreach (DataRow item in Tabla.Rows)
+                {
+                    Cliente listaCliente = new Cliente();
+                    listaCliente.IdCliente = Convert.ToInt32(item["IdCliente"].ToString());
+                    listaCliente.NombreRazonSocial = item["NombreRazonSocial"].ToString();
+                    listaCliente.Cuit = item["Cuit"].ToString();
+                    listaCliente.Actividad = item["Actividad"].ToString();
+                    listaCliente.FechaDeInscripcion = Convert.ToDateTime(item["FechaInscripcion"].ToString());
+                    listaCliente.CondicionAntiAfip = item["CondicionAntiAfip"].ToString();
+                    listaCliente.Telefono = item["Telefono"].ToString();
+                    listaCliente.Email = item["Email"].ToString();
+                    listaCliente.Provincia = item["Provincia"].ToString();
+                    listaCliente.Localidad = item["Localidad"].ToString();
+                    listaCliente.Calle = item["Calle"].ToString();
+                    listaCliente.Altura = item["Altura"].ToString();
+                    listaCliente.CodigoPostal = item["CodigoPostal"].ToString();
+                    lista.Add(listaCliente);
+                }
+            }
+            connection.Close();
+            return lista;
+        }
+
         public static string BuscarNroFactura(int idCliente)
         {
             string Factura = "";

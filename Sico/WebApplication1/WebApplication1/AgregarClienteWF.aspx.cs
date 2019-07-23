@@ -171,52 +171,32 @@ namespace WebApplication1
                 cmbCondicionAntiAfip.Items.Add(item);
             }
         }
-        //private void LimpiarCampos()
-        //{
-        //    txtNombreRazonSocial.Clear();
-        //    txtCuit.Clear();
-        //    txtActividad.Clear();
-        //    CargarComboCondicion();
-        //    txtCodArea.Clear();
-        //    txtTelefono.Clear();
-        //    txtEmail.Clear();
-        //    txtCalle.Clear();
-        //    txtAltura.Clear();
-        //    txtCodigoPostal.Clear();
-        //    DateTime fecha = DateTime.Now;
-        //    dtFechaInscripcion.Value = fecha;
-        //    CargarComboProvincia();
-        //    cmbLocalidad.Text = "Seleccione";
-        //    progressBar1.Value = Convert.ToInt32(null);
-        //    progressBar1.Visible = false;
-        //    groupBox1.Enabled = false;
-        //    groupBox4.Enabled = false;
-        //}
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void LimpiarCampos()
         {
-            Sico.Entidades.Cliente _cliente = CargarEntidad();
-            bool Exito = ClienteNeg.GurdarCliente(_cliente);
-            if (Exito == true)
-            {
-                //ProgressBar();
-                const string message2 = "Se registro el cliente exitosamente.";
-                const string caption2 = "Éxito";
-                //var result2 = MessageBox.Show(message2, caption2,
-                //                             MessageBoxButtons.OK,
-                //                             MessageBoxIcon.Asterisk);
-                //LimpiarCampos();
-            }
-            else
-            {
-
-            }
+            txtNombreRazonSocial.Text = null;
+            txtCuit.Text = null;
+            txtActividad.Text = null;
+            CargarComboCondicion();
+            txtTelefono.Text = null;
+            txtEmail.Text = null;
+            txtCalle.Text = null;
+            txtAltura.Text = null;
+            txtCodigoPostal.Text = null;
+            txtFecha.Text = null;
+            CargarComboProvincia();
+            cmbLocalidad.Text = "Seleccione";
         }
 
         private Cliente CargarEntidad()
         {
             Cliente _cliente = new Cliente();
             _cliente.NombreRazonSocial = txtNombreRazonSocial.Text;
-            _cliente.Cuit = txtCuit.Text;
+            var cuit = txtCuit.Text;
+
+            double number = Convert.ToDouble(cuit);
+            string fmt = "00-00000000-0";
+            string CuitFinal = number.ToString(fmt);
+            _cliente.Cuit = CuitFinal;
             _cliente.Actividad = txtActividad.Text;
             DateTime fecha = Convert.ToDateTime(txtFecha.Text);
             _cliente.FechaDeInscripcion = fecha;
@@ -231,8 +211,7 @@ namespace WebApplication1
             _cliente.Calle = txtCalle.Text;
             _cliente.Altura = txtAltura.Text;
             _cliente.CodigoPostal = txtCodigoPostal.Text;
-            int idusuarioLogueado = Sesion.UsuarioLogueado.IdUsuario;
-            _cliente.idUsuario = idusuarioLogueado;
+            _cliente.idUsuario = ((Usuario)HttpContext.Current.Session["loginUsuario"]).IdUsuario;
             return _cliente;
         }
         #endregion
@@ -264,6 +243,25 @@ namespace WebApplication1
                 throw ex;
             }
 
+        }
+
+        protected void btnGuardar_Click1(object sender, EventArgs e)
+        {
+            Sico.Entidades.Cliente _cliente = CargarEntidad();
+            bool Exito = ClienteNeg.GurdarCliente(_cliente);
+            if (Exito == true)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "scriptkey", "alert('Se registro el cliente exitosamente.');");
+                LimpiarCampos();
+            }
+            else
+            {
+
+            }
+        }
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }

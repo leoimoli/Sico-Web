@@ -17,6 +17,26 @@ namespace Sico.Negocio
             lista = Dao.ClienteDao.CargarComboProvincia();
             return lista;
         }
+
+        public static List<Cliente> BuscarClientes()
+        {
+            List<Cliente> _listaClientes = new List<Cliente>();
+            try
+            {
+                _listaClientes = ClienteDao.BuscarClientes();
+            }
+            catch (Exception ex)
+            {
+                const string message = "Error en el sistema. Intente nuevamente o comuniquese con el administrador.";
+                const string caption = "Atención";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.OK,
+                                           MessageBoxIcon.Warning);
+                throw new Exception();
+            }
+            return _listaClientes;
+        }
+
         public static List<string> CargarComboLocalidades()
         {
             List<string> lista = new List<string>();
