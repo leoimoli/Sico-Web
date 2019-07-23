@@ -99,6 +99,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarClienteWF.aspx" />
+    <Content Include="App_Themes\imagenes\editar.png" />
+    <Content Include="App_Themes\imagenes\lupa.png" />
     <Content Include="ConsultaClientesWF.aspx" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
@@ -1888,7 +1890,9 @@
       <Name>Sico.Negocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Themes\Theme1\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

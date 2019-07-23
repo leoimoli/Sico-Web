@@ -251,7 +251,11 @@ namespace WebApplication1
             bool Exito = ClienteNeg.GurdarCliente(_cliente);
             if (Exito == true)
             {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "scriptkey", "alert('Se registro el cliente exitosamente.');");
+                string msg = "<script language=\"javascript\">";
+                msg += "alert('" + "Se registro el cliente exitosamente." + "');";
+                msg += "</script>";
+                Response.Write(msg);
+                // Page.ClientScript.RegisterStartupScript(this.GetType(), "scriptkey", "alert('Se registro el cliente exitosamente.');");
                 LimpiarCampos();
             }
             else
