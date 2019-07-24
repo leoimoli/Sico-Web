@@ -1,6 +1,51 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ConsultaClientesWF.aspx.cs" Inherits="WebApplication1.ConsultaClientesWF" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ClientesVentasWF.aspx.cs" Inherits="WebApplication1.ClientesVentasWF" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <asp:Label ID="Label4" runat="server" Text="Ventas" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <asp:Label ID="Label2" runat="server" Text="Nombre o Razón Social:" Font-Size="Large" ForeColor="SteelBlue"></asp:Label>
+                            <asp:Label ID="lblCliente" runat="server" Text="Hola Mundo" Font-Size="Large" ForeColor="SteelBlue"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <asp:Label ID="Label1" runat="server" Text="Cuit:" Font-Size="Large" ForeColor="SteelBlue"></asp:Label>
+                            <asp:Label ID="lblCuit" runat="server" Text="Hola Mundo" Font-Size="Large" ForeColor="SteelBlue"></asp:Label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-md-9 col-sm-9 col-xs-9">
         <div>
             <div class="row">
@@ -9,24 +54,24 @@
                 <div class="col-sm-9">
                     <div class="row">
                         <div class="form-group">
-                            <asp:GridView ID="gvClientes" runat="server" Align="center" AllowPaging="true" AllowSorting="True"
+                            <asp:GridView ID="gvVentas" runat="server" Align="center" AllowPaging="true" AllowSorting="True"
                                 SkinID="grilla" PageSize="15" AutoGenerateColumns="False" BackColor="White" BorderWidth="1px"
-                                Width="100%" DataKeyNames="idCliente" OnRowCommand="gvClientes_RowCommand"
-                                OnPageIndexChanging="gvClientes_PageIndexChanging">
+                                Width="100%" DataKeyNames="idSubCliente" OnRowCommand="gvVentas_RowCommand"
+                                OnPageIndexChanging="gvVentas_PageIndexChanging">
                                 <Columns>
-                                    <asp:BoundField DataField="IdCliente" HeaderText="Nro.Identificador">
+                                    <asp:BoundField DataField="idSubCliente" HeaderText="Nro.Identificador">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="150px" />
                                         <ItemStyle BorderColor="Black" CssClass="item_grilla" HorizontalAlign="left" Width="200px" />
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="NombreRazonSocial" HeaderText="Nombre/Razón Social">
+                                    <asp:BoundField DataField="NroFactura" HeaderText="Nro.Factura">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="1000px" />
                                         <ItemStyle BorderColor="Black" CssClass="item_grilla" HorizontalAlign="left" Width="200px" />
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="Cuit" HeaderText="Cuit">
+                                    <asp:BoundField DataField="Fecha" HeaderText="Fecha">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="200px" />
                                         <ItemStyle BorderColor="Black" CssClass="item_grilla" HorizontalAlign="left" Width="200px" />
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="Actividad" HeaderText="Actividad">
+                                    <asp:BoundField DataField="ApellidoNombre" HeaderText="Apellido y Nombre">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="500px" />
                                         <ItemStyle BorderColor="Black" CssClass="item_grilla" HorizontalAlign="left" Width="200px" />
                                     </asp:BoundField>

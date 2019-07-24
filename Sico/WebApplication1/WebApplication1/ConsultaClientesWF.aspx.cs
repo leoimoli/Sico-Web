@@ -29,13 +29,12 @@ namespace WebApplication1
         {
             try
             {
-                //gvUsuarios.SelectedIndex = Convert.ToInt32(e.CommandArgument);
-                //int idusuario = (int)gvUsuarios.SelectedValue;
+                gvClientes.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+                int idusuario = (int)gvClientes.SelectedValue;
                 switch (e.CommandName)
                 {
                     case "Ver":
-                        //int o=gvUsuarios.SelectedRow(idDetalle);
-                        break;
+                        this.Ver(Convert.ToInt32(e.CommandArgument)); break;
                     case "Editar":
                         this.Editar(Convert.ToInt32(e.CommandArgument)); break;
                 }
@@ -45,12 +44,17 @@ namespace WebApplication1
 
             }
         }
-
         private void Editar(int posicion)
         {
             IList<Cliente> clientes = Session["usuarios"] as IList<Cliente>;
-            this.Session["mod_usuario"] = clientes[posicion];
-            Response.Redirect("~/AltaDeUsuario.aspx?mod=true");
+            this.Session["usuarios"] = clientes[posicion];
+            Response.Redirect("");
+        }
+        private void Ver(int posicion)
+        {
+            IList<Cliente> clientes = Session["usuarios"] as IList<Cliente>;
+            this.Session["usuarios"] = clientes[posicion];
+            Response.Redirect("~/ClientesWF.aspx");
         }
         protected void gvClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -66,6 +70,5 @@ namespace WebApplication1
 
             }
         }
-
     }
 }

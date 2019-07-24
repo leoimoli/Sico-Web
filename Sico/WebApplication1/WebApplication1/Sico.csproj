@@ -101,6 +101,8 @@
     <Content Include="AgregarClienteWF.aspx" />
     <Content Include="App_Themes\imagenes\editar.png" />
     <Content Include="App_Themes\imagenes\lupa.png" />
+    <Content Include="ClientesVentasWF.aspx" />
+    <Content Include="ClientesWF.aspx" />
     <Content Include="ConsultaClientesWF.aspx" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
@@ -1853,6 +1855,20 @@
     <Compile Include="Clases_Maestras\ValoresConstantes.cs" />
     <Compile Include="Clases_Maestras\Variables.cs" />
     <Compile Include="Clase_Maestra.cs" />
+    <Compile Include="ClientesVentasWF.aspx.cs">
+      <DependentUpon>ClientesVentasWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientesVentasWF.aspx.designer.cs">
+      <DependentUpon>ClientesVentasWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientesWF.aspx.cs">
+      <DependentUpon>ClientesWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientesWF.aspx.designer.cs">
+      <DependentUpon>ClientesWF.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaClientesWF.aspx.cs">
       <DependentUpon>ConsultaClientesWF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
