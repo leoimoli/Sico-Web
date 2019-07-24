@@ -14,10 +14,15 @@ namespace WebApplication1
         public Cliente ClienteSeleccionado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Sico.Entidades.SubCliente> ListaFacturas = new List<Sico.Entidades.SubCliente>();
-            ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
             lblCliente.Text = ClienteSeleccionado.NombreRazonSocial;
             lblCuit.Text = ClienteSeleccionado.Cuit;
+
+            //txtBuscarPorNombreRazonSocial.AutoCompleteCustomSource = Sico.Clases_Maestras.AutoCompleteSubCliente.Autocomplete(ClienteSeleccionado.Cuit);
+            //txtBuscarPorNombreRazonSocial.AutoCompleteMode = AutoCompleteMode ;
+            //txtBuscarPorNombreRazonSocial.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            List<Sico.Entidades.SubCliente> ListaFacturas = new List<Sico.Entidades.SubCliente>();
+            ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
+
             if (!IsPostBack)
             {
                 ListaFacturas = ClienteNeg.BuscarTodasFacturasSubCliente(ClienteSeleccionado.Cuit);
