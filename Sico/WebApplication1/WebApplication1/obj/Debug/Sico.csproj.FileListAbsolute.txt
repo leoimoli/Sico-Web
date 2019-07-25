@@ -62,9 +62,10 @@ C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\M
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.ApplicationInsights.dll
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\MySql.Data.DLL
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Dao.exe
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Entidades.exe
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Negocio.exe
-C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Dao.exe
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Dao.pdb
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Entidades.pdb
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Negocio.pdb
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.AI.DependencyCollector.xml
@@ -73,7 +74,6 @@ C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\M
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.ApplicationInsights.xml
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Dao.pdb
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\Sico.csprojResolveAssemblyReference.cache
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

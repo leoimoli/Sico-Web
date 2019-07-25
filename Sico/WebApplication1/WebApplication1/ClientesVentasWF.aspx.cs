@@ -6,25 +6,24 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
+
 
 namespace WebApplication1
 {
     public partial class ClientesVentasWF : System.Web.UI.Page
     {
+        public static Cliente _clienteSeleccionado { get; set; }
         public Cliente ClienteSeleccionado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblCliente.Text = ClienteSeleccionado.NombreRazonSocial;
-            lblCuit.Text = ClienteSeleccionado.Cuit;
-
-            //txtBuscarPorNombreRazonSocial.AutoCompleteCustomSource = Sico.Clases_Maestras.AutoCompleteSubCliente.Autocomplete(ClienteSeleccionado.Cuit);
-            //txtBuscarPorNombreRazonSocial.AutoCompleteMode = AutoCompleteMode ;
-            //txtBuscarPorNombreRazonSocial.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            List<Sico.Entidades.SubCliente> ListaFacturas = new List<Sico.Entidades.SubCliente>();
-            ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
 
             if (!IsPostBack)
             {
+                ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
+                lblCliente.Text = ClienteSeleccionado.NombreRazonSocial;
+                lblCuit.Text = ClienteSeleccionado.Cuit;
+                List<Sico.Entidades.SubCliente> ListaFacturas = new List<Sico.Entidades.SubCliente>();
                 ListaFacturas = ClienteNeg.BuscarTodasFacturasSubCliente(ClienteSeleccionado.Cuit);
                 if (ListaFacturas.Count > 0)
                 {
@@ -33,8 +32,14 @@ namespace WebApplication1
                     this.gvVentas.DataBind();
                     this.lblTotalRegistros.Text = ListaFacturas.Count.ToString();
                 }
+                _clienteSeleccionado = ClienteSeleccionado;
+            }
+            else
+            {
+
             }
         }
+
         protected void gvVentas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             try
@@ -81,6 +86,47 @@ namespace WebApplication1
             {
 
             }
+        }
+
+        protected void btnBuscar_Click1(object sender, EventArgs e)
+        {
+            List<Sico.Entidades.SubCliente> ListaFacturas = new List<Sico.Entidades.SubCliente>();
+            try
+            {
+                if (txtBuscarPorNombreRazonSocial.Text != "")
+                {
+                    var ApellidoNombre = txtBuscarPorNombreRazonSocial.Text;
+                    ListaFacturas = ClienteNeg.BuscarSubClientePorApellidoNombre(txtBuscarPorNombreRazonSocial.Text, lblCuit.Text);
+                    if (ListaFacturas.Count > 0)
+                    {
+                        this.Session["usuarios"] = ListaFacturas;
+                        this.gvVentas.DataSource = ListaFacturas;
+                        this.gvVentas.DataBind();
+                        this.lblTotalRegistros.Text = ListaFacturas.Count.ToString();
+                    }
+                }
+                if (txtNroFactura.Text != "" & txtBuscarPorNombreRazonSocial.Text == "")
+                {
+                    var ApellidoNombre = txtBuscarPorNombreRazonSocial.Text;
+                    ListaFacturas = ClienteNeg.BuscarSubClientePorNroFactura(txtNroFactura.Text, lblCuit.Text);
+                    if (ListaFacturas.Count > 0)
+                    {
+                        this.Session["usuarios"] = ListaFacturas;
+                        this.gvVentas.DataSource = ListaFacturas;
+                        this.gvVentas.DataBind();
+                        this.lblTotalRegistros.Text = ListaFacturas.Count.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        protected void btnFacturaB_Click(object sender, EventArgs e)
+        {
+            this.Session["usuarios"] = _clienteSeleccionado;
+            Response.Redirect("~/FacturaBWF.aspx");
         }
     }
 }

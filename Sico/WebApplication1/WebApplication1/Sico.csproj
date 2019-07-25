@@ -89,6 +89,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -99,13 +100,56 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarClienteWF.aspx" />
+    <Content Include="App_Themes\imagenes\agregar-usuario-nuevo.png" />
+    <Content Include="App_Themes\imagenes\borrar-usuario.png" />
+    <Content Include="App_Themes\imagenes\buscar-con-herramienta-en-esquema.png" />
+    <Content Include="App_Themes\imagenes\cancelar.png" />
+    <Content Include="App_Themes\imagenes\carpeta %281%29.png" />
+    <Content Include="App_Themes\imagenes\ciclo-del-agua %281%29.png" />
+    <Content Include="App_Themes\imagenes\ciclo-del-agua %282%29.png" />
+    <Content Include="App_Themes\imagenes\ciclo-del-agua.png" />
+    <Content Include="App_Themes\imagenes\clip-sujetapapeles %281%29.png" />
+    <Content Include="App_Themes\imagenes\clip-sujetapapeles.png" />
+    <Content Include="App_Themes\imagenes\comprador %281%29.png" />
+    <Content Include="App_Themes\imagenes\comprador %281%291.png" />
+    <Content Include="App_Themes\imagenes\comprador %282%29.png" />
+    <Content Include="App_Themes\imagenes\comprador.png" />
+    <Content Include="App_Themes\imagenes\copia-de-seguridad.png" />
+    <Content Include="App_Themes\imagenes\diagnostico.png" />
+    <Content Include="App_Themes\imagenes\diagnostico1.png" />
+    <Content Include="App_Themes\imagenes\diagrama.png" />
+    <Content Include="App_Themes\imagenes\diario-abierto.png" />
+    <Content Include="App_Themes\imagenes\dinero.png" />
+    <Content Include="App_Themes\imagenes\e-mail-sobre-abierto.png" />
     <Content Include="App_Themes\imagenes\editar.png" />
+    <Content Include="App_Themes\imagenes\email.png" />
+    <Content Include="App_Themes\imagenes\estadisticas-de-ventas.png" />
+    <Content Include="App_Themes\imagenes\factura %281%29.png" />
+    <Content Include="App_Themes\imagenes\factura.png" />
+    <Content Include="App_Themes\imagenes\flecha-curva-hacia-atras-a-la-izquierda.png" />
+    <Content Include="App_Themes\imagenes\historial-medico %281%29.png" />
+    <Content Include="App_Themes\imagenes\icon %281%29.png" />
+    <Content Include="App_Themes\imagenes\icon.png" />
+    <Content Include="App_Themes\imagenes\Imagen_Sico.jpg" />
+    <Content Include="App_Themes\imagenes\juicio %281%29.png" />
+    <Content Include="App_Themes\imagenes\juicio.png" />
+    <Content Include="App_Themes\imagenes\logout.png" />
     <Content Include="App_Themes\imagenes\lupa.png" />
+    <Content Include="App_Themes\imagenes\nueva-pagina.png" />
+    <Content Include="App_Themes\imagenes\pdf.png" />
+    <Content Include="App_Themes\imagenes\refrescar.png" />
+    <Content Include="App_Themes\imagenes\SistemaContable.png" />
+    <Content Include="App_Themes\imagenes\tarjeta.png" />
+    <Content Include="App_Themes\imagenes\txt.png" />
+    <Content Include="App_Themes\imagenes\usuario-hombre %281%29.png" />
+    <Content Include="App_Themes\imagenes\usuario-hombre.png" />
+    <Content Include="App_Themes\imagenes\usuario.png" />
     <Content Include="ClientesVentasWF.aspx" />
     <Content Include="ClientesWF.aspx" />
     <Content Include="ConsultaClientesWF.aspx" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
+    <Content Include="FacturaBWF.aspx" />
     <Content Include="InicioWF.aspx" />
     <Content Include="js\Demo\chart-area-demo.js" />
     <Content Include="js\Demo\chart-bar-demo.js" />
@@ -1876,6 +1920,13 @@
     <Compile Include="ConsultaClientesWF.aspx.designer.cs">
       <DependentUpon>ConsultaClientesWF.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FacturaBWF.aspx.cs">
+      <DependentUpon>FacturaBWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FacturaBWF.aspx.designer.cs">
+      <DependentUpon>FacturaBWF.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InicioWF.aspx.cs">
       <DependentUpon>InicioWF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1897,6 +1948,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Themes\Theme1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sico.Dao\Sico.Dao.csproj">
+      <Project>{04136d67-3e1c-465f-9885-b4c8874745ae}</Project>
+      <Name>Sico.Dao</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sico.Entidades\Sico.Entidades.csproj">
       <Project>{8439ce2c-e234-4432-909e-c4b1c38e2b61}</Project>
       <Name>Sico.Entidades</Name>
@@ -1905,9 +1963,6 @@
       <Project>{778da416-4c30-4022-9616-936c3bd27c07}</Project>
       <Name>Sico.Negocio</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Themes\Theme1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

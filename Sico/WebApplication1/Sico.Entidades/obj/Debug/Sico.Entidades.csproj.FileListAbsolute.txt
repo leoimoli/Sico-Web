@@ -9,7 +9,6 @@ C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Entidades\obj\
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Entidades\bin\Debug\Sico.Entidades.exe.config
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Entidades\bin\Debug\Sico.Entidades.exe
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Entidades\bin\Debug\Sico.Entidades.pdb
-C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Entidades\obj\Debug\Sico.Entidades.csprojResolveAssemblyReference.cache
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Entidades\obj\Debug\Sico.Entidades.Properties.Resources.resources
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Entidades\obj\Debug\Sico.Entidades.csproj.GenerateResource.Cache
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\Sico.Entidades\obj\Debug\Sico.Entidades.exe
