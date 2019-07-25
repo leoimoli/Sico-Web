@@ -1,6 +1,29 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="AgregarClienteWF.aspx.cs" Inherits="WebApplication1.AgregarClienteWF" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+        <div class="row">
+            <div class="col-sm-3">
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <asp:Label ID="Label4" runat="server" Text="Clientes" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-md-9 col-sm-9 col-xs-9">
         <div>
             <div class="row">

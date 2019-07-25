@@ -64,16 +64,16 @@ namespace WebApplication1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cmbPersona;
+        protected global::System.Web.UI.WebControls.DropDownList cmbPersona;
         
         /// <summary>
-        /// Button1 control.
+        /// btnNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnNuevo;
         
         /// <summary>
         /// lblDniEdit control.
@@ -256,13 +256,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtIva3;
         
         /// <summary>
-        /// cmbCodigoMoneda control.
+        /// cmbTipoMoneda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbCodigoMoneda;
+        protected global::System.Web.UI.WebControls.DropDownList cmbTipoMoneda;
         
         /// <summary>
         /// txtTipoCambio control.
@@ -290,5 +290,32 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// btnAdjuntar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdjuntar;
+        
+        /// <summary>
+        /// btnLimpiar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiar;
+        
+        /// <summary>
+        /// btnGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
     }
 }

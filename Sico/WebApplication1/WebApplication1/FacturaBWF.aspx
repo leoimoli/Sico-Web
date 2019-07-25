@@ -54,12 +54,12 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Persona Física:<span class="kv-reqd"> (*)</span></label>
-                                <asp:TextBox class="form-control" ID="cmbPersona" runat="server"></asp:TextBox>
+                                <asp:DropDownList class="form-control" ID="cmbPersona" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <asp:Button ID="Button1" class="btn btn-primary" Style="display: inline-block;" Width="55px" Height="65px" runat="server" Text="Nuevo" Font-Size="Small" />
+                                <asp:Button ID="btnNuevo" Style="text-align: end; background-image: url(App_Themes/imagenes/nuevo-usuario.png); background-position: top; display: inline-block;" Width="60px" Height="60px" runat="server" />
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -91,7 +91,7 @@
                         </div>
                         <div class="col-sm-2">
                             <div class="form-group">
-                                <asp:Button ID="btnNuevoPeriodo" Style="text-align:end; background-image: url(App_Themes/imagenes/ciclo-del-agua.png); background-position:top; display: inline-block;" Width="55px" Height="65px" runat="server" Text="Nuevo" Font-Size="Small" />
+                                <asp:Button ID="btnNuevoPeriodo" Style="text-align: end; background-image: url(App_Themes/imagenes/nuevas-insignias-de-una-tienda.png); background-position: top; display: inline-block;" Width="60px" Height="60px" runat="server" />
                             </div>
                         </div>
                     </div>
@@ -202,8 +202,8 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="lblRazonSocial">Código de Moneda:<span class="kv-reqd"> (*)</span></label>
-                                <asp:DropDownList class="form-control" ID="cmbCodigoMoneda" runat="server"></asp:DropDownList>
+                                <label for="lblRazonSocial">Tipo de Moneda:<span class="kv-reqd"> (*)</span></label>
+                                <asp:DropDownList class="form-control" ID="cmbTipoMoneda" runat="server"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -226,10 +226,19 @@
                                 <asp:TextBox class="form-control" ID="txtEmail" runat="server"></asp:TextBox>
                             </div>
                         </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <asp:Button ID="btnAdjuntar" Style="text-align: end; background-image: url(App_Themes/imagenes/clip-sujetapapeles.png); background-position: top; display: inline-block;" Width="60px" Height="60px" runat="server" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <%--  Domicilio--%>
+
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 800px">
+        <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Limpiar" />
+        <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Guardar" />
     </div>
 </asp:Content>
