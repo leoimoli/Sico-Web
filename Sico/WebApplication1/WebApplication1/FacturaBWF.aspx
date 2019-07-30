@@ -134,7 +134,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblAlicuota">Alicuota</label>
-                                <asp:TextBox class="form-control" ID="TextBox1" runat="server" Text="10,5%" Enabled="false"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="lbl105" runat="server" Text="10,5%" Enabled="false"></asp:TextBox>
 
                             </div>
                         </div>
@@ -161,7 +161,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblAlicuota">Alicuota</label>
-                                <asp:TextBox class="form-control" ID="TextBox4" runat="server" Text="21%" Enabled="false"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="lbl21" runat="server" Text="21%" Enabled="false"></asp:TextBox>
 
                             </div>
                         </div>
@@ -188,7 +188,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblAlicuota">Alicuota</label>
-                                <asp:TextBox class="form-control" ID="TextBox5" runat="server" Text="27%" Enabled="false"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="lbl27" runat="server" Text="27%" Enabled="false"></asp:TextBox>
 
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                         <div class="col-sm-9">
                             <div class="form-group">
                                 <label for="lblAdjuntar">Adjuntar:</label>
-                                <asp:TextBox class="form-control" ID="txtEmail" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtAdjuntar" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-2">
@@ -232,6 +232,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="form-group">
+                                <label for="lblTotal">Total:</label>
+                                <asp:TextBox class="form-control" ID="txtTotal" runat="server"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

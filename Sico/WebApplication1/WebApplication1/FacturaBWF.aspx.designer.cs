@@ -166,13 +166,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtNeto1;
         
         /// <summary>
-        /// TextBox1 control.
+        /// lbl105 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox lbl105;
         
         /// <summary>
         /// txtIva1 control.
@@ -202,13 +202,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtNeto2;
         
         /// <summary>
-        /// TextBox4 control.
+        /// lbl21 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox lbl21;
         
         /// <summary>
         /// txtIva2 control.
@@ -238,13 +238,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtNeto3;
         
         /// <summary>
-        /// TextBox5 control.
+        /// lbl27 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox lbl27;
         
         /// <summary>
         /// txtIva3 control.
@@ -283,13 +283,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.DropDownList cmbCodigoOperacion;
         
         /// <summary>
-        /// txtEmail control.
+        /// txtAdjuntar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtAdjuntar;
         
         /// <summary>
         /// btnAdjuntar control.
@@ -299,6 +299,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAdjuntar;
+        
+        /// <summary>
+        /// txtTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTotal;
         
         /// <summary>
         /// btnLimpiar control.
