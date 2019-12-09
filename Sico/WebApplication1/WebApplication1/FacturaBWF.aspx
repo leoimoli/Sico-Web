@@ -57,9 +57,9 @@
                                 <asp:DropDownList class="form-control" ID="cmbPersona" runat="server"></asp:DropDownList>
                             </div>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <div class="form-group">
-                                <asp:Button ID="btnNuevo" Style="text-align: end; background-image: url(App_Themes/imagenes/nuevo-usuario.png); background-position: top; display: inline-block;" Width="60px" Height="60px" runat="server" />
+                                <asp:Button ID="btnNuevo" Style="text-align: end; background-image: url(App_Themes/imagenes/nuevo-usuario.png); display: inline-block;" Width="30px" Height="30px" runat="server" />
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -77,13 +77,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                             <div class="form-group">
                                 <label for="lblFecha">Observaciones:</label>
                                 <asp:TextBox class="form-control" ID="lblObservacionesEdit" runat="server"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                             <div class="form-group">
                                 <label for="lblCondicionAntiAfip">Periodo:<span class="kv-reqd"> (*)</span></label>
                                 <asp:DropDownList class="form-control" ID="cmbPeriodo" runat="server"></asp:DropDownList>
@@ -96,20 +96,20 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Fecha Comprobante:<span class="kv-reqd"> (*)</span></label>
                                 <asp:TextBox class="form-control" ID="dtFecha" runat="server"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblCuit">Tipo Comprobante:<span class="kv-reqd"> (*)</span></label>
                                 <asp:DropDownList class="form-control" ID="cmbTipoComprobante" runat="server"></asp:DropDownList>
 
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblActividad">Nro.Factura:</label>
                                 <asp:TextBox class="form-control" ID="txtFactura" runat="server"></asp:TextBox>
@@ -200,19 +200,19 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Tipo de Moneda:<span class="kv-reqd"> (*)</span></label>
                                 <asp:DropDownList class="form-control" ID="cmbTipoMoneda" runat="server"></asp:DropDownList>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblCuit">Tipo De Cambio:<span class="kv-reqd"> (*)</span></label>
                                 <asp:TextBox class="form-control" ID="txtTipoCambio" runat="server" MaxLength="11"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblActividad">Código Operación:</label>
                                 <asp:DropDownList class="form-control" ID="cmbCodigoOperacion" runat="server"></asp:DropDownList>
