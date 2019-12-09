@@ -57,19 +57,18 @@
                                 <asp:DropDownList class="form-control" ID="cmbPersona" runat="server"></asp:DropDownList>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <asp:Button ID="btnNuevo" Style="text-align: end; background-image: url(App_Themes/imagenes/nuevo-usuario.png); display: inline-block;" Width="30px" Height="30px" runat="server" />
+                        <div class="col-sm-0.5" style="text-align: center; vertical-align: central; align-self: center">
+                            <div class="form-group" style="margin-top: 25px; margin-left: 0px">
+                                <asp:Button ID="btnNuevo" Style="background-image: url(App_Themes/imagenes/nuevo-usuario.png); background-size: 100%; display: inline-block;" Width="40px" Height="40px" runat="server" />
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblCuit">Dni:<span class="kv-reqd"> (*)</span></label>
                                 <asp:TextBox class="form-control" ID="lblDniEdit" runat="server" MaxLength="11"></asp:TextBox>
-
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblActividad">Dirección:</label>
                                 <asp:TextBox class="form-control" ID="lblDireccionEdit" runat="server"></asp:TextBox>
@@ -83,15 +82,15 @@
                                 <asp:TextBox class="form-control" ID="lblObservacionesEdit" runat="server"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="lblCondicionAntiAfip">Periodo:<span class="kv-reqd"> (*)</span></label>
                                 <asp:DropDownList class="form-control" ID="cmbPeriodo" runat="server"></asp:DropDownList>
                             </div>
                         </div>
-                        <div class="col-sm-2">
-                            <div class="form-group">
-                                <asp:Button ID="btnNuevoPeriodo" Style="text-align: end; background-image: url(App_Themes/imagenes/nuevas-insignias-de-una-tienda.png); background-position: top; display: inline-block;" Width="60px" Height="60px" runat="server" />
+                        <div class="col-sm-0.5" style="text-align: center; vertical-align: central; align-self: center">
+                            <div class="form-group" style="margin-top: 25px; margin-left: 0px">
+                                <asp:Button ID="btnNuevoPeriodo" Style="text-align: end; background-image: url(App_Themes/imagenes/nuevas-insignias-de-una-tienda.png); background-size: 100%; background-position: center; display: inline-block;" Width="40px" Height="40px" runat="server" />
                             </div>
                         </div>
                     </div>
@@ -226,9 +225,9 @@
                                 <asp:TextBox class="form-control" ID="txtAdjuntar" runat="server"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="col-sm-2">
-                            <div class="form-group">
-                                <asp:Button ID="btnAdjuntar" Style="text-align: end; background-image: url(App_Themes/imagenes/clip-sujetapapeles.png); background-position: top; display: inline-block;" Width="60px" Height="60px" runat="server" />
+                        <div class="col-sm-0.5" style="text-align: center; vertical-align: central; align-self: center">
+                            <div class="form-group" style="margin-top: 25px; margin-left: 0px">
+                                <asp:Button ID="btnAdjuntar" Style="text-align: end; background-image: url(App_Themes/imagenes/clip-sujetapapeles.png); background-size: 100%; background-position: center; display: inline-block;" Width="30px" Height="30px" runat="server" />
                             </div>
                         </div>
                     </div>
@@ -236,7 +235,6 @@
                         <div class="col-sm-9">
                             <div class="form-group">
                                 <label for="lblTotal">Total:</label>
-                                <asp:TextBox class="form-control" ID="txtTotal" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
