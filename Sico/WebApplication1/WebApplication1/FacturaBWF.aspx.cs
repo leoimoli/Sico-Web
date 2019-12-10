@@ -236,92 +236,86 @@ namespace WebApplication1
 
             Total = NuevoValor3 + Valor2 + Valor1;
         }
-        private void txtTotal1_KeyDown(object sender, KeyEventArgs e)
+        protected void txtTotal1_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            ///// Calculo el NetoGral Alicuota 10,5
+            double Total1 = Convert.ToDouble(txtTotal1.Text);
+            decimal NetoCalculado = CalcularValorNeto1(Total1);
+            txtNeto1.Text = Convert.ToString(NetoCalculado);
+
+            ///// Calculo el IVA Alicuota 10,5
+            decimal IvaCalculado = CalcularIva1(NetoCalculado);
+            txtIva1.Text = Convert.ToString(IvaCalculado);
+
+            ///// Calculo el Monto Total
+            if (Total == 0)
             {
-                ///// Calculo el NetoGral Alicuota 10,5
-                double Total1 = Convert.ToDouble(txtTotal1.Text);
-                decimal NetoCalculado = CalcularValorNeto1(Total1);
-                txtNeto1.Text = Convert.ToString(NetoCalculado);
-
-                ///// Calculo el IVA Alicuota 10,5
-                decimal IvaCalculado = CalcularIva1(NetoCalculado);
-                txtIva1.Text = Convert.ToString(IvaCalculado);
-
-                ///// Calculo el Monto Total
-                if (Total == 0)
-                {
-                    txtTotal.Text = Convert.ToString(Total1);
-                    decimal TotalCargado = Convert.ToDecimal(Total1);
-                    Total = TotalCargado;
-                }
-                else
-                {
-                    RecalcularTotal1();
-                    txtTotal.Text = Convert.ToString(Total);
-                }
-                txtTotal2.Focus();
+                txtTotal.Text = Convert.ToString(Total1);
+                decimal TotalCargado = Convert.ToDecimal(Total1);
+                Total = TotalCargado;
             }
+            else
+            {
+                RecalcularTotal1();
+                txtTotal.Text = Convert.ToString(Total);
+            }
+            txtTotal2.Focus();
+
         }
-        private void txtTotal2_KeyDown(object sender, KeyEventArgs e)
+        protected void txtTotal2_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+
+            ///// Calculo el NetoGral Alicuota 21
+            double Total2 = Convert.ToDouble(txtTotal2.Text);
+            decimal NetoCalculado = CalcularValorNeto2(Total2);
+            txtNeto2.Text = Convert.ToString(NetoCalculado);
+
+            ///// Calculo el IVA Alicuota 21
+            decimal IvaCalculado = CalcularIva2(NetoCalculado);
+            txtIva2.Text = Convert.ToString(IvaCalculado);
+
+            ///// Calculo el Monto Total
+            if (Total == 0)
             {
-                ///// Calculo el NetoGral Alicuota 21
-                double Total2 = Convert.ToDouble(txtTotal2.Text);
-                decimal NetoCalculado = CalcularValorNeto2(Total2);
-                txtNeto2.Text = Convert.ToString(NetoCalculado);
-
-                ///// Calculo el IVA Alicuota 21
-                decimal IvaCalculado = CalcularIva2(NetoCalculado);
-                txtIva2.Text = Convert.ToString(IvaCalculado);
-
-                ///// Calculo el Monto Total
-                if (Total == 0)
-                {
-                    txtTotal.Text = Convert.ToString(Total2);
-                    decimal TotalCargado = Convert.ToDecimal(Total2);
-                    Total = TotalCargado;
-                }
-                else
-                {
-                    RecalcularTotal2();
-                    txtTotal.Text = Convert.ToString(Total);
-                    //decimal TotalCargado = Convert.ToDecimal(Total2);
-                    //decimal TotalMostrar = Total + TotalCargado;
-                    //Total = TotalMostrar;
-                    //lblTotalEdit.Text = Convert.ToString(TotalMostrar);
-                }
-                txtTotal3.Focus();
+                txtTotal.Text = Convert.ToString(Total2);
+                decimal TotalCargado = Convert.ToDecimal(Total2);
+                Total = TotalCargado;
             }
+            else
+            {
+                RecalcularTotal2();
+                txtTotal.Text = Convert.ToString(Total);
+                //decimal TotalCargado = Convert.ToDecimal(Total2);
+                //decimal TotalMostrar = Total + TotalCargado;
+                //Total = TotalMostrar;
+                //lblTotalEdit.Text = Convert.ToString(TotalMostrar);
+            }
+            txtTotal3.Focus();
+
         }
-        private void txtTotal3_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+        protected void txtTotal3_TextChanged(object sender, EventArgs e)
+        {                            ///// Calculo el NetoGral Alicuota 27
+            double Total3 = Convert.ToDouble(txtTotal3.Text);
+            decimal NetoCalculado = CalcularValorNeto3(Total3);
+            txtNeto3.Text = Convert.ToString(NetoCalculado);
+
+            ///// Calculo el IVA Alicuota 27
+            decimal IvaCalculado = CalcularIva3(NetoCalculado);
+            txtIva3.Text = Convert.ToString(IvaCalculado);
+
+            ///// Calculo el Monto Total
+            if (Total == 0)
             {
-                ///// Calculo el NetoGral Alicuota 27
-                double Total3 = Convert.ToDouble(txtTotal3.Text);
-                decimal NetoCalculado = CalcularValorNeto3(Total3);
-                txtNeto3.Text = Convert.ToString(NetoCalculado);
-
-                ///// Calculo el IVA Alicuota 27
-                decimal IvaCalculado = CalcularIva3(NetoCalculado);
-                txtIva3.Text = Convert.ToString(IvaCalculado);
-
-                ///// Calculo el Monto Total
-                if (Total == 0)
-                {
-                    txtTotal.Text = Convert.ToString(Total3);
-                    decimal TotalCargado = Convert.ToDecimal(Total3);
-                    Total = TotalCargado;
-                }
-                else
-                {
-                    RecalcularTotal3();
-                    txtTotal.Text = Convert.ToString(Total);
-                }
+                txtTotal.Text = Convert.ToString(Total3);
+                decimal TotalCargado = Convert.ToDecimal(Total3);
+                Total = TotalCargado;
             }
+            else
+            {
+                RecalcularTotal3();
+                txtTotal.Text = Convert.ToString(Total);
+            }
+
         }
         private decimal CalcularValorNeto1(double total1)
         {

@@ -5,18 +5,22 @@
         <div class="row">
             <div class="col-sm-3">
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-12">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-1">
                         <div class="form-group">
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
                         <div class="form-group">
                             <asp:Label ID="Label4" runat="server" Text="Clientes" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <div class="form-group">
                         </div>
                     </div>
@@ -29,9 +33,13 @@
             <div class="row">
                 <div class="col-sm-3">
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <%--   <label for="lblTitulo" style="font-size: x-large; color: steelblue"">Agregar Clientes</label>--%>
                     <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                            </div>
+                        </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Nombre/Razon Social:<span class="kv-reqd"> (*)</span></label>
@@ -56,6 +64,10 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="form-group">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
                                 <label for="lblFecha">Fecha:</label>
                                 <asp:TextBox class="form-control" ID="txtFecha" runat="server" placeholder="yyyy-mm-dd" onkeyup="var date = this.value;if (date.match(/^\d{4}$/) !== null) {this.value = date + '-';} else if (date.match(/^\d{4}\-\d{2}$/) !== null) {this.value = date + '-';}" MaxLength="10"></asp:TextBox>
                                 <%--<input type="text"  name="date" placeholder="yyyy-mm-dd" onkeyup="var date = this.value;if (date.match(/^\d{4}$/) !== null) {this.value = date + '-';} else if (date.match(/^\d{4}\-\d{2}$/) !== null) {this.value = date + '-';}" maxlength="10">--%>
@@ -77,11 +89,14 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                            </div>
+                        </div>
                         <div class="col-sm-9">
                             <div class="form-group">
                                 <label for="lblEmail">Email:</label>
                                 <asp:TextBox class="form-control" ID="txtEmail" runat="server"></asp:TextBox>
-                                <%-- <input type="text" class="form-control" id="txtEmail">--%>
                             </div>
                         </div>
                     </div>
@@ -93,8 +108,12 @@
             <div class="row">
                 <div class="col-sm-3">
                 </div>
-                <div class="col-sm-9">
+                <div class="col-sm-12">
                     <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                            </div>
+                        </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblProvincia">Provincia:</label>
@@ -117,13 +136,17 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblCalle">Calle:</label>
                                 <asp:TextBox class="form-control" ID="txtCalle" runat="server"></asp:TextBox>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblAltura">Altura:</label>
                                 <asp:TextBox class="form-control" ID="txtAltura" runat="server"></asp:TextBox>
@@ -136,10 +159,9 @@
         </div>
 
         <%--////// Botones--%>
-        <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 550px">
+        <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 700px">
             <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" />
             <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Guardar" OnClick="btnGuardar_Click1" />
-
         </div>
     </div>
 </asp:Content>

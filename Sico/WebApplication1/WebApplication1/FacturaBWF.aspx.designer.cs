@@ -301,6 +301,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btnAdjuntar;
         
         /// <summary>
+        /// txtTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTotal;
+        
+        /// <summary>
         /// btnLimpiar control.
         /// </summary>
         /// <remarks>

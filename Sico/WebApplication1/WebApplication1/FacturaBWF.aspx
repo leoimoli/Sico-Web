@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="FacturaBWF.aspx.cs" Inherits="WebApplication1.FacturaBWF" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="FacturaBWF.aspx.cs" Inherits="WebApplication1.FacturaBWF" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
@@ -6,7 +6,7 @@
         </div>
         <div class="col-sm-9">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <div class="form-group">
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblTotal">Total:</label>
-                                <asp:TextBox class="form-control" ID="txtTotal1" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtTotal1" runat="server" OnTextChanged="txtTotal1_TextChanged"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -148,7 +148,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblTotal">Total:</label>
-                                <asp:TextBox class="form-control" ID="txtTotal2" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtTotal2" runat="server" OnTextChanged="txtTotal2_TextChanged"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -175,7 +175,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblTotal">Total:</label>
-                                <asp:TextBox class="form-control" ID="txtTotal3" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtTotal3" runat="server" OnTextChanged="txtTotal3_TextChanged"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -219,7 +219,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-11">
                             <div class="form-group">
                                 <label for="lblAdjuntar">Adjuntar:</label>
                                 <asp:TextBox class="form-control" ID="txtAdjuntar" runat="server"></asp:TextBox>
@@ -232,9 +232,10 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblTotal">Total:</label>
+                                <asp:TextBox class="form-control" ID="txtTotal" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -244,7 +245,7 @@
         </div>
 
     </div>
-    <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 800px">
+    <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 700px">
         <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Limpiar" />
         <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Guardar" />
     </div>

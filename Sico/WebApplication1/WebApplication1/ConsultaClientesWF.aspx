@@ -6,6 +6,31 @@
             <div class="row">
                 <div class="col-sm-3">
                 </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <asp:Label ID="Label4" runat="server" Text="Listado de Clientes" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                </div>
                 <div class="col-sm-9">
                     <div class="row">
                         <div class="form-group">
@@ -54,6 +79,12 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 700px">
+                    <asp:Button ID="btnNuevoCliente" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Nuevo Cliente" Font-Size="Small" />
+                    <%-- <asp:Button ID="btnFacturaB" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Factura B" Font-Size="Small" OnClick="btnFacturaB_Click" />--%>
                 </div>
             </div>
         </div>
