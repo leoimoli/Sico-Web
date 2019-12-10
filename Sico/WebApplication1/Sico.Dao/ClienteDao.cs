@@ -49,8 +49,7 @@ namespace Sico.Dao
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = connection;
             DataTable Tabla = new DataTable();
-            MySqlParameter[] oParam = {
-                                      new MySqlParameter()};
+            MySqlParameter[] oParam = {};
             string proceso = "BuscarClientes";
             MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
             dt.SelectCommand.CommandType = CommandType.StoredProcedure;

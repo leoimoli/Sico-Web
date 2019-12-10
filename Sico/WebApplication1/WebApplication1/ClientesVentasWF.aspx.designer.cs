@@ -139,13 +139,13 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btnSubCliente;
         
         /// <summary>
-        /// btnFacturaB control.
+        /// btnFactura control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFacturaB;
+        protected global::System.Web.UI.WebControls.Button btnFactura;
         
         /// <summary>
         /// btnNotaDeCredito control.

@@ -61,6 +61,7 @@ C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\M
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.AI.WindowsServer.dll
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.ApplicationInsights.dll
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\MySql.Data.DLL
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Dao.exe
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Entidades.exe
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Sico.Negocio.exe

@@ -66,7 +66,7 @@
                     </div>
                     <div class="col-sm-3">
                         <div class="form-group">
-                            <asp:Button ID="btnBuscar" class="btn btn-primary" Style="display: inline-block;" Width="80px" Height="60px" runat="server" Text="Buscar" Font-Size="Small" OnClick="btnBuscar_Click1"/>
+                            <asp:Button ID="btnBuscar" class="btn btn-primary" Style="display: inline-block;" Width="80px" Height="60px" runat="server" Text="Buscar" Font-Size="Small" OnClick="btnBuscar_Click1" />
                         </div>
                     </div>
                 </div>
@@ -129,11 +129,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 550px">
-        <asp:Button ID="btnSubCliente" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Nuevo Sub-Cliente" Font-Size="Small" />
-        <asp:Button ID="btnFacturaB" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Factura B" Font-Size="Small" OnClick="btnFacturaB_Click" />
-        <asp:Button ID="btnNotaDeCredito" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Nota de Crédito" Font-Size="Small" />
-        <asp:Button ID="btnCompras" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Compras" Font-Size="Small" />
+        <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 460px">
+            <asp:Button ID="btnSubCliente" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nuevo Sub-Cliente" Font-Size="Small" />
+            <asp:Button ID="btnFactura" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Facturar" Font-Size="Small" OnClick="btnFacturaB_Click" />
+            <asp:Button ID="btnNotaDeCredito" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nota de Crédito" Font-Size="Small" />
+            <asp:Button ID="btnCompras" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Compras" Font-Size="Small" />
+        </div>
     </div>
 </asp:Content>
