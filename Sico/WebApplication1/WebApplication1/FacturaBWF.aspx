@@ -54,7 +54,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Persona Física:<span class="kv-reqd"> (*)</span></label>
-                                <asp:DropDownList class="form-control" ID="cmbPersona" runat="server"></asp:DropDownList>
+                                <asp:DropDownList class="form-control" ID="cmbPersonas" runat="server" OnSelectedIndexChanged="cmbPersonas_SelectedIndexChanged"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-sm-0.5" style="text-align: center; vertical-align: central; align-self: center">

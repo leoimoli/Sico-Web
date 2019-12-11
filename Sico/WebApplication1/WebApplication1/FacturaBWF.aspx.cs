@@ -90,13 +90,13 @@ namespace WebApplication1
         {
             List<string> Personas = new List<string>();
             Personas = ClienteNeg.CargarComboPersonas(ClienteSeleccionado.Cuit);
-            cmbPersona.Items.Clear();
+            cmbPersonas.Items.Clear();
             ListItem item = new ListItem("Seleccione", "0");
             cmbTipoComprobante.Items.Add(item);
             foreach (var tipo in Personas)
             {
                 item = new ListItem(tipo);
-                cmbPersona.Items.Add(item);
+                cmbPersonas.Items.Add(item);
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace WebApplication1
         private SubCliente CargarEntidad()
         {
             SubCliente _subCliente = new SubCliente();
-            _subCliente.ApellidoNombre = cmbPersona.Text;
+            _subCliente.ApellidoNombre = cmbPersonas.Text;
             string factura = txtFactura.Text;
             ///// Primera parte del numero
             var split1 = factura.Split('-')[0];
@@ -355,6 +355,38 @@ namespace WebApplication1
             string res = Convert.ToString(Math.Round((NetoCalculado * 0.27), 2));
             decimal resultado = Convert.ToDecimal(res);
             return resultado;
+        }
+        protected void cmbPersonas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
+                string cuit = ClienteSeleccionado.Cuit;
+                string persona = cmbPersonas.Text;
+                string NuevoNroFactura = ClienteNeg.BuscarNroFactura(cuit);
+                txtFactura.Text = NuevoNroFactura;
+                dtFecha.Enabled = true;
+                string apellidoNombre = cmbPersonas.Text;
+                List<SubCliente> DatosPersonales = ClienteNeg.BuscarDatosSubClientePorApellidoNombre(apellidoNombre, cuit);
+                if (DatosPersonales.Count > 0)
+                {
+                    //HabilitarLabels();
+                    var datos = DatosPersonales.First();
+                    if (String.IsNullOrEmpty(datos.Dni))
+                    { lblDniEdit.Text = "No informa"; }
+                    else { lblDniEdit.Text = datos.Dni; }
+
+                    if (String.IsNullOrEmpty(datos.Direccion))
+                    { lblDireccionEdit.Text = "No informa"; }
+                    else { lblDireccionEdit.Text = datos.Direccion; }
+
+                    if (String.IsNullOrEmpty(datos.Observacion))
+                    { lblObservacionesEdit.Text = "No informa"; }
+                    else { lblObservacionesEdit.Text = datos.Observacion; }
+                }
+            }
+            catch (Exception ex)
+            { }
         }
     }
 }

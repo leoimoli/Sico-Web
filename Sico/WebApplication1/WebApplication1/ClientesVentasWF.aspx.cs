@@ -39,7 +39,6 @@ namespace WebApplication1
 
             }
         }
-
         protected void gvVentas_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             try
@@ -59,14 +58,12 @@ namespace WebApplication1
 
             }
         }
-
         private void Editar(int posicion)
         {
             IList<SubCliente> Subclientes = Session["usuarios"] as IList<SubCliente>;
             this.Session["usuarios"] = Subclientes[posicion];
             Response.Redirect("");
         }
-
         private void Ver(int posicion)
         {
             IList<SubCliente> Subclientes = Session["usuarios"] as IList<SubCliente>;
@@ -87,7 +84,6 @@ namespace WebApplication1
 
             }
         }
-
         protected void btnBuscar_Click1(object sender, EventArgs e)
         {
             List<Sico.Entidades.SubCliente> ListaFacturas = new List<Sico.Entidades.SubCliente>();
@@ -125,6 +121,7 @@ namespace WebApplication1
         }
         protected void btnFacturaB_Click(object sender, EventArgs e)
         {
+            string cuit = lblCuit.Text;
             this.Session["usuarios"] = _clienteSeleccionado;
             Response.Redirect("~/FacturaBWF.aspx");
         }
