@@ -54,7 +54,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Persona Física:<span class="kv-reqd"> (*)</span></label>
-                                <asp:DropDownList class="form-control" ID="cmbPersonas" runat="server" OnSelectedIndexChanged="cmbPersonas_SelectedIndexChanged"></asp:DropDownList>
+                                <asp:DropDownList class="form-control" ID="cmbPersonas" runat="server" OnSelectedIndexChanged="cmbPersonas_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                             </div>
                         </div>
                         <div class="col-sm-0.5" style="text-align: center; vertical-align: central; align-self: center">
@@ -112,6 +112,9 @@
                             <div class="form-group">
                                 <label for="lblActividad">Nro.Factura:</label>
                                 <asp:TextBox class="form-control" ID="txtFactura" runat="server"></asp:TextBox>
+                              <%--  <asp:TextBox ID="txtDecimales" runat="server"></asp:TextBox>--%>
+                                <cc1:maskededitextender id="meeDecimales" runat="server" targetcontrolid="txtFactura" mask="00000-00000000"
+                                    masktype="Number" inputdirection="RightToLeft" />
                             </div>
                         </div>
                     </div>
@@ -246,7 +249,7 @@
 
     </div>
     <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 700px">
-        <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Limpiar" />
-        <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Guardar" />
+        <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click1" />
+        <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
     </div>
 </asp:Content>

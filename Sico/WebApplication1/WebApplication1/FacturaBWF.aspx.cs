@@ -52,7 +52,6 @@ namespace WebApplication1
                 cmbTipoComprobante.Items.Add(item);
             }
 
-
             List<string> CodigoOperacion = new List<string>();
             CodigoOperacion = ComprasNeg.CargarComboCodigoOperacion();
             cmbCodigoOperacion.Items.Clear();
@@ -60,7 +59,7 @@ namespace WebApplication1
             cmbCodigoOperacion.Items.Add(item2);
             foreach (var codigo in CodigoOperacion)
             {
-                item = new ListItem(codigo);
+                item2 = new ListItem(codigo);
                 cmbCodigoOperacion.Items.Add(item2);
             }
             List<string> TipoMoneda = new List<string>();
@@ -70,10 +69,9 @@ namespace WebApplication1
             cmbTipoMoneda.Items.Add(item3);
             foreach (var TipoMon in TipoMoneda)
             {
-                item = new ListItem(TipoMon);
+                item3 = new ListItem(TipoMon);
                 cmbTipoMoneda.Items.Add(item3);
             }
-
 
             List<string> Periodo = new List<string>();
             Periodo = PeriodoNeg.CargarComboPeriodoVenta(ClienteSeleccionado.Cuit);
@@ -82,7 +80,7 @@ namespace WebApplication1
             cmbPeriodo.Items.Add(item4);
             foreach (var per in Periodo)
             {
-                item = new ListItem(per);
+                item4 = new ListItem(per);
                 cmbPeriodo.Items.Add(item4);
             }
         }
@@ -98,25 +96,6 @@ namespace WebApplication1
                 item = new ListItem(tipo);
                 cmbPersonas.Items.Add(item);
             }
-        }
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Sico.Entidades.SubCliente _subCliente = CargarEntidad();
-                bool Exito = ClienteNeg.GuardarFacturaSubCliente(_subCliente, ClienteSeleccionado.Cuit);
-                if (Exito == true)
-                {
-                    const string message2 = "Se registro la factura exitosamente.";
-                    const string caption2 = "Éxito";
-                    LimpiarCampos();
-                }
-                else
-                {
-
-                }
-            }
-            catch (Exception ex) { }
         }
         private SubCliente CargarEntidad()
         {
@@ -387,6 +366,61 @@ namespace WebApplication1
             }
             catch (Exception ex)
             { }
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void LimpiarCamposEscritos()
+        {
+            txtTotal1.Text = null;
+            txtTotal2.Text = null;
+            txtTotal3.Text = null;
+            txtNeto1.Text = null;
+            txtNeto2.Text = null;
+            txtNeto3.Text = null;
+            txtIva1.Text = null;
+            txtIva2.Text = null;
+            txtIva3.Text = null;
+            txtTotal.Text = "-";
+            Total = 0;
+            txtAdjuntar.Text = null;
+            CargarCombo();
+        }
+        protected void btnLimpiar_Click1(object sender, EventArgs e)
+        {
+            try
+            {
+                LimpiarCamposEscritos();
+            }
+            catch (Exception ex)
+            {
+                const string message = "Error en el sistema. Intente nuevamente o comuniquese con el administrador.";
+                const string caption = "Atención";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.OK,
+                                           MessageBoxIcon.Warning);
+                throw new Exception();
+            }
+        }
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Sico.Entidades.SubCliente _subCliente = CargarEntidad();
+                bool Exito = ClienteNeg.GuardarFacturaSubCliente(_subCliente, ClienteSeleccionado.Cuit);
+                if (Exito == true)
+                {
+                    const string message2 = "Se registro la factura exitosamente.";
+                    const string caption2 = "Éxito";
+                    LimpiarCampos();
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex) { }
         }
     }
 }
