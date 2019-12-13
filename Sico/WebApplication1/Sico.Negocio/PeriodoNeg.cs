@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sico.Entidades;
 
 namespace Sico.Negocio
 {
@@ -64,6 +65,20 @@ namespace Sico.Negocio
         {
             List<string> lista = new List<string>();
             lista = PeriodoDao.CargarComboPeriodoVenta(cuit);
+            return lista;
+        }
+
+        public static List<Periodo> BuscarPeriodosExistentePorTransaccion(string transaccion, string cuit)
+        {
+            List<Periodo> lista = new List<Periodo>();
+            lista = PeriodoDao.BuscarPeriodosExistentePorTransaccion(transaccion, cuit);
+            return lista;
+        }
+
+        public static List<Periodo> BuscarPeriodosExistentePorTransaccionAño(string transaccion, string cuit, string año)
+        {
+            List<Periodo> lista = new List<Periodo>();
+            lista = PeriodoDao.BuscarPeriodosExistentePorTransaccionAño(transaccion, cuit, año);
             return lista;
         }
     }

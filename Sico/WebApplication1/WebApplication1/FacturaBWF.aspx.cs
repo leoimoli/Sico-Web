@@ -13,6 +13,7 @@ namespace WebApplication1
 {
     public partial class FacturaBWF : System.Web.UI.Page
     {
+        public static Cliente _clienteSeleccionado { get; set; }
         public Cliente ClienteSeleccionado { get; set; }
         public static decimal Total;
         protected void Page_Load(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace WebApplication1
                 }
                 catch (Exception ex)
                 { }
+                _clienteSeleccionado = ClienteSeleccionado;
             }
         }
         private void CargarCombo()
@@ -421,6 +423,12 @@ namespace WebApplication1
                 }
             }
             catch (Exception ex) { }
+        }
+        protected void btnNuevoPeriodo_Click(object sender, EventArgs e)
+        {
+            string cuit = lblCuit.Text;
+            this.Session["usuarios"] = _clienteSeleccionado;
+            Response.Redirect("~/PeriodosWF.aspx");
         }
     }
 }

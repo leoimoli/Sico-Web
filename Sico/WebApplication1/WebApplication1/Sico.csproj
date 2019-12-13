@@ -123,6 +123,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="PeriodosWF.aspx" />
     <Content Include="Site.Master" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="scss\sb-admin-2.scss" />
@@ -1902,6 +1903,13 @@
     </Compile>
     <Compile Include="LoginWF.aspx.designer.cs">
       <DependentUpon>LoginWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PeriodosWF.aspx.cs">
+      <DependentUpon>PeriodosWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PeriodosWF.aspx.designer.cs">
+      <DependentUpon>PeriodosWF.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

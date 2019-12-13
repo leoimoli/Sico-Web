@@ -65,13 +65,13 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblCuit">Dni:<span class="kv-reqd"> (*)</span></label>
-                                <asp:TextBox class="form-control" ID="lblDniEdit" runat="server" MaxLength="11"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="lblDniEdit" runat="server" MaxLength="11" ReadOnly="True"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblActividad">Dirección:</label>
-                                <asp:TextBox class="form-control" ID="lblDireccionEdit" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="lblDireccionEdit" runat="server" ReadOnly="True"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                         <div class="col-sm-5">
                             <div class="form-group">
                                 <label for="lblFecha">Observaciones:</label>
-                                <asp:TextBox class="form-control" ID="lblObservacionesEdit" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="lblObservacionesEdit" runat="server" ReadOnly="True"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -90,7 +90,7 @@
                         </div>
                         <div class="col-sm-0.5" style="text-align: center; vertical-align: central; align-self: center">
                             <div class="form-group" style="margin-top: 25px; margin-left: 0px">
-                                <asp:Button ID="btnNuevoPeriodo" Style="text-align: end; background-image: url(App_Themes/imagenes/nuevas-insignias-de-una-tienda.png); background-size: 100%; background-position: center; display: inline-block;" Width="40px" Height="40px" runat="server" />
+                                <asp:Button ID="btnNuevoPeriodo" Style="text-align: end; background-image: url(App_Themes/imagenes/nuevas-insignias-de-una-tienda.png); background-size: 100%; background-position: center; display: inline-block;" Width="40px" Height="40px" runat="server" OnClick="btnNuevoPeriodo_Click" />
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Fecha Comprobante:<span class="kv-reqd"> (*)</span></label>
-                                <asp:TextBox class="form-control" ID="dtFecha" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="dtFecha" runat="server" TextMode="DateTime"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -112,9 +112,10 @@
                             <div class="form-group">
                                 <label for="lblActividad">Nro.Factura:</label>
                                 <asp:TextBox class="form-control" ID="txtFactura" runat="server"></asp:TextBox>
-                              <%--  <asp:TextBox ID="txtDecimales" runat="server"></asp:TextBox>--%>
-                                <cc1:maskededitextender id="meeDecimales" runat="server" targetcontrolid="txtFactura" mask="00000-00000000"
-                                    masktype="Number" inputdirection="RightToLeft" />
+                                <%--  <asp:TextBox ID="txtDecimales" runat="server"></asp:TextBox>--%>
+                                <%--  <cc1:maskededitextender id="meeDecimales" runat="server" targetcontrolid="txtFactura" mask="00000-00000000"
+                                    masktype="Number" inputdirection="RightToLeft" />--%>
+                                <%--   <input type="text" id="txtFactura" value="00000-00000000" data-mask="00000-00000000" /><br />--%>
                             </div>
                         </div>
                     </div>

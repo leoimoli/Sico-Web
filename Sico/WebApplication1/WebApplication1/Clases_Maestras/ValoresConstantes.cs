@@ -50,7 +50,7 @@ namespace Sico.Clases_Maestras
         {
             get
             {
-                return new string[] { "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"};
+                return new string[] { "Seleccione", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"};
             }
         }
 
@@ -82,6 +82,14 @@ namespace Sico.Clases_Maestras
             get
             {
                 return new string[] { "Cuit", "Dni" };
+            }
+        }
+
+        public static string[] Transacción
+        {
+            get
+            {
+                return new string[] { "Seleccione", "Compras", "Ventas" };
             }
         }
     }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
+using Sico.Entidades;
 
 namespace Sico.Dao
 {
@@ -47,7 +48,6 @@ namespace Sico.Dao
                 return exito;
             }
         }
-
         public static List<string> CargarComboPeriodoVenta(string cuit)
         {
             List<Entidades.Cliente> id = new List<Entidades.Cliente>();
@@ -75,7 +75,126 @@ namespace Sico.Dao
             connection.Close();
             return _TipoMoneda;
         }
+        public static List<Periodo> BuscarPeriodosExistentePorTransaccionAño(string transaccion, string cuit, string Año)
+        {
+            List<Entidades.Cliente> id = new List<Entidades.Cliente>();
+            id = ClienteDao.BuscarClientePorCuit(cuit);
+            int idCliente = id[0].IdCliente;
+            List<Periodo> _periodo = new List<Periodo>();
+            connection.Close();
+            connection.Open();
+            if (transaccion == "Ventas")
+            {
 
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                DataTable Tabla = new DataTable();
+                MySqlParameter[] oParam = { new MySqlParameter("idCliente_in", idCliente),
+                new MySqlParameter("Año_in", Año)};
+                string proceso = "BuscarPeriodosVentasExistentePorTransaccionAño";
+                MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+                dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dt.SelectCommand.Parameters.AddRange(oParam);
+                dt.Fill(Tabla);
+                if (Tabla.Rows.Count > 0)
+                {
+                    foreach (DataRow item in Tabla.Rows)
+                    {
+                        Periodo _listaPeriodo = new Periodo();
+                        _listaPeriodo.idPeriodo = Convert.ToInt32(item["idPeriodoVenta"].ToString());
+                        _listaPeriodo.NombrePeriodo = item["Nombre"].ToString();
+                        _listaPeriodo.Ano = item["ano"].ToString();
+                        _periodo.Add(_listaPeriodo);
+                    }
+                }
+                connection.Close();
+            }
+            else
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                DataTable Tabla = new DataTable();
+                MySqlParameter[] oParam = { new MySqlParameter("idCliente_in", idCliente),
+                new MySqlParameter("Año_in", Año)};
+                string proceso = "BuscarPeriodosComprasExistentePorTransaccionAño";
+                MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+                dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dt.SelectCommand.Parameters.AddRange(oParam);
+                dt.Fill(Tabla);
+                if (Tabla.Rows.Count > 0)
+                {
+                    foreach (DataRow item in Tabla.Rows)
+                    {
+                        Periodo _listaPeriodo = new Periodo();
+                        _listaPeriodo.idPeriodo = Convert.ToInt32(item["idPeriodoCompra"].ToString());
+                        _listaPeriodo.NombrePeriodo = item["Nombre"].ToString();
+                        _listaPeriodo.Ano = item["ano"].ToString();
+                        _periodo.Add(_listaPeriodo);
+                    }
+                }
+                connection.Close();
+            }
+            return _periodo;
+        }
+        public static List<Periodo> BuscarPeriodosExistentePorTransaccion(string transaccion, string cuit)
+        {
+            List<Entidades.Cliente> id = new List<Entidades.Cliente>();
+            id = ClienteDao.BuscarClientePorCuit(cuit);
+            int idCliente = id[0].IdCliente;
+            List<Periodo> _periodo = new List<Periodo>();
+            connection.Close();
+            connection.Open();
+            if (transaccion == "Ventas")
+            {
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                DataTable Tabla = new DataTable();
+                MySqlParameter[] oParam = { new MySqlParameter("idCliente_in", idCliente) };
+                string proceso = "BuscarPeriodosVentasExistentePorTransaccion";
+                MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+                dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dt.SelectCommand.Parameters.AddRange(oParam);
+                dt.Fill(Tabla);
+                if (Tabla.Rows.Count > 0)
+                {
+                    foreach (DataRow item in Tabla.Rows)
+                    {
+                        Periodo _listaPeriodo = new Periodo();
+                        _listaPeriodo.idPeriodo = Convert.ToInt32(item["idPeriodoVenta"].ToString());
+                        _listaPeriodo.NombrePeriodo = item["Nombre"].ToString();
+                        _listaPeriodo.Ano = item["ano"].ToString();
+                        _periodo.Add(_listaPeriodo);
+                    }
+                }
+                connection.Close();
+            }
+            else
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                DataTable Tabla = new DataTable();
+                MySqlParameter[] oParam = { new MySqlParameter("idCliente_in", idCliente) };
+                string proceso = "BuscarPeriodosComprasExistentePorTransaccion";
+                MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+                dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dt.SelectCommand.Parameters.AddRange(oParam);
+                dt.Fill(Tabla);
+                if (Tabla.Rows.Count > 0)
+                {
+                    foreach (DataRow item in Tabla.Rows)
+                    {
+                        Periodo _listaPeriodo = new Periodo();
+                        _listaPeriodo.idPeriodo = Convert.ToInt32(item["idPeriodoCompra"].ToString());
+                        _listaPeriodo.NombrePeriodo = item["Nombre"].ToString();
+                        _listaPeriodo.Ano = item["ano"].ToString();
+                        _periodo.Add(_listaPeriodo);
+                    }
+                }
+                connection.Close();
+            }
+            return _periodo;
+        }
         public static bool GuardarPeriodoVenta(string cuit, string nombre, string Año)
         {
             bool exito = false;
@@ -138,7 +257,6 @@ namespace Sico.Dao
             connection.Close();
             return Existe;
         }
-
         private static bool ValidadPeriodoExistente(string nombre, int idCliente, string Año)
         {
             connection.Close();
@@ -165,7 +283,6 @@ namespace Sico.Dao
             connection.Close();
             return Existe;
         }
-
         public static List<string> CargarComboPeriodo(string cuit)
         {
             List<Entidades.Cliente> id = new List<Entidades.Cliente>();
