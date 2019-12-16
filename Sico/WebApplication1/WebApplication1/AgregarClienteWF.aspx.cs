@@ -244,7 +244,6 @@ namespace WebApplication1
             }
 
         }
-
         protected void btnGuardar_Click1(object sender, EventArgs e)
         {
             Sico.Entidades.Cliente _cliente = CargarEntidad();

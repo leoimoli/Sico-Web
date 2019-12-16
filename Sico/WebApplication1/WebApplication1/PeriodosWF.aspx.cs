@@ -50,76 +50,7 @@ namespace WebApplication1
                 cmbTransacción.Text = "Seleccione";
                 cmbTransacción.Items.Add(item);
             }
-        }
-
-        protected void btnBuscar_Click(object sender, EventArgs e)
-        {
-            List<Sico.Entidades.Periodo> ListaPeriodo = new List<Sico.Entidades.Periodo>();
-            try
-            {
-                string transaccion = cmbTransacción.Text;
-                string Año = cmbAño.Text;
-                if (transaccion != "Seleccione")
-                {
-                    if (transaccion != "Seleccione" & Año != "Seleccione")
-                    {
-                        ListaPeriodo = PeriodoNeg.BuscarPeriodosExistentePorTransaccionAño(transaccion, lblCuit.Text, Año);
-                        if (ListaPeriodo.Count > 0)
-                        {
-                            this.gvPeriodos.Visible = true;
-                            lblMensaje.Visible = false;
-                            this.Session["usuarios"] = ListaPeriodo;
-                            this.gvPeriodos.DataSource = ListaPeriodo;
-                            this.gvPeriodos.DataBind();
-                            this.lblTotalRegistros.Text = ListaPeriodo.Count.ToString();
-                            lblTotal.Visible = true;
-                            lblTotalRegistros.Visible = true;
-                        }
-                        else
-                        {
-                            lblTotal.Visible = false;
-                            lblTotalRegistros.Visible = false;
-                            this.gvPeriodos.Visible = false;
-                            lblMensaje.Visible = true;
-                        }
-                    }
-                    else
-                    {
-                        ListaPeriodo = PeriodoNeg.BuscarPeriodosExistentePorTransaccion(transaccion, lblCuit.Text);
-                        if (ListaPeriodo.Count > 0)
-                        {
-                            this.gvPeriodos.Visible = true;
-                            lblMensaje.Visible = false;
-                            this.Session["usuarios"] = ListaPeriodo;
-                            this.gvPeriodos.DataSource = ListaPeriodo;
-                            this.gvPeriodos.DataBind();
-                            this.lblTotalRegistros.Text = ListaPeriodo.Count.ToString();
-                            lblTotal.Visible = true;
-                            lblTotalRegistros.Visible = true;
-                        }
-                        else
-                        {
-                            lblTotal.Visible = false;
-                            lblTotalRegistros.Visible = false;
-                            this.gvPeriodos.Visible = false;
-                            lblMensaje.Visible = true;
-                        }
-                    }
-                }
-                else
-                {
-                    const string message2 = "Debe seleccionar un tipo de transacción.";
-                    const string caption2 = "Atención";
-                    var result2 = MessageBox.Show(message2, caption2,
-                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Exclamation);
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
+        }     
         protected void gvPeriodos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             try

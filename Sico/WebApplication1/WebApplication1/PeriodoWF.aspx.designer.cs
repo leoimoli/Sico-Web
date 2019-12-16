@@ -103,15 +103,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
-        /// lblMensaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
-        
-        /// <summary>
         /// gvPeriodos control.
         /// </summary>
         /// <remarks>
@@ -137,6 +128,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotalRegistros;
+        
+        /// <summary>
+        /// lblMensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
         
         /// <summary>
         /// btnNuevo control.

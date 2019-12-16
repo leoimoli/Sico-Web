@@ -428,7 +428,7 @@ namespace WebApplication1
         {
             string cuit = lblCuit.Text;
             this.Session["usuarios"] = _clienteSeleccionado;
-            Response.Redirect("~/PeriodosWF.aspx");
+            Response.Redirect("~/PeriodoWF.aspx");
         }
     }
 }
