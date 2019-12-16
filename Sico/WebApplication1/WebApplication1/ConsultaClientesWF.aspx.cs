@@ -70,5 +70,9 @@ namespace WebApplication1
 
             }
         }
+        protected void btnNuevoCliente_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AgregarClienteWF.aspx");
+        }
     }
 }

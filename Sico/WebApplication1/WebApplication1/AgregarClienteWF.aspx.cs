@@ -186,7 +186,6 @@ namespace WebApplication1
             CargarComboProvincia();
             cmbLocalidad.Text = "Seleccione";
         }
-
         private Cliente CargarEntidad()
         {
             Cliente _cliente = new Cliente();

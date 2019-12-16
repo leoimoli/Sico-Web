@@ -123,11 +123,10 @@ namespace WebApplication1
                 }
                 else
                 {
-                    const string message2 = "Debe seleccionar un tipo de transacción.";
-                    const string caption2 = "Atención";
-                    var result2 = MessageBox.Show(message2, caption2,
-                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Exclamation);
+                    string msg = "<script language=\"javascript\">";
+                    msg += "alert('" + "Debe seleccionar un tipo de transacción." + "');";
+                    msg += "</script>";
+                    Response.Write(msg);
                 }
             }
             catch (Exception ex)
@@ -206,7 +205,6 @@ namespace WebApplication1
             txtNombrePeriodo.Text = null;
             HabilitarCamposConsulta();
         }
-
         private void HabilitarCamposConsulta()
         {
             cmbTransaccion.Enabled = true;
@@ -223,7 +221,6 @@ namespace WebApplication1
             cmbTransaccionNuevo.Visible = false;
             lblNuevoPeriodo.Visible = false;
         }
-
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
             try
@@ -233,7 +230,6 @@ namespace WebApplication1
             catch (Exception ex)
             { }
         }
-
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -244,11 +240,10 @@ namespace WebApplication1
                 bool Exito = PeriodoNeg.GuardarPeriodoVenta(cuit, nombre, Año);
                 if (Exito == true)
                 {
-                    const string message2 = "Se registro el período exitosamente.";
-                    const string caption2 = "Éxito";
-                    var result2 = MessageBox.Show(message2, caption2,
-                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Asterisk);
+                    string msg = "<script language=\"javascript\">";
+                    msg += "Exito('" + "Se registro el período exitosamente." + "');";
+                    msg += "</script>";
+                    Response.Write(msg);
                     LimpiarCamposCarga();
                 }
                 else
