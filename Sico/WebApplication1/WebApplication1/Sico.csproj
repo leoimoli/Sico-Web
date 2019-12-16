@@ -124,6 +124,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="PeriodosWF.aspx" />
+    <Content Include="PeriodoWF.aspx" />
     <Content Include="Site.Master" />
     <Content Include="img\undraw_posting_photo.svg" />
     <Content Include="scss\sb-admin-2.scss" />
@@ -1910,6 +1911,13 @@
     </Compile>
     <Compile Include="PeriodosWF.aspx.designer.cs">
       <DependentUpon>PeriodosWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PeriodoWF.aspx.cs">
+      <DependentUpon>PeriodoWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PeriodoWF.aspx.designer.cs">
+      <DependentUpon>PeriodoWF.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

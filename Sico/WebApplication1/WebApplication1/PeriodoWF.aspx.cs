@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WebApplication1
 {
-    public partial class PeriodosWF : System.Web.UI.Page
+    public partial class PeriodoWF : System.Web.UI.Page
     {
         public Cliente ClienteSeleccionado { get; set; }
         public static decimal Total;
@@ -43,12 +43,12 @@ namespace WebApplication1
             }
 
             string[] Transaccion = Sico.Clases_Maestras.ValoresConstantes.Transacción;
-            cmbTransacción.Items.Add("Seleccione");
-            cmbTransacción.Items.Clear();
+            cmbTransaccion.Items.Add("Seleccione");
+            cmbTransaccion.Items.Clear();
             foreach (string item in Transaccion)
             {
-                cmbTransacción.Text = "Seleccione";
-                cmbTransacción.Items.Add(item);
+                cmbTransaccion.Text = "Seleccione";
+                cmbTransaccion.Items.Add(item);
             }
         }
 
@@ -57,7 +57,7 @@ namespace WebApplication1
             List<Sico.Entidades.Periodo> ListaPeriodo = new List<Sico.Entidades.Periodo>();
             try
             {
-                string transaccion = cmbTransacción.Text;
+                string transaccion = cmbTransaccion.Text;
                 string Año = cmbAño.Text;
                 if (transaccion != "Seleccione")
                 {
@@ -164,9 +164,9 @@ namespace WebApplication1
         }
         private void HabilitarCampos()
         {
-            lblNombrePeriodo.Visible = true;
+            txtNombrePeriodo.Visible = true;
             //lblAñoNuevo.Visible = true;
-            cmbAño.Visible = true;
+            cmbAñoPeriodo.Visible = true;
             txtNombrePeriodo.Visible = true;
             txtNombrePeriodo.Focus();
         }
