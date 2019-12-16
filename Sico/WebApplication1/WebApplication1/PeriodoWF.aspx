@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="PeriodoWF.aspx.cs" Inherits="WebApplication1.PeriodoWF" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="col-md-9 col-sm-9 col-xs-9">
+    <div class="col-md-9 col-sm-9 col-xs-9" style="margin-left: 100px">
         <div>
             <div class="row">
                 <div class="col-sm-3">
@@ -80,10 +80,10 @@
             <div>
                 <div class="col-sm-9">
                     <div class="row">
-                        <div class="form-group">
+                        <div class="form-group" style="margin-left: 450px">
                             <asp:GridView ID="gvPeriodos" runat="server" Align="center" AllowPaging="true" AllowSorting="True"
                                 SkinID="grilla" PageSize="10" AutoGenerateColumns="False" BackColor="White" BorderWidth="1px"
-                                Width="100%" DataKeyNames="idSubCliente" OnRowCommand="gvPeriodos_RowCommand"
+                                Width="100%" DataKeyNames="idPeriodo" OnRowCommand="gvPeriodos_RowCommand"
                                 OnPageIndexChanging="gvPeriodos_PageIndexChanging" Visible="false">
                                 <Columns>
                                     <asp:BoundField DataField="idPeriodo" HeaderText="Nro.Identificador">
@@ -107,25 +107,54 @@
                         </div>
                     </div>
                 </div>
+                <%--    Mensaje Rojo--%>
                 <div class="col-sm-9">
                     <div class="row">
-                        <div class="form-group">
-                            <asp:Label ID="lblMensaje" runat="server" Text="No se encontraron resultados para los parametros seleccionados." Font-Size="Large" ForeColor="Red" Visible="false"></asp:Label>
+                        <div class="col-sm-4">
                         </div>
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <asp:Label ID="lblMensaje" runat="server" Text="No se encontraron resultados para los parametros seleccionados." Font-Size="Large" ForeColor="Red" Visible="false" Width="600px"></asp:Label>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
             <div style="padding-left: 580px">
-                <asp:Button ID="btnNuevo" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nuevo Período" Font-Size="Small" />
+                <asp:Button ID="btnNuevo" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nuevo Período" Font-Size="Small" OnClick="btnNuevo_Click" />
             </div>
-            <div class="row">
+            <div class="row" style="margin-left: 580px;">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 580px;">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <asp:Label ID="lblNuevoPeriodo" runat="server" Text="Nuevo Período" Font-Size="Large" ForeColor="Black" Visible="false" Width="600px"></asp:Label>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 300px;">
                 <div class="col-sm-3">
                 </div>
                 <div class="col-sm-9">
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label for="lblAñoNuevo" visible="false">Año:<span class="kv-reqd" visible="false"> (*)</span></label>
+                                <asp:Label ID="lblTransaccionNuevo" runat="server" CssClass="total" Text="Tipo Transacción:" Visible="false"></asp:Label>
+                                <asp:DropDownList class="form-control" ID="cmbTransaccionNuevo" runat="server" Visible="false"></asp:DropDownList>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <asp:Label ID="lblAñoNuevo" runat="server" CssClass="total" Text="Año:" Visible="false"></asp:Label>
                                 <asp:DropDownList class="form-control" ID="cmbAñoPeriodo" runat="server" Visible="false"></asp:DropDownList>
                             </div>
                         </div>
@@ -133,14 +162,15 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label for="lblNombrePeriodo" visible="false">Nombre:<span class="kv-reqd" visible="false"> (*)</span></label>
+                                <asp:Label ID="lblNombrePeriodo" runat="server" CssClass="total" Text="Nombre:" Visible="false"></asp:Label>
                                 <asp:TextBox class="form-control" ID="txtNombrePeriodo" runat="server" Visible="false"></asp:TextBox>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="padding-left: 460px">
-                    <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Guardar" Font-Size="Small" Visible="false" />
+                <div style="padding-left: 250px">
+                    <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Limpiar" Font-Size="Small" Visible="false" OnClick="btnLimpiar_Click" />
+                    <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Guardar" Font-Size="Small" Visible="false" OnClick="btnGuardar_Click" />
                 </div>
             </div>
         </div>

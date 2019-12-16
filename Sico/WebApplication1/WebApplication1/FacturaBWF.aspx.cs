@@ -426,7 +426,6 @@ namespace WebApplication1
         }
         protected void btnNuevoPeriodo_Click(object sender, EventArgs e)
         {
-            string cuit = lblCuit.Text;
             this.Session["usuarios"] = _clienteSeleccionado;
             Response.Redirect("~/PeriodoWF.aspx");
         }

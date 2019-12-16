@@ -41,7 +41,14 @@ namespace WebApplication1
                 cmbAño.Text = "Seleccione";
                 cmbAño.Items.Add(item);
             }
-
+            string[] AñoNuevo = Sico.Clases_Maestras.ValoresConstantes.Años;
+            cmbAñoPeriodo.Items.Add("Seleccione");
+            cmbAñoPeriodo.Items.Clear();
+            foreach (string item in AñoNuevo)
+            {
+                cmbAñoPeriodo.Text = "Seleccione";
+                cmbAñoPeriodo.Items.Add(item);
+            }
             string[] Transaccion = Sico.Clases_Maestras.ValoresConstantes.Transacción;
             cmbTransaccion.Items.Add("Seleccione");
             cmbTransaccion.Items.Clear();
@@ -49,6 +56,14 @@ namespace WebApplication1
             {
                 cmbTransaccion.Text = "Seleccione";
                 cmbTransaccion.Items.Add(item);
+            }
+            string[] TransaccionNuevo = Sico.Clases_Maestras.ValoresConstantes.Transacción;
+            cmbTransaccionNuevo.Items.Add("Seleccione");
+            cmbTransaccionNuevo.Items.Clear();
+            foreach (string item in TransaccionNuevo)
+            {
+                cmbTransaccionNuevo.Text = "Seleccione";
+                cmbTransaccionNuevo.Items.Add(item);
             }
         }
 
@@ -157,24 +172,58 @@ namespace WebApplication1
         {
             try
             {
+                BloquearCamposConsulta();
                 HabilitarCampos();
             }
             catch (Exception ex)
             { }
         }
+
+        private void BloquearCamposConsulta()
+        {
+            cmbTransaccion.Enabled = false;
+            cmbAño.Enabled = false;
+            btnBuscar.Enabled = false;
+        }
         private void HabilitarCampos()
         {
             txtNombrePeriodo.Visible = true;
-            //lblAñoNuevo.Visible = true;
+            lblAñoNuevo.Visible = true;
+            lblNombrePeriodo.Visible = true;
             cmbAñoPeriodo.Visible = true;
             txtNombrePeriodo.Visible = true;
             txtNombrePeriodo.Focus();
+            btnGuardar.Visible = true;
+            btnLimpiar.Visible = true;
+            lblTransaccionNuevo.Visible = true;
+            cmbTransaccionNuevo.Visible = true;
+            CargarCombo();
+            lblNuevoPeriodo.Visible = true;
         }
         private void LimpiarCamposCarga()
         {
             CargarCombo();
             txtNombrePeriodo.Text = null;
+            HabilitarCamposConsulta();
         }
+
+        private void HabilitarCamposConsulta()
+        {
+            cmbTransaccion.Enabled = true;
+            cmbAño.Enabled = true;
+            btnBuscar.Enabled = true;
+            txtNombrePeriodo.Visible = false;
+            lblAñoNuevo.Visible = false;
+            lblNombrePeriodo.Visible = false;
+            cmbAñoPeriodo.Visible = false;
+            txtNombrePeriodo.Visible = false;
+            btnGuardar.Visible = false;
+            btnLimpiar.Visible = false;
+            lblTransaccionNuevo.Visible = false;
+            cmbTransaccionNuevo.Visible = false;
+            lblNuevoPeriodo.Visible = false;
+        }
+
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
             try
@@ -189,8 +238,8 @@ namespace WebApplication1
         {
             try
             {
-                string cuit = ClienteSeleccionado.Cuit;
-                string Año = cmbAño.Text;
+                string cuit = lblCuit.Text; ;
+                string Año = cmbAñoPeriodo.Text;
                 string nombre = txtNombrePeriodo.Text;
                 bool Exito = PeriodoNeg.GuardarPeriodoVenta(cuit, nombre, Año);
                 if (Exito == true)
@@ -209,6 +258,6 @@ namespace WebApplication1
             }
             catch (Exception ex)
             { }
-        }        
+        }
     }
 }
