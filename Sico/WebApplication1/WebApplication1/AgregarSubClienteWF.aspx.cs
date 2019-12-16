@@ -14,6 +14,7 @@ namespace WebApplication1
         public static Cliente _clienteSeleccionado { get; set; }
         public Cliente ClienteSeleccionado { get; set; }
         public static decimal Total;
+        public static int EsEditar;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,7 +31,6 @@ namespace WebApplication1
                 { }
             }
         }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             List<Sico.Entidades.SubCliente> SubCliente = new List<Sico.Entidades.SubCliente>();
@@ -91,7 +91,6 @@ namespace WebApplication1
 
             }
         }
-
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
             try
@@ -102,14 +101,12 @@ namespace WebApplication1
             catch (Exception ex)
             { }
         }
-
         private void BloquearFiltrosDeBusqueda()
         {
             txtDni.Enabled = false;
             txtApellido.Enabled = false;
             btnBuscar.Enabled = false;
         }
-
         private void HabilitarCamposNuevoSub()
         {
             lblDniNuevo.Visible = true;
@@ -120,11 +117,74 @@ namespace WebApplication1
             txtCalle.Visible = true;
             lblAlturaNuevo.Visible = true;
             txtAltura.Visible = true;
+            txtObservaciones.Visible = true;
+            lblObservacionesNuevo.Visible = true;
             btnNuevo.Visible = true;
             btnLimpiar.Visible = true;
             btnGuardar.Visible = true;
             lblNuevoSubCliente.Visible = true;
-            txtDni.Focus();
+            txtDniNuevo.Focus();
+        }
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Sico.Entidades.SubCliente _subCliente = CargarEntidad();
+                var cuit = lblCuit.Text;
+                if (txtDni.Enabled == false)
+                {
+                    bool Exito = ClienteNeg.EditarSubCliente(_subCliente, cuit);
+                    if (Exito == true)
+                    {
+
+                        //const string message2 = "El sub-cliente se edito exitosamente.";
+                        //const string caption2 = "Éxito";
+                        //var result2 = MessageBox.Show(message2, caption2,
+                        //                             MessageBoxButtons.OK,
+                        //                             MessageBoxIcon.Asterisk);
+                        //LimpiarCampos();
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    bool Exito = ClienteNeg.GuardarNuevoSubCliente(_subCliente, cuit);
+                    if (Exito == true)
+                    {
+                        //ProgressBar();
+                        //const string message2 = "Se registro el sub-cliente exitosamente.";
+                        //const string caption2 = "Éxito";
+                        //var result2 = MessageBox.Show(message2, caption2,
+                        //                             MessageBoxButtons.OK,
+                        //                             MessageBoxIcon.Asterisk);
+                        //LimpiarCampos();
+                    }
+                    else
+                    {
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            { }
+        }
+        private SubCliente CargarEntidad()
+        {
+            SubCliente _subCliente = new SubCliente();
+            _subCliente.Dni = txtDniNuevo.Text;
+            _subCliente.ApellidoNombre = txtApellidoNombreNuevo.Text;
+            _subCliente.Direccion = txtCalle.Text + " " + txtAltura.Text;
+            _subCliente.Observacion = txtObservaciones.Text;
+            return _subCliente;
+        }
+        private void Ver(int posicion)
+        {
+            IList<SubCliente> Subclientes = Session["usuarios"] as IList<SubCliente>;
+            this.Session["usuarios"] = Subclientes[posicion];
+            EsEditar = 1;            
         }
     }
 }

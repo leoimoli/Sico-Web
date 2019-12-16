@@ -12,7 +12,7 @@
                             <div class="form-group">
                             </div>
                         </div>
-                        <div class="col-sm-2" style="margin-left:250px">
+                        <div class="col-sm-2" style="margin-left: 250px">
                             <div class="form-group">
                                 <asp:Label ID="Label4" runat="server" Text="Sub-Cliente" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
                             </div>
@@ -140,7 +140,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-left: 580px;">
+            <div class="row" style="margin-left: 520px;">
                 <div class="col-sm-4">
                     <div class="form-group">
                         <asp:Label ID="lblNuevoSubCliente" runat="server" Text="Nuevo Sub-Cliente" Font-Size="XX-Large" ForeColor="Black" Visible="false" Width="600px"></asp:Label>
@@ -179,10 +179,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <asp:Label ID="lblObservacionesNuevo" runat="server" CssClass="total" Text="Observaciones(*):" Visible="false"></asp:Label>
+                                <asp:TextBox class="form-control" ID="txtObservaciones" runat="server" Visible="false" Height="100px" Width="550px"></asp:TextBox>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div style="padding-left: 450px">
                     <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Limpiar" Font-Size="Small" Visible="false" />
-                    <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Guardar" Font-Size="Small" Visible="false" />
+                    <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Guardar" Font-Size="Small" Visible="false" OnClick="btnGuardar_Click" />
                 </div>
             </div>
         </div>

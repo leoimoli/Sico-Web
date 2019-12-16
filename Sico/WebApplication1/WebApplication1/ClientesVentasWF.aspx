@@ -82,7 +82,7 @@
                     <div class="row">
                         <div class="form-group">
                             <asp:GridView ID="gvVentas" runat="server" Align="center" AllowPaging="true" AllowSorting="True"
-                                SkinID="grilla" PageSize="15" AutoGenerateColumns="False" BackColor="White" BorderWidth="1px"
+                                SkinID="grilla" PageSize="10" AutoGenerateColumns="False" BackColor="White" BorderWidth="1px"
                                 Width="100%" DataKeyNames="idSubCliente" OnRowCommand="gvVentas_RowCommand"
                                 OnPageIndexChanging="gvVentas_PageIndexChanging">
                                 <Columns>
