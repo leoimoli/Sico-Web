@@ -28,7 +28,7 @@ namespace WebApplication1
                 }
                 catch (Exception ex)
                 { }
-            }       
+            }
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -90,6 +90,41 @@ namespace WebApplication1
             {
 
             }
+        }
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BloquearFiltrosDeBusqueda();
+                HabilitarCamposNuevoSub();
+            }
+            catch (Exception ex)
+            { }
+        }
+
+        private void BloquearFiltrosDeBusqueda()
+        {
+            txtDni.Enabled = false;
+            txtApellido.Enabled = false;
+            btnBuscar.Enabled = false;
+        }
+
+        private void HabilitarCamposNuevoSub()
+        {
+            lblDniNuevo.Visible = true;
+            txtDniNuevo.Visible = true;
+            lblApellidoNombreNuevo.Visible = true;
+            txtApellidoNombreNuevo.Visible = true;
+            lblCalleNuevo.Visible = true;
+            txtCalle.Visible = true;
+            lblAlturaNuevo.Visible = true;
+            txtAltura.Visible = true;
+            btnNuevo.Visible = true;
+            btnLimpiar.Visible = true;
+            btnGuardar.Visible = true;
+            lblNuevoSubCliente.Visible = true;
+            txtDni.Focus();
         }
     }
 }

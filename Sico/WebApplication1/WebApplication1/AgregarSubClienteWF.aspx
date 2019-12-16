@@ -12,13 +12,13 @@
                             <div class="form-group">
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                            </div>
-                        </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2" style="margin-left:250px">
                             <div class="form-group">
                                 <asp:Label ID="Label4" runat="server" Text="Sub-Cliente" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -132,7 +132,7 @@
                 </div>
             </div>
             <div style="padding-left: 580px">
-                <asp:Button ID="btnNuevo" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nuevo Período" Font-Size="Small" />
+                <asp:Button ID="btnNuevo" class="btn btn-primary" Style="display: inline-block;" Width="130px" Height="61px" runat="server" Text="Nuevo Sub-Cliente" Font-Size="Small" OnClick="btnNuevo_Click" />
             </div>
             <div class="row" style="margin-left: 580px;">
                 <div class="col-sm-4">
@@ -143,42 +143,46 @@
             <div class="row" style="margin-left: 580px;">
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <asp:Label ID="lblNuevoPeriodo" runat="server" Text="Nuevo Período" Font-Size="Large" ForeColor="Black" Visible="false" Width="600px"></asp:Label>
+                        <asp:Label ID="lblNuevoSubCliente" runat="server" Text="Nuevo Sub-Cliente" Font-Size="XX-Large" ForeColor="Black" Visible="false" Width="600px"></asp:Label>
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-left: 300px;">
+            <div class="row" style="margin-left: 100px;">
                 <div class="col-sm-3">
                 </div>
                 <div class="col-sm-9">
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <asp:Label ID="lblTransaccionNuevo" runat="server" CssClass="total" Text="Tipo Transacción:" Visible="false"></asp:Label>
-                                <asp:DropDownList class="form-control" ID="cmbTransaccionNuevo" runat="server" Visible="false"></asp:DropDownList>
+                                <asp:Label ID="lblDniNuevo" runat="server" CssClass="total" Text="DNI(*):" Visible="false"></asp:Label>
+                                <asp:TextBox class="form-control" ID="txtDniNuevo" runat="server" MaxLength="8" Visible="false"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <asp:Label ID="lblApellidoNombreNuevo" runat="server" CssClass="total" Text="Apellido y Nombre(*):" Visible="false"></asp:Label>
+                                <asp:TextBox class="form-control" ID="txtApellidoNombreNuevo" runat="server" Visible="false"></asp:TextBox>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <asp:Label ID="lblAñoNuevo" runat="server" CssClass="total" Text="Año:" Visible="false"></asp:Label>
-                                <asp:DropDownList class="form-control" ID="cmbAñoPeriodo" runat="server" Visible="false"></asp:DropDownList>
+                                <asp:Label ID="lblCalleNuevo" runat="server" CssClass="total" Text="Calle(*):" Visible="false"></asp:Label>
+                                <asp:TextBox class="form-control" ID="txtCalle" runat="server" Visible="false"></asp:TextBox>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <asp:Label ID="lblNombrePeriodo" runat="server" CssClass="total" Text="Nombre:" Visible="false"></asp:Label>
-                                <asp:TextBox class="form-control" ID="txtNombrePeriodo" runat="server" Visible="false"></asp:TextBox>
+                                <asp:Label ID="lblAlturaNuevo" runat="server" CssClass="total" Text="Altura(*):" Visible="false"></asp:Label>
+                                <asp:TextBox class="form-control" ID="txtAltura" runat="server" Visible="false"></asp:TextBox>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="padding-left: 250px">
-                    <%--    <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Limpiar" Font-Size="Small" Visible="false" OnClick="btnLimpiar_Click" />
-                    <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Guardar" Font-Size="Small" Visible="false" OnClick="btnGuardar_Click" />--%>
+                <div style="padding-left: 450px">
+                    <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Limpiar" Font-Size="Small" Visible="false" />
+                    <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Guardar" Font-Size="Small" Visible="false" />
                 </div>
             </div>
         </div>

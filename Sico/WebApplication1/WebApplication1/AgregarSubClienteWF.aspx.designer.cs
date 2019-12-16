@@ -148,66 +148,102 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btnNuevo;
         
         /// <summary>
-        /// lblNuevoPeriodo control.
+        /// lblNuevoSubCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNuevoPeriodo;
+        protected global::System.Web.UI.WebControls.Label lblNuevoSubCliente;
         
         /// <summary>
-        /// lblTransaccionNuevo control.
+        /// lblDniNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTransaccionNuevo;
+        protected global::System.Web.UI.WebControls.Label lblDniNuevo;
         
         /// <summary>
-        /// cmbTransaccionNuevo control.
+        /// txtDniNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbTransaccionNuevo;
+        protected global::System.Web.UI.WebControls.TextBox txtDniNuevo;
         
         /// <summary>
-        /// lblAñoNuevo control.
+        /// lblApellidoNombreNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAñoNuevo;
+        protected global::System.Web.UI.WebControls.Label lblApellidoNombreNuevo;
         
         /// <summary>
-        /// cmbAñoPeriodo control.
+        /// txtApellidoNombreNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cmbAñoPeriodo;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoNombreNuevo;
         
         /// <summary>
-        /// lblNombrePeriodo control.
+        /// lblCalleNuevo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombrePeriodo;
+        protected global::System.Web.UI.WebControls.Label lblCalleNuevo;
         
         /// <summary>
-        /// txtNombrePeriodo control.
+        /// txtCalle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombrePeriodo;
+        protected global::System.Web.UI.WebControls.TextBox txtCalle;
+        
+        /// <summary>
+        /// lblAlturaNuevo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAlturaNuevo;
+        
+        /// <summary>
+        /// txtAltura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAltura;
+        
+        /// <summary>
+        /// btnLimpiar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLimpiar;
+        
+        /// <summary>
+        /// btnGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
     }
 }
