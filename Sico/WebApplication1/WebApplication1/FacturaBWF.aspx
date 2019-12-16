@@ -59,7 +59,7 @@
                         </div>
                         <div class="col-sm-0.5" style="text-align: center; vertical-align: central; align-self: center">
                             <div class="form-group" style="margin-top: 25px; margin-left: 0px">
-                                <asp:Button ID="btnNuevo" Style="background-image: url(App_Themes/imagenes/nuevo-usuario.png); background-size: 100%; display: inline-block;" Width="40px" Height="40px" runat="server" />
+                                <asp:Button ID="btnNuevo" Style="background-image: url(App_Themes/imagenes/nuevo-usuario.png); background-size: 100%; display: inline-block;" Width="40px" Height="40px" runat="server" OnClick="btnNuevo_Click" />
                             </div>
                         </div>
                         <div class="col-sm-4">

@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AgregarClienteWF.aspx" />
+    <Content Include="AgregarSubClienteWF.aspx" />
     <Content Include="App_Themes\imagenes\clip-sujetapapeles.png" />
     <Content Include="App_Themes\imagenes\editar.png" />
     <Content Include="App_Themes\imagenes\lupa.png" />
@@ -1850,6 +1851,13 @@
     </Compile>
     <Compile Include="AgregarClienteWF.aspx.designer.cs">
       <DependentUpon>AgregarClienteWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarSubClienteWF.aspx.cs">
+      <DependentUpon>AgregarSubClienteWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarSubClienteWF.aspx.designer.cs">
+      <DependentUpon>AgregarSubClienteWF.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases_Maestras\AutoCompleClass.cs" />
     <Compile Include="Clases_Maestras\AutoCompleteCausa.cs" />

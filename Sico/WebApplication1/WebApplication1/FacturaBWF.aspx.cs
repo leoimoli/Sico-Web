@@ -429,5 +429,11 @@ namespace WebApplication1
             this.Session["usuarios"] = _clienteSeleccionado;
             Response.Redirect("~/PeriodoWF.aspx");
         }
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
+        {
+            this.Session["usuarios"] = _clienteSeleccionado;
+            Response.Redirect("~/AgregarSubClienteWF.aspx");
+        }
     }
 }
