@@ -98,7 +98,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Fecha Comprobante:<span class="kv-reqd"> (*)</span></label>
-                                <asp:TextBox class="form-control" ID="dtFecha" runat="server" TextMode="DateTime"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="dtFecha" runat="server" TextMode="Date"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -112,14 +112,9 @@
                             <div class="form-group">
                                 <label for="lblActividad">Nro.Factura:</label>
                                 <asp:TextBox class="form-control" ID="txtFactura" runat="server"></asp:TextBox>
-                                <%--  <asp:TextBox ID="txtDecimales" runat="server"></asp:TextBox>--%>
-                                <%--  <cc1:maskededitextender id="meeDecimales" runat="server" targetcontrolid="txtFactura" mask="00000-00000000"
-                                    masktype="Number" inputdirection="RightToLeft" />--%>
-                                <%--   <input type="text" id="txtFactura" value="00000-00000000" data-mask="00000-00000000" /><br />--%>
                             </div>
                         </div>
                     </div>
-
                     <%--  Filas Totales.....--%>
                     <div class="row">
                         <div class="col-sm-3">
@@ -253,4 +248,10 @@
         <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click1" />
         <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
     </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Mask the textbox as per your format 123-123-123
+            $('#txtFactura').mask('00000-00000000', { placeholder: "#" });
+        });
+                                </script>
 </asp:Content>

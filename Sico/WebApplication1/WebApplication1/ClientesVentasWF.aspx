@@ -55,7 +55,7 @@
                     <div class="col-sm-3">
                         <div class="form-group">
                             <asp:Label ID="Label5" runat="server" Text="Buscar por Nombre o Razón Social:" Font-Size="Large" ForeColor="Black"></asp:Label>
-                            <asp:TextBox class="form-control" ID="txtBuscarPorNombreRazonSocial" runat="server"></asp:TextBox>
+                            <asp:TextBox class="form-control" ID="txtBuscarPorNombreRazonSocial" runat="server" Style="text-transform: uppercase"></asp:TextBox>
                         </div>
                     </div>
                     <div class="col-sm-3">

@@ -59,13 +59,13 @@
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <asp:Label ID="lblDni" runat="server" Text="Dni:" Font-Size="Large" ForeColor="SteelBlue"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="txtDni" runat="server" MaxLength="8"></asp:TextBox>
+                                    <asp:TextBox class="form-control" ID="txtDni" runat="server" MaxLength="8" TextMode="Number" CharacterCasing="Upper"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <asp:Label ID="lblApellido" runat="server" Text="Apellido:" Font-Size="Large" ForeColor="SteelBlue"></asp:Label>
-                                    <asp:TextBox class="form-control" ID="txtApellido" runat="server"></asp:TextBox>
+                                    <asp:TextBox class="form-control" ID="txtApellido" runat="server" Style="text-transform: uppercase"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-sm-3">
@@ -155,13 +155,13 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <asp:Label ID="lblDniNuevo" runat="server" CssClass="total" Text="DNI(*):" Visible="false"></asp:Label>
-                                <asp:TextBox class="form-control" ID="txtDniNuevo" runat="server" MaxLength="8" Visible="false"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtDniNuevo" runat="server" MaxLength="8" Visible="false" TextMode="Number" CharacterCasing="Upper"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <asp:Label ID="lblApellidoNombreNuevo" runat="server" CssClass="total" Text="Apellido y Nombre(*):" Visible="false"></asp:Label>
-                                <asp:TextBox class="form-control" ID="txtApellidoNombreNuevo" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtApellidoNombreNuevo" runat="server" Visible="false" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -169,13 +169,13 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <asp:Label ID="lblCalleNuevo" runat="server" CssClass="total" Text="Calle(*):" Visible="false"></asp:Label>
-                                <asp:TextBox class="form-control" ID="txtCalle" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtCalle" runat="server" Visible="false" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <asp:Label ID="lblAlturaNuevo" runat="server" CssClass="total" Text="Altura(*):" Visible="false"></asp:Label>
-                                <asp:TextBox class="form-control" ID="txtAltura" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtAltura" runat="server" Visible="false" TextMode="Number" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <asp:Label ID="lblObservacionesNuevo" runat="server" CssClass="total" Text="Observaciones(*):" Visible="false"></asp:Label>
-                                <asp:TextBox class="form-control" ID="txtObservaciones" runat="server" Visible="false" Height="100px" Width="550px"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtObservaciones" runat="server" Visible="false" Height="100px" Width="550px" TextMode="MultiLine" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
                     </div>

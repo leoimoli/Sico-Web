@@ -37,7 +37,14 @@ namespace WebApplication1
             var ApellidoNombre = txtApellido.Text;
             var Dni = txtDni.Text;
             var cuit = lblCuit.Text;
-            SubCliente = ClienteNeg.BuscarSubClientePorApellidoNombre(ApellidoNombre, cuit);
+            if (Dni != "")
+            {
+                SubCliente = ClienteNeg.BuscarSubClientePorDni(Dni, cuit);
+            }
+            if (ApellidoNombre != "")
+            {
+                SubCliente = ClienteNeg.BuscarSubClientePorApellido(ApellidoNombre, cuit);
+            }
             if (SubCliente.Count > 0)
             {
                 this.gvSubClientes.Visible = true;
@@ -66,8 +73,8 @@ namespace WebApplication1
                 int idSubCliente = (int)gvSubClientes.SelectedValue;
                 switch (e.CommandName)
                 {
-                    //case "Ver":
-                    //    this.Ver(Convert.ToInt32(e.CommandArgument)); break;
+                    case "Ver":
+                        this.Ver(Convert.ToInt32(e.CommandArgument)); break;
                     //case "Editar":
                     //    this.Editar(Convert.ToInt32(e.CommandArgument)); break;
                 }
@@ -131,7 +138,7 @@ namespace WebApplication1
             {
                 Sico.Entidades.SubCliente _subCliente = CargarEntidad();
                 var cuit = lblCuit.Text;
-                if (txtDni.Enabled == false)
+               if(EsEditar == 1)
                 {
                     bool Exito = ClienteNeg.EditarSubCliente(_subCliente, cuit);
                     if (Exito == true)
@@ -184,7 +191,34 @@ namespace WebApplication1
         {
             IList<SubCliente> Subclientes = Session["usuarios"] as IList<SubCliente>;
             this.Session["usuarios"] = Subclientes[posicion];
-            EsEditar = 1;            
+            EsEditar = 1;
+            txtDniNuevo.Text = Subclientes[posicion].Dni;
+            txtApellidoNombreNuevo.Text = Subclientes[posicion].ApellidoNombre;
+            /////// Separo el domicilio en 2 partes
+            string dir = Subclientes[posicion].Direccion;
+            var split3 = dir.Split(' ')[0];
+            split3 = split3.Trim();
+
+            string dir2 = Subclientes[posicion].Direccion;
+            int cantidad2 = dir2.Split().Count();
+            string valor2 = "";
+            string valorFinal2 = "";
+            for (int i = 1; i < cantidad2; i++)
+            {
+                var split4 = dir2.Split(' ')[i];
+
+                string split = split4.Trim();
+
+                valorFinal2 = valor2 + " " + split4;
+                valor2 = split;
+            }
+            txtCalle.Text = split3;
+            txtAltura.Text = valorFinal2;
+            if (Subclientes[posicion].Observacion != "")
+            {
+                txtObservaciones.Text = Subclientes[posicion].Observacion;
+            }
+            HabilitarCamposNuevoSub();
         }
     }
 }

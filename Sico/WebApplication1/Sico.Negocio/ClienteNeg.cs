@@ -43,6 +43,45 @@ namespace Sico.Negocio
             lista = Dao.ClienteDao.CargarComboLocalidades();
             return lista;
         }
+
+        public static List<SubCliente> BuscarSubClientePorDni(string Dni, string cuit)
+        {
+            List<SubCliente> _listaSubClientes = new List<SubCliente>();
+            try
+            {
+                _listaSubClientes = ClienteDao.BuscarSubClientePorDni(Dni, cuit);
+            }
+            catch (Exception ex)
+            {
+                const string message = "Error en el sistema. Intente nuevamente o comuniquese con el administrador.";
+                const string caption = "Atención";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.OK,
+                                           MessageBoxIcon.Warning);
+                throw new Exception();
+            }
+            return _listaSubClientes;
+        }
+
+        public static List<SubCliente> BuscarSubClientePorApellido(string apellidoNombre, string cuit)
+        {
+            List<SubCliente> _listaSubClientes = new List<SubCliente>();
+            try
+            {
+                _listaSubClientes = ClienteDao.BuscarSubClientePorApellido(apellidoNombre, cuit);
+            }
+            catch (Exception ex)
+            {
+                const string message = "Error en el sistema. Intente nuevamente o comuniquese con el administrador.";
+                const string caption = "Atención";
+                var result = MessageBox.Show(message, caption,
+                                             MessageBoxButtons.OK,
+                                           MessageBoxIcon.Warning);
+                throw new Exception();
+            }
+            return _listaSubClientes;
+        }
+
         public static bool GuardarNuevoSubCliente(SubCliente _subCliente, string cuit)
         {
             bool exito = false;
@@ -57,14 +96,12 @@ namespace Sico.Negocio
             }
             return exito;
         }
-
         public static string BuscarNroFactura(string cuit)
         {
             int idCliente = ClienteDao.BuscarIdClientePorCuit(cuit);
             string NroFactura = ClienteDao.BuscarNroFactura(idCliente);
             return NroFactura;
         }
-
         public static List<SubCliente> BuscarDetalleFacturaSubCliente(string idsubCliente)
         {
             List<SubCliente> _listaSubClientes = new List<SubCliente>();
@@ -83,7 +120,6 @@ namespace Sico.Negocio
             }
             return _listaSubClientes;
         }
-
         public static bool GuardarNotaDeCredito(SubCliente _subCliente, string cuit)
         {
             bool exito = false;
@@ -112,7 +148,6 @@ namespace Sico.Negocio
             }
             return exito;
         }
-
         private static void ValidarDatosSubCliente(SubCliente _subCliente)
         {
             if (String.IsNullOrEmpty(_subCliente.Dni))
@@ -144,7 +179,6 @@ namespace Sico.Negocio
                 throw new Exception();
             }
         }
-
         public static List<SubCliente> BuscarSubClientePorNroFactura(string text, string cuit)
         {
             List<SubCliente> _listaSubClientes = new List<SubCliente>();
@@ -163,7 +197,6 @@ namespace Sico.Negocio
             }
             return _listaSubClientes;
         }
-
         public static List<SubCliente> BuscarFacturacionTotal(string cuit, int mes, string año)
         {
             List<SubCliente> _listaFacturasSubCliente = new List<SubCliente>();
@@ -182,14 +215,12 @@ namespace Sico.Negocio
             }
             return _listaFacturasSubCliente;
         }
-
         public static List<string> CargarComboLocalidadesPorIdProvincia(int idProvinciaSeleccionada)
         {
             List<string> lista = new List<string>();
             lista = Dao.ClienteDao.CargarComboLocalidadesPorIdProvincia(idProvinciaSeleccionada);
             return lista;
         }
-
         public static List<SubCliente> BuscarTodasFacturasSubCliente(string cuit)
         {
             List<SubCliente> _listaFacturasSubCliente = new List<SubCliente>();
@@ -208,7 +239,6 @@ namespace Sico.Negocio
             }
             return _listaFacturasSubCliente;
         }
-
         public static string BuscarNuevoNroFacturaNotaDeCredito(string persona)
         {
             string Factura;
@@ -225,14 +255,12 @@ namespace Sico.Negocio
             Factura = Dao.ClienteDao.BuscarNuevoNroFactura(persona);
             return Factura;
         }
-
         public static List<string> CargarComboPersonas(string cuit)
         {
             List<string> lista = new List<string>();
             lista = Dao.ClienteDao.CargarComboPersonas(cuit);
             return lista;
         }
-
         public static bool GurdarCliente(Cliente _cliente)
         {
             bool exito = false;
@@ -314,7 +342,6 @@ namespace Sico.Negocio
                 throw new Exception();
             }
         }
-
         public static List<SubCliente> BuscarDatosSubClientePorApellidoNombre(string apellidoNombre, string cuit)
         {
             List<SubCliente> _listaSubClientes = new List<SubCliente>();
@@ -333,7 +360,6 @@ namespace Sico.Negocio
             }
             return _listaSubClientes;
         }
-
         public static bool EditarCliente(Cliente _cliente)
         {
             bool exito = false;
@@ -384,7 +410,6 @@ namespace Sico.Negocio
             }
             return _listaSubClientes;
         }
-
         public static bool GuardarFacturaSubCliente(SubCliente _subCliente, string cuit)
         {
             bool exito = false;
@@ -438,7 +463,6 @@ namespace Sico.Negocio
                 throw new Exception();
             }
         }
-
         public static List<Cliente> BuscarClientePorNombreRazonSocial(string nombreRazonSocial)
         {
             List<Cliente> _listaClientes = new List<Cliente>();

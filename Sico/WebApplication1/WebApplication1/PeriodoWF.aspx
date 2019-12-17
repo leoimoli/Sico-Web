@@ -163,7 +163,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <asp:Label ID="lblNombrePeriodo" runat="server" CssClass="total" Text="Nombre:" Visible="false"></asp:Label>
-                                <asp:TextBox class="form-control" ID="txtNombrePeriodo" runat="server" Visible="false"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtNombrePeriodo" runat="server" Visible="false" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
                     </div>

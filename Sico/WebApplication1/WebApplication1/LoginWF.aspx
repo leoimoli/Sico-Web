@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="form-group">
                                             <%--<input type="password" class="form-control form-control-user" id="txtClave" placeholder="Password">--%>
-                                            <asp:TextBox ID="txtClave" class="form-control form-control-user" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="txtClave" class="form-control form-control-user" runat="server" TextMode="Password"></asp:TextBox>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

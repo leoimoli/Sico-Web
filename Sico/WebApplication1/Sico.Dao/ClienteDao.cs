@@ -15,7 +15,7 @@ namespace Sico.Dao
     public class ClienteDao
     {
         private static MySql.Data.MySqlClient.MySqlConnection connection = new MySqlConnection(ConfigurationManager.AppSettings.Get("DB"));
-     
+
         public static List<string> CargarComboProvincia()
         {
             connection.Close();
@@ -40,7 +40,6 @@ namespace Sico.Dao
             connection.Close();
             return _listaProvincia;
         }
-
         public static List<Cliente> BuscarClientes()
         {
             connection.Close();
@@ -49,7 +48,7 @@ namespace Sico.Dao
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = connection;
             DataTable Tabla = new DataTable();
-            MySqlParameter[] oParam = {};
+            MySqlParameter[] oParam = { };
             string proceso = "BuscarClientes";
             MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
             dt.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -80,13 +79,97 @@ namespace Sico.Dao
             return lista;
         }
 
+        public static List<SubCliente> BuscarSubClientePorApellido(string apellidoNombre, string cuit)
+        {
+            List<Entidades.SubCliente> lista = new List<Entidades.SubCliente>();
+            List<Entidades.Cliente> id = new List<Entidades.Cliente>();
+            id = BuscarClientePorCuit(cuit);
+            int idCliente = id[0].IdCliente;
+            if (idCliente > 0)
+            {
+                connection.Close();
+                connection.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                DataTable Tabla = new DataTable();
+                MySqlParameter[] oParam = {
+                                      new MySqlParameter("ApellidoNombre_in", apellidoNombre),
+                new MySqlParameter("idCliente_in", idCliente)};
+                string proceso = "BuscarSubClientePorApellido";
+                MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+                dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dt.SelectCommand.Parameters.AddRange(oParam);
+                dt.Fill(Tabla);
+                if (Tabla.Rows.Count > 0)
+                {
+                    foreach (DataRow item in Tabla.Rows)
+                    {
+                        SubCliente listaSubCliente = new SubCliente();
+                        listaSubCliente.idSubCliente = Convert.ToInt32(item["idSubCliente"].ToString());
+                        listaSubCliente.NroFactura = item["NroFactura"].ToString();
+                        listaSubCliente.Fecha = item["Fecha"].ToString();
+                        listaSubCliente.ApellidoNombre = item["ApellidoNombre"].ToString();
+                        listaSubCliente.Dni = item["Dni"].ToString();
+                        listaSubCliente.Direccion = item["Direccion"].ToString();
+                        listaSubCliente.Monto = Convert.ToDecimal(item["Monto"].ToString());
+                        listaSubCliente.Observacion = item["Observacion"].ToString();
+                        listaSubCliente.idCliente = idCliente;
+                        lista.Add(listaSubCliente);
+                    }
+                }
+                connection.Close();
+            }
+            return lista;
+        }
+        public static List<SubCliente> BuscarSubClientePorDni(string dni, string cuit)
+        {
+            List<Entidades.SubCliente> lista = new List<Entidades.SubCliente>();
+            List<Entidades.Cliente> id = new List<Entidades.Cliente>();
+            id = BuscarClientePorCuit(cuit);
+            int idCliente = id[0].IdCliente;
+            if (idCliente > 0)
+            {
+                connection.Close();
+                connection.Open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = connection;
+                DataTable Tabla = new DataTable();
+                MySqlParameter[] oParam = {
+                                      new MySqlParameter("Dni_in", dni),
+                new MySqlParameter("idCliente_in", idCliente)};
+                string proceso = "BuscarSubClientePorDni";
+                MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+                dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+                dt.SelectCommand.Parameters.AddRange(oParam);
+                dt.Fill(Tabla);
+                if (Tabla.Rows.Count > 0)
+                {
+                    foreach (DataRow item in Tabla.Rows)
+                    {
+                        SubCliente listaSubCliente = new SubCliente();
+                        listaSubCliente.idSubCliente = Convert.ToInt32(item["idSubCliente"].ToString());
+                        listaSubCliente.NroFactura = item["NroFactura"].ToString();
+                        listaSubCliente.Fecha = item["Fecha"].ToString();
+                        listaSubCliente.ApellidoNombre = item["ApellidoNombre"].ToString();
+                        listaSubCliente.Dni = item["Dni"].ToString();
+                        listaSubCliente.Direccion = item["Direccion"].ToString();
+                        listaSubCliente.Monto = Convert.ToDecimal(item["Monto"].ToString());
+                        listaSubCliente.Observacion = item["Observacion"].ToString();
+                        listaSubCliente.idCliente = idCliente;
+                        lista.Add(listaSubCliente);
+                    }
+                }
+                connection.Close();
+            }
+            return lista;
+        }
         public static string BuscarNroFactura(int idCliente)
         {
             string Factura = "";
-
             connection.Close();
             connection.Open();
-
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = connection;
             DataTable Tabla = new DataTable();
@@ -102,23 +185,19 @@ namespace Sico.Dao
                 {
                     string id = item["id"].ToString();
                     string FacturaVieja = item["NroFactura"].ToString();
-
                     ///// Primera parte del numero
                     var split1 = FacturaVieja.Split('-')[0];
                     split1 = split1.Trim();
                     ///// Segunda parte del numero
                     var split2 = FacturaVieja.Split('-')[1];
                     split2 = split2.Trim();
-
                     string prueba = string.Concat(split1, split2);
                     int Numero = Convert.ToInt32(prueba);
                     int Fac = Numero + 1;
                     string prueba2 = Convert.ToString(Fac);
                     Factura = string.Concat("0000", prueba2);
-
                 }
             }
-
             connection.Close();
             return Factura;
         }
@@ -147,7 +226,6 @@ namespace Sico.Dao
             connection.Close();
             return idCliente;
         }
-
         public static List<SubCliente> BuscarSubClientePorNroFactura(string text, string cuit)
         {
             List<Entidades.SubCliente> lista = new List<Entidades.SubCliente>();
@@ -191,7 +269,6 @@ namespace Sico.Dao
             }
             return lista;
         }
-
         internal static bool GuardarFacturaSubCliente(FacturaCompra _factura)
         {
             throw new NotImplementedException();

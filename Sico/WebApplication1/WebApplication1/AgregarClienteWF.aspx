@@ -43,20 +43,20 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblRazonSocial">Nombre/Razon Social:<span class="kv-reqd"> (*)</span></label>
-                                <asp:TextBox class="form-control" ID="txtNombreRazonSocial" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtNombreRazonSocial" runat="server" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblCuit">Cuit:<span class="kv-reqd"> (*)</span></label>
-                                <asp:TextBox class="form-control" ID="txtCuit" runat="server" MaxLength="11"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtCuit" runat="server" MaxLength="11" Style="text-transform: uppercase"></asp:TextBox>
 
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblActividad">Actividad:</label>
-                                <asp:TextBox class="form-control" ID="txtActividad" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtActividad" runat="server" Style="text-transform: uppercase"></asp:TextBox>
                                 <%-- <input type="text" class="form-control" id="txtActividad">--%>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblTelefono">Telefono:</label>
-                                <asp:TextBox class="form-control" ID="txtTelefono" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtTelefono" runat="server" Style="text-transform: uppercase" TextMode="Number"></asp:TextBox>
                                 <%--  <input type="text" class="form-control" id="txtTelefono">--%>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                         <div class="col-sm-9">
                             <div class="form-group">
                                 <label for="lblEmail">Email:</label>
-                                <asp:TextBox class="form-control" ID="txtEmail" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtEmail" runat="server" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblCodigoPostal">Código Postal:</label>
-                                <asp:TextBox class="form-control" ID="txtCodigoPostal" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtCodigoPostal" runat="server" TextMode="Number"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -143,14 +143,13 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblCalle">Calle:</label>
-                                <asp:TextBox class="form-control" ID="txtCalle" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtCalle" runat="server" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblAltura">Altura:</label>
-                                <asp:TextBox class="form-control" ID="txtAltura" runat="server"></asp:TextBox>
-                                <%--  <input type="text" class="form-control" id="txtTelefono">--%>
+                                <asp:TextBox class="form-control" ID="txtAltura" runat="server" Style="text-transform: uppercase" TextMode="Number"></asp:TextBox>
                             </div>
                         </div>
                     </div>
