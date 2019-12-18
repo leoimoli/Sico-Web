@@ -111,7 +111,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblActividad">Nro.Factura:</label>
-                                <asp:TextBox class="form-control" ID="txtFactura" runat="server"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtFactura" runat="server" ></asp:TextBox>
                             </div>
                         </div>
                     </div>

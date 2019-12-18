@@ -195,7 +195,10 @@ namespace Sico.Dao
                     int Numero = Convert.ToInt32(prueba);
                     int Fac = Numero + 1;
                     string prueba2 = Convert.ToString(Fac);
-                    Factura = string.Concat("0000", prueba2);
+                    string cadena = prueba2;
+                    if (cadena.StartsWith("3"))
+                        prueba2 = cadena.Substring(1);
+                    Factura = string.Concat("00003-", prueba2);
                 }
             }
             connection.Close();
