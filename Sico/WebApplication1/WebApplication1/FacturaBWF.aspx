@@ -111,7 +111,7 @@
                         <div class="col-sm-4">
                             <div class="form-group">
                                 <label for="lblActividad">Nro.Factura:</label>
-                                <asp:TextBox class="form-control" ID="txtFactura" runat="server" ></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtFactura" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,8 @@
                         </div>
                         <div class="col-sm-0.5" style="text-align: center; vertical-align: central; align-self: center">
                             <div class="form-group" style="margin-top: 25px; margin-left: 0px">
-                                <asp:Button ID="btnAdjuntar" Style="text-align: end; background-image: url(App_Themes/imagenes/clip-sujetapapeles.png); background-size: 100%; background-position: center; display: inline-block;" Width="30px" Height="30px" runat="server" />
+                                <asp:Button ID="btnAdjuntar" Style="text-align: end; background-image: url(App_Themes/imagenes/clip-sujetapapeles.png); background-size: 100%; background-position: center; display: inline-block;" Width="30px" Height="30px" runat="server" OnClick="btnAdjuntar_Click" />
+
                             </div>
                         </div>
                     </div>
@@ -254,4 +255,5 @@
             $('#txtFactura').mask('00000-00000000', { placeholder: "#" });
         });
                                 </script>
+
 </asp:Content>

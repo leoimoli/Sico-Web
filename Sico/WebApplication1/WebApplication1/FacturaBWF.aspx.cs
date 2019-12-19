@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using WebApplication1.Clases_Maestras;
 //using System.Windows.Forms;
 
 namespace WebApplication1
@@ -414,8 +415,6 @@ namespace WebApplication1
                 bool Exito = ClienteNeg.GuardarFacturaSubCliente(_subCliente, Cuit);
                 if (Exito == true)
                 {
-                    const string message2 = "Se registro la factura exitosamente.";
-                    const string caption2 = "Éxito";
                     LimpiarCampos();
                 }
                 else
@@ -425,16 +424,37 @@ namespace WebApplication1
             }
             catch (Exception ex) { }
         }
+        private void MostrarMensajeDialogo(Clases_Maestras.Enumeraciones.TipoDeMensaje tipoDeMensaje, string mensaje)
+        {
+            IMensajeDeDialogo mensajeDeDialogo = (IMensajeDeDialogo)this.Master.FindControl("form1").FindControl("MensajeDeDialogo");
+            System.Web.UI.Control mensajeR = this.Master.FindControl("form1").FindControl("MensajeDeDialogo") as System.Web.UI.Control;
+            if (mensajeR != null)
+            {
+                mensajeR.Visible = true;
+            }
+            mensajeDeDialogo.MostrarMensajeDialogo(tipoDeMensaje, mensaje);
+        }
         protected void btnNuevoPeriodo_Click(object sender, EventArgs e)
         {
             this.Session["usuarios"] = _clienteSeleccionado;
             Response.Redirect("~/PeriodoWF.aspx");
         }
-
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
             this.Session["usuarios"] = _clienteSeleccionado;
             Response.Redirect("~/AgregarSubClienteWF.aspx");
+        }
+        protected void btnAdjuntar_Click(object sender, EventArgs e)
+        {
+            //if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    string path = "";
+            //    System.IO.StreamReader sr = new
+            //       System.IO.StreamReader(openFileDialog1.FileName);
+            //    path = openFileDialog1.FileName;
+            //    txtAdjunto.Text = path;
+            //    sr.Close();
+            //}
         }
     }
 }

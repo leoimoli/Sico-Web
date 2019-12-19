@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <asp:Label ID="Label4" runat="server" Text="Clientes" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                            <asp:Label ID="Label4" runat="server" Text="Nuevo Cliente" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -69,7 +69,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblFecha">Fecha:</label>
-                                <asp:TextBox class="form-control" ID="txtFecha" runat="server" placeholder="yyyy-mm-dd" onkeyup="var date = this.value;if (date.match(/^\d{4}$/) !== null) {this.value = date + '-';} else if (date.match(/^\d{4}\-\d{2}$/) !== null) {this.value = date + '-';}" MaxLength="10"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtFecha" runat="server" MaxLength="10" TextMode="Date"></asp:TextBox>
                                 <%--<input type="text"  name="date" placeholder="yyyy-mm-dd" onkeyup="var date = this.value;if (date.match(/^\d{4}$/) !== null) {this.value = date + '-';} else if (date.match(/^\d{4}\-\d{2}$/) !== null) {this.value = date + '-';}" maxlength="10">--%>
                             </div>
                         </div>

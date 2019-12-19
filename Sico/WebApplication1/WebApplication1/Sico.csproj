@@ -103,13 +103,17 @@
     <Content Include="AgregarSubClienteWF.aspx" />
     <Content Include="App_Themes\imagenes\clip-sujetapapeles.png" />
     <Content Include="App_Themes\imagenes\editar.png" />
+    <Content Include="App_Themes\imagenes\error%281%29.png" />
+    <Content Include="App_Themes\imagenes\info.png" />
     <Content Include="App_Themes\imagenes\lupa.png" />
     <Content Include="App_Themes\imagenes\nuevas-insignias-de-una-tienda.png" />
     <Content Include="App_Themes\imagenes\nuevo-usuario.png" />
+    <Content Include="App_Themes\imagenes\pregunta.PNG" />
     <Content Include="App_Themes\imagenes\SicoWeb2.jpeg" />
     <Content Include="ClientesVentasWF.aspx" />
     <Content Include="ClientesWF.aspx" />
     <Content Include="ConsultaClientesWF.aspx" />
+    <Content Include="Controllers\MensajeDeDialogoWUC.ascx" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
     <Content Include="FacturaBWF.aspx" />
@@ -1859,12 +1863,16 @@
     <Compile Include="AgregarSubClienteWF.aspx.designer.cs">
       <DependentUpon>AgregarSubClienteWF.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\IConfirmacionWUC.cs" />
+    <Content Include="App_Code\IMensajeDeDialogo.cs" />
+    <Content Include="App_Code\IMensajeDeDialogoPregunta.cs" />
     <Compile Include="Clases_Maestras\AutoCompleClass.cs" />
     <Compile Include="Clases_Maestras\AutoCompleteCausa.cs" />
     <Compile Include="Clases_Maestras\AutoCompleteClassEmailPericia.cs" />
     <Compile Include="Clases_Maestras\AutoCompleteClassProveedores.cs" />
     <Compile Include="Clases_Maestras\AutoCompleteRazonSocial.cs" />
     <Compile Include="Clases_Maestras\AutoCompleteSubCliente.cs" />
+    <Compile Include="Clases_Maestras\Enumeraciones.cs" />
     <Compile Include="Clases_Maestras\GenerarExcelCiti.cs" />
     <Compile Include="Clases_Maestras\GoogleCloudSamples.cs" />
     <Compile Include="Clases_Maestras\Sesion.cs" />
@@ -1891,6 +1899,10 @@
     </Compile>
     <Compile Include="ConsultaClientesWF.aspx.designer.cs">
       <DependentUpon>ConsultaClientesWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MensajeDeDialogoWUC.ascx.cs">
+      <DependentUpon>MensajeDeDialogoWUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="FacturaBWF.aspx.cs">
       <DependentUpon>FacturaBWF.aspx</DependentUpon>
