@@ -43,7 +43,6 @@ namespace Sico.Negocio
             lista = Dao.ClienteDao.CargarComboLocalidades();
             return lista;
         }
-
         public static List<SubCliente> BuscarSubClientePorDni(string Dni, string cuit)
         {
             List<SubCliente> _listaSubClientes = new List<SubCliente>();
@@ -62,7 +61,6 @@ namespace Sico.Negocio
             }
             return _listaSubClientes;
         }
-
         public static List<SubCliente> BuscarSubClientePorApellido(string apellidoNombre, string cuit)
         {
             List<SubCliente> _listaSubClientes = new List<SubCliente>();
@@ -81,7 +79,6 @@ namespace Sico.Negocio
             }
             return _listaSubClientes;
         }
-
         public static bool GuardarNuevoSubCliente(SubCliente _subCliente, string cuit)
         {
             bool exito = false;
@@ -239,13 +236,13 @@ namespace Sico.Negocio
             }
             return _listaFacturasSubCliente;
         }
-        public static string BuscarNuevoNroFacturaNotaDeCredito(string persona)
+        public static string BuscarNuevoNroFacturaNotaDeCredito(string cuit)
         {
-            string Factura;
-            Factura = Dao.ClienteDao.BuscarNuevoNroFacturaNotaDeCredito(persona);
+            int idCliente = ClienteDao.BuscarIdClientePorCuit(cuit);
+            string Factura = Dao.ClienteDao.BuscarNuevoNroFacturaNotaDeCredito(idCliente);
             if (Factura == "0" || Factura == "")
             {
-                Factura = "0003-00000001";
+                Factura = "00003-00000001";
             }
             return Factura;
         }

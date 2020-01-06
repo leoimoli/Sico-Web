@@ -113,10 +113,9 @@
     <Content Include="ClientesVentasWF.aspx" />
     <Content Include="ClientesWF.aspx" />
     <Content Include="ConsultaClientesWF.aspx" />
-    <Content Include="Controllers\MensajeDeDialogoWUC.ascx" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\sb-admin-2.min.css" />
-    <Content Include="FacturaBWF.aspx" />
+    <Content Include="FacturacionWF.aspx" />
     <Content Include="InicioWF.aspx" />
     <Content Include="js\Demo\chart-area-demo.js" />
     <Content Include="js\Demo\chart-bar-demo.js" />
@@ -1900,16 +1899,12 @@
     <Compile Include="ConsultaClientesWF.aspx.designer.cs">
       <DependentUpon>ConsultaClientesWF.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\MensajeDeDialogoWUC.ascx.cs">
-      <DependentUpon>MensajeDeDialogoWUC.ascx</DependentUpon>
+    <Compile Include="FacturacionWF.aspx.cs">
+      <DependentUpon>FacturacionWF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FacturaBWF.aspx.cs">
-      <DependentUpon>FacturaBWF.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FacturaBWF.aspx.designer.cs">
-      <DependentUpon>FacturaBWF.aspx</DependentUpon>
+    <Compile Include="FacturacionWF.aspx.designer.cs">
+      <DependentUpon>FacturacionWF.aspx</DependentUpon>
     </Compile>
     <Compile Include="InicioWF.aspx.cs">
       <DependentUpon>InicioWF.aspx</DependentUpon>

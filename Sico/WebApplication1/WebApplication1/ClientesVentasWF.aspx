@@ -132,7 +132,7 @@
         <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 460px">
             <asp:Button ID="btnSubCliente" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nuevo Sub-Cliente" Font-Size="Small" />
             <asp:Button ID="btnFactura" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Facturar" Font-Size="Small" OnClick="btnFacturaB_Click" />
-            <asp:Button ID="btnNotaDeCredito" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nota de Crédito" Font-Size="Small" />
+            <asp:Button ID="btnNotaDeCredito" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nota de Crédito" Font-Size="Small" OnClick="btnNotaDeCredito_Click"/>
             <asp:Button ID="btnCompras" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Compras" Font-Size="Small" />
         </div>
     </div>

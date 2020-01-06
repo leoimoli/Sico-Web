@@ -17,7 +17,6 @@ namespace WebApplication1
         public Cliente ClienteSeleccionado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
@@ -122,8 +121,18 @@ namespace WebApplication1
         protected void btnFacturaB_Click(object sender, EventArgs e)
         {
             string cuit = lblCuit.Text;
+            ///// Indico la funcion que esta enviando. En este caso esta queriendo generar un nuevo comprobante.
+            _clienteSeleccionado.Funcion = 1;
             this.Session["usuarios"] = _clienteSeleccionado;
-            Response.Redirect("~/FacturaBWF.aspx");
+            Response.Redirect("~/FacturacionWF.aspx");
+        }
+        protected void btnNotaDeCredito_Click(object sender, EventArgs e)
+        {
+            string cuit = lblCuit.Text;
+            ///// Indico la funcion que esta enviando. En este caso esta queriendo generar un nuevo ota de Credito.
+            _clienteSeleccionado.Funcion = 2;
+            this.Session["usuarios"] = _clienteSeleccionado;
+            Response.Redirect("~/FacturacionWF.aspx");
         }
     }
 }

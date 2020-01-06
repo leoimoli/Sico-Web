@@ -412,7 +412,7 @@ namespace Sico.Dao
             connection.Close();
             return exito;
         }
-        public static string BuscarNuevoNroFacturaNotaDeCredito(string persona)
+        public static string BuscarNuevoNroFacturaNotaDeCredito(int idCliente)
         {
             string Factura = "";
 
@@ -422,7 +422,7 @@ namespace Sico.Dao
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = connection;
             DataTable Tabla = new DataTable();
-            MySqlParameter[] oParam = { new MySqlParameter("Persona_in", persona) };
+            MySqlParameter[] oParam = { new MySqlParameter("idCliente_in", idCliente) };
             string proceso = "BuscarNuevoNroFacturaNotaDeCredito";
             MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
             dt.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -434,7 +434,6 @@ namespace Sico.Dao
                 {
                     string id = item["id"].ToString();
                     string FacturaVieja = item["NroFacturaNotaDeCredtio"].ToString();
-
                     ///// Primera parte del numero
                     var split1 = FacturaVieja.Split('-')[0];
                     split1 = split1.Trim();
@@ -445,8 +444,10 @@ namespace Sico.Dao
                     int Numero = Convert.ToInt32(prueba);
                     int Fac = Numero + 1;
                     string prueba2 = Convert.ToString(Fac);
-                    Factura = string.Concat("000", prueba2);
-
+                    string cadena = prueba2;
+                    if (cadena.StartsWith("3"))
+                        prueba2 = cadena.Substring(1);
+                    Factura = string.Concat("00003-", prueba2);
                 }
             }
 

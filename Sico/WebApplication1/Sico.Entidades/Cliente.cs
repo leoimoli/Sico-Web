@@ -22,5 +22,6 @@ namespace Sico.Entidades
         public string Altura { get; set; }
         public string CodigoPostal { get; set; }
         public int idUsuario { get; set; }
+        public int Funcion { get; set; }
     }
 }
