@@ -99,7 +99,7 @@ namespace Sico.Negocio
             string NroFactura = ClienteDao.BuscarNroFactura(idCliente);
             return NroFactura;
         }
-        public static List<SubCliente> BuscarDetalleFacturaSubCliente(string idsubCliente)
+        public static List<SubCliente> BuscarDetalleFacturaSubCliente(int idsubCliente)
         {
             List<SubCliente> _listaSubClientes = new List<SubCliente>();
             try
@@ -108,12 +108,12 @@ namespace Sico.Negocio
             }
             catch (Exception ex)
             {
-                const string message = "Error en el sistema. Intente nuevamente o comuniquese con el administrador.";
-                const string caption = "Atención";
-                var result = MessageBox.Show(message, caption,
-                                             MessageBoxButtons.OK,
-                                           MessageBoxIcon.Warning);
-                throw new Exception();
+                //const string message = "Error en el sistema. Intente nuevamente o comuniquese con el administrador.";
+                //const string caption = "Atención";
+                //var result = MessageBox.Show(message, caption,
+                //                             MessageBoxButtons.OK,
+                //                           MessageBoxIcon.Warning);
+                //throw new Exception();
             }
             return _listaSubClientes;
         }

@@ -276,19 +276,17 @@ namespace Sico.Dao
         {
             throw new NotImplementedException();
         }
-        public static List<SubCliente> BuscarDetalleFacturaSubCliente(string idsubCliente)
+        public static List<SubCliente> BuscarDetalleFacturaSubCliente(int idsubCliente)
         {
             List<Entidades.SubCliente> lista = new List<Entidades.SubCliente>();
-
-            int idsub = Convert.ToInt32(idsubCliente);
+            //int idsub = Convert.ToInt32(idsubCliente);
             connection.Close();
             connection.Open();
-
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = connection;
             DataTable Tabla = new DataTable();
             MySqlParameter[] oParam = {
-                                      new MySqlParameter("idsubCliente_in", idsub)};
+                                      new MySqlParameter("idsubCliente_in", idsubCliente)};
             string proceso = "BuscarDetalleFacturaSubCliente";
             MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
             dt.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -333,7 +331,7 @@ namespace Sico.Dao
             //}
             return lista;
         }
-        public static List<string> CargarArchivos(string idsubCliente)
+        public static List<string> CargarArchivos(int idsubCliente)
         {
             List<string> listarArchivos = new List<string>();
             connection.Close();
@@ -363,12 +361,16 @@ namespace Sico.Dao
         }
         public static bool GuardarNotaDeCredito(SubCliente _subCliente, string cuit)
         {
+            bool exitoGuardarImagenes = false;
+            if (_subCliente.Adjunto != "")
+            {
+                exitoGuardarImagenes = GuardarImagenesEnCarpeta(_subCliente);
+            }
             int idUltimaFacturaSubCliente = 0;
             int idsubcliente = 0;
             List<Entidades.Cliente> id = new List<Entidades.Cliente>();
             id = BuscarClientePorCuit(cuit);
             int idCliente = id[0].IdCliente;
-
             bool exito = false;
             connection.Close();
             connection.Open();
@@ -382,6 +384,7 @@ namespace Sico.Dao
             cmd.Parameters.AddWithValue("idCliente_in", idCliente);
             cmd.Parameters.AddWithValue("Dni_in", _subCliente.Dni);
             cmd.Parameters.AddWithValue("Direccion_in", _subCliente.Direccion);
+            cmd.Parameters.AddWithValue("Periodo_in", _subCliente.Periodo);
             MySqlDataReader r = cmd.ExecuteReader();
             while (r.Read())
             {

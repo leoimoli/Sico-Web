@@ -23,5 +23,6 @@ namespace Sico.Entidades
         public string CodigoPostal { get; set; }
         public int idUsuario { get; set; }
         public int Funcion { get; set; }
+        public int idSubCliente { get; set; }
     }
 }

@@ -19,9 +19,39 @@ namespace WebApplication1
         public static decimal Total;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
+            if (ClienteSeleccionado.Funcion == 3)
             {
-                ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
+                int idsubCliente = ClienteSeleccionado.idSubCliente;
+                List<SubCliente> _Factura = new List<SubCliente>();
+                _Factura = ClienteNeg.BuscarDetalleFacturaSubCliente(idsubCliente);
+                List<string> listaArchivos = new List<string>();
+                listaArchivos = Sico.Dao.ClienteDao.CargarArchivos(idsubCliente);
+                int contador = 0;
+                if (listaArchivos.Count > 0)
+                {
+                    if (listaArchivos.Count > contador)
+                    {
+                        txtAdjuntar.Text = listaArchivos[0].ToString();
+                        //txtAdjunto.Visible = true; btnAdjuntarFacturaElectronica.Visible = true; lblArchivo1.Visible = true; contador = 1;
+                    }
+                }
+
+                if (_Factura.Count <= 0)
+                {
+                    //MessageBox.Show("La factura seleccionada no tiene un detalle cargado.");
+                    //TareaClienteWF _tarea = new TareaClienteWF(razonSocial, cuit);
+                    //_tarea.Show();
+                    //Close();
+                }
+                if (_Factura.Count > 0)
+                {
+                    HabilitarCamposVer(_Factura);
+                }
+            }
+            if (ClienteSeleccionado.Funcion != 3 & !IsPostBack)
+            {
+                //ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
                 lblCliente.Text = ClienteSeleccionado.NombreRazonSocial;
                 lblCuit.Text = ClienteSeleccionado.Cuit;
                 try
@@ -50,6 +80,51 @@ namespace WebApplication1
                 ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
                 _clienteSeleccionado = ClienteSeleccionado;
             }
+        }
+        private void HabilitarCamposVer(List<SubCliente> _Factura)
+        {
+            var Factura = _Factura.First();
+            cmbPersonas.Items.Add(Factura.ApellidoNombre);
+            lblDniEdit.Visible = false;
+            lblDireccionEdit.Visible = false;
+            lblObservacionesEdit.Visible = false;
+            lblDni.Visible = false;
+            lblDireccion.Visible = false;
+            lblObservacion.Visible = false;
+            btnNuevoPeriodo.Visible = false;
+            btnNuevo.Visible = false;
+            txtFactura.Text = Factura.NroFactura;
+            dtFecha.Text = Factura.Fecha;
+            dtFecha.Text = Factura.NroFactura;
+            txtTotal.Text = Convert.ToString(Factura.Monto);
+            if (Factura.Total1 > 0)
+                txtTotal1.Text = Convert.ToString(Factura.Total1);
+            if (Factura.Total2 > 0)
+                txtTotal2.Text = Convert.ToString(Factura.Total2);
+            if (Factura.Total3 > 0)
+                txtTotal3.Text = Convert.ToString(Factura.Total3);
+
+            if (Factura.Neto1 > 0)
+                txtNeto1.Text = Convert.ToString(Factura.Neto1);
+            if (Factura.Neto2 > 0)
+                txtNeto2.Text = Convert.ToString(Factura.Neto2);
+            if (Factura.Neto3 > 0)
+                txtNeto3.Text = Convert.ToString(Factura.Neto3);
+
+            if (Factura.Iva1 > 0)
+                txtIva1.Text = Convert.ToString(Factura.Iva1);
+            if (Factura.Iva2 > 0)
+                txtIva2.Text = Convert.ToString(Factura.Iva2);
+            if (Factura.Iva3 > 0)
+                txtIva3.Text = Convert.ToString(Factura.Iva3);
+
+            cmbTipoComprobante.Items.Add(Factura.TipoComprobante);
+            cmbCodigoOperacion.Items.Add(Factura.CodigoTipoOperacion);
+            cmbTipoMoneda.Items.Add(Factura.CodigoMoneda);
+            txtTipoCambio.Text = Factura.TipoDeCambio;
+            cmbPeriodo.Items.Add(Factura.Periodo);
+            txtAdjuntar.Visible = true; /*btnAdjuntarFacturaElectronica.Visible = true; lblArchivo1.Visible = true;*/
+            //InhabilitarCampos();
         }
         private void CargarCombo()
         {
@@ -357,8 +432,16 @@ namespace WebApplication1
                 ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
                 string cuit = ClienteSeleccionado.Cuit;
                 string persona = cmbPersonas.Text;
-                string NuevoNroFactura = ClienteNeg.BuscarNroFactura(cuit);
-                txtFactura.Text = NuevoNroFactura;
+                if (ClienteSeleccionado.Funcion == 1)
+                {
+                    string NroFactura = ClienteNeg.BuscarNroFactura(ClienteSeleccionado.Cuit);
+                    txtFactura.Text = NroFactura;
+                }
+                if (ClienteSeleccionado.Funcion == 2)
+                {
+                    string NroFactura = ClienteNeg.BuscarNuevoNroFacturaNotaDeCredito(ClienteSeleccionado.Cuit);
+                    txtFactura.Text = NroFactura;
+                }
                 dtFecha.Enabled = true;
                 string apellidoNombre = cmbPersonas.Text;
                 List<SubCliente> DatosPersonales = ClienteNeg.BuscarDatosSubClientePorApellidoNombre(apellidoNombre, cuit);
@@ -424,15 +507,34 @@ namespace WebApplication1
             {
                 string Cuit = lblCuit.Text;
                 Sico.Entidades.SubCliente _subCliente = CargarEntidad();
-                bool Exito = ClienteNeg.GuardarFacturaSubCliente(_subCliente, Cuit);
-                if (Exito == true)
+                if (ClienteSeleccionado.Funcion == 1)
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('El registro se guardó correctamente');", true);
-                    LimpiarCampos();
-                }
-                else
-                {
+                    bool Exito = ClienteNeg.GuardarFacturaSubCliente(_subCliente, Cuit);
+                    if (Exito == true)
+                    {
 
+
+                        ShowMessage("Aww, password is wrong", MessageType.Error);
+                        //ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('Se registro exitosamente la factura cargada.');", true);
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+
+                    }
+                }
+                if (ClienteSeleccionado.Funcion == 2)
+                {
+                    bool Exito = ClienteNeg.GuardarNotaDeCredito(_subCliente, Cuit);
+                    if (Exito == true)
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('Se registro exitosamente la Nota de Crédito cargada.');", true);
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+
+                    }
                 }
             }
             catch (Exception ex) { }
@@ -468,6 +570,10 @@ namespace WebApplication1
             //    txtAdjunto.Text = path;
             //    sr.Close();
             //}
+        }
+        protected void ShowMessage(string Message, MessageType type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
         }
     }
 }

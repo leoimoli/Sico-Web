@@ -66,8 +66,11 @@ namespace WebApplication1
         private void Ver(int posicion)
         {
             IList<SubCliente> Subclientes = Session["usuarios"] as IList<SubCliente>;
-            this.Session["usuarios"] = Subclientes[posicion];
-            Response.Redirect("~/ClientesWF.aspx");
+            int idSub = Subclientes[posicion].idSubCliente;
+            _clienteSeleccionado.Funcion = 3;
+            _clienteSeleccionado.idSubCliente = idSub;
+            this.Session["usuarios"] = _clienteSeleccionado;
+            Response.Redirect("~/FacturacionWF.aspx");
         }
         protected void gvVentas_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {

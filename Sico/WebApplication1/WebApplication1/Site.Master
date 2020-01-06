@@ -29,6 +29,38 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <%-- ////////////////Andres--%>
+    <style type="text/css">
+        .messagealert {
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            z-index: 100000;
+            padding: 0;
+            font-size: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        function ShowMessage(message, messagetype) {
+            var cssclass;
+            switch (messagetype) {
+                case 'Success':
+                    cssclass = 'alert-success'
+                    break;
+                case 'Error':
+                    cssclass = 'alert-danger'
+                    break;
+                case 'Warning':
+                    cssclass = 'alert-warning'
+                    break;
+                default:
+                    cssclass = 'alert-info'
+            }
+            $('#<%=ButtonLogin.ClientID %>').append('<div id="alert_div" style="margin: 0 0.5%; -webkit-box-shadow: 3px 4px 6px #999;" class="alert fade in ' + cssclass + '"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>' + messagetype + '!</strong> <span>' + message + '</span></div>');
+        }
+    </script>
+    <%-- ////////////////Andres--%>
 </head>
 <body id="page-top">
     <form runat="server">
@@ -631,6 +663,9 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
- <%--   <mensajededialogo:mensajededialogo id="MensajeDeDialogo" runat="server" visible="false" />--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <%--   <mensajededialogo:mensajededialogo id="MensajeDeDialogo" runat="server" visible="false" />--%>
 </body>
 </html>

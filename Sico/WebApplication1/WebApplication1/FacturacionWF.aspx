@@ -64,13 +64,13 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label for="lblCuit">Dni:<span class="kv-reqd"> (*)</span></label>
+                                <asp:Label ID="lblDni" runat="server" Text="Dni:" Font-Size="Large" ForeColor="SteelBlue"></asp:Label>
                                 <asp:TextBox class="form-control" ID="lblDniEdit" runat="server" MaxLength="11" ReadOnly="True"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <label for="lblActividad">Dirección:</label>
+                                <asp:Label ID="lblDireccion" runat="server" Text="Dirección:" Font-Size="Large" ForeColor="SteelBlue"></asp:Label>
                                 <asp:TextBox class="form-control" ID="lblDireccionEdit" runat="server" ReadOnly="True"></asp:TextBox>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="form-group">
-                                <label for="lblFecha">Observaciones:</label>
+                                <asp:Label ID="lblObservacion" runat="server" Text="Observaciones:" Font-Size="Large" ForeColor="SteelBlue"></asp:Label>
                                 <asp:TextBox class="form-control" ID="lblObservacionesEdit" runat="server" ReadOnly="True"></asp:TextBox>
                             </div>
                         </div>

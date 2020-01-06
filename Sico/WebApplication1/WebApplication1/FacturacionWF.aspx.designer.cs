@@ -76,6 +76,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.Button btnNuevo;
         
         /// <summary>
+        /// lblDni control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDni;
+        
+        /// <summary>
         /// lblDniEdit control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox lblDniEdit;
         
         /// <summary>
+        /// lblDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDireccion;
+        
+        /// <summary>
         /// lblDireccionEdit control.
         /// </summary>
         /// <remarks>
@@ -92,6 +110,15 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lblDireccionEdit;
+        
+        /// <summary>
+        /// lblObservacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblObservacion;
         
         /// <summary>
         /// lblObservacionesEdit control.
