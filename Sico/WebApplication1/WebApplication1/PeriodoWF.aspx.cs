@@ -177,7 +177,6 @@ namespace WebApplication1
             catch (Exception ex)
             { }
         }
-
         private void BloquearCamposConsulta()
         {
             cmbTransaccion.Enabled = false;
@@ -240,10 +239,7 @@ namespace WebApplication1
                 bool Exito = PeriodoNeg.GuardarPeriodoVenta(cuit, nombre, Año);
                 if (Exito == true)
                 {
-                    string msg = "<script language=\"javascript\">";
-                    msg += "Exito('" + "Se registro el período exitosamente." + "');";
-                    msg += "</script>";
-                    Response.Write(msg);
+                    ShowMessage("Se registro exitosamente el período ingresado.", "Éxito");
                     LimpiarCamposCarga();
                 }
                 else
@@ -253,6 +249,10 @@ namespace WebApplication1
             }
             catch (Exception ex)
             { }
+        }
+        protected void ShowMessage(string Message, string type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
         }
     }
 }

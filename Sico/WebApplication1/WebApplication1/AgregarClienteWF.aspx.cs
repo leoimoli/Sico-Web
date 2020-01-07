@@ -249,11 +249,7 @@ namespace WebApplication1
             bool Exito = ClienteNeg.GurdarCliente(_cliente);
             if (Exito == true)
             {
-                string msg = "<script language=\"javascript\">";
-                msg += "alert('" + "Se registro el cliente exitosamente." + "');";
-                msg += "</script>";
-                Response.Write(msg);
-                // Page.ClientScript.RegisterStartupScript(this.GetType(), "scriptkey", "alert('Se registro el cliente exitosamente.');");
+                ShowMessage("Se registro exitosamente el cliente ingresado.", "Éxito");
                 LimpiarCampos();
             }
             else
@@ -264,6 +260,10 @@ namespace WebApplication1
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+        protected void ShowMessage(string Message, string type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
         }
     }
 }

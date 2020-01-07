@@ -144,11 +144,7 @@ namespace WebApplication1
                     if (Exito == true)
                     {
 
-                        //const string message2 = "El sub-cliente se edito exitosamente.";
-                        //const string caption2 = "Éxito";
-                        //var result2 = MessageBox.Show(message2, caption2,
-                        //                             MessageBoxButtons.OK,
-                        //                             MessageBoxIcon.Asterisk);
+                        ShowMessage("Se Edito exitosamente el Sub-Cliente ingresado.", "Éxito");
                         //LimpiarCampos();
                     }
                     else
@@ -161,12 +157,7 @@ namespace WebApplication1
                     bool Exito = ClienteNeg.GuardarNuevoSubCliente(_subCliente, cuit);
                     if (Exito == true)
                     {
-                        //ProgressBar();
-                        //const string message2 = "Se registro el sub-cliente exitosamente.";
-                        //const string caption2 = "Éxito";
-                        //var result2 = MessageBox.Show(message2, caption2,
-                        //                             MessageBoxButtons.OK,
-                        //                             MessageBoxIcon.Asterisk);
+                        ShowMessage("Se registro exitosamente el Sub-Cliente ingresado.", "Success");
                         //LimpiarCampos();
                     }
                     else
@@ -219,6 +210,10 @@ namespace WebApplication1
                 txtObservaciones.Text = Subclientes[posicion].Observacion;
             }
             HabilitarCamposNuevoSub();
+        }
+        protected void ShowMessage(string Message, string type)
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
         }
     }
 }

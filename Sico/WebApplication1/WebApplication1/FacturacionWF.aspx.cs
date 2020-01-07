@@ -512,10 +512,7 @@ namespace WebApplication1
                     bool Exito = ClienteNeg.GuardarFacturaSubCliente(_subCliente, Cuit);
                     if (Exito == true)
                     {
-
-
-                        ShowMessage("Aww, password is wrong", MessageType.Error);
-                        //ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('Se registro exitosamente la factura cargada.');", true);
+                        ShowMessage("Se registro exitosamente la factura cargada.", "Éxito");
                         LimpiarCampos();
                     }
                     else
@@ -528,7 +525,7 @@ namespace WebApplication1
                     bool Exito = ClienteNeg.GuardarNotaDeCredito(_subCliente, Cuit);
                     if (Exito == true)
                     {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "alertIns", "alert('Se registro exitosamente la Nota de Crédito cargada.');", true);
+                        ShowMessage("Se registro exitosamente la Nota de Crédito cargada.", "Success");
                         LimpiarCampos();
                     }
                     else
@@ -571,7 +568,7 @@ namespace WebApplication1
             //    sr.Close();
             //}
         }
-        protected void ShowMessage(string Message, MessageType type)
+        protected void ShowMessage(string Message, string type)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
         }
