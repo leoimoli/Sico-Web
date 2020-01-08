@@ -12,6 +12,7 @@ namespace WebApplication1
 {
     public partial class PeriodoWF : System.Web.UI.Page
     {
+        public static Cliente _clienteSeleccionado { get; set; }
         public Cliente ClienteSeleccionado { get; set; }
         public static decimal Total;
         protected void Page_Load(object sender, EventArgs e)
@@ -28,9 +29,10 @@ namespace WebApplication1
                 }
                 catch (Exception ex)
                 { }
+                _clienteSeleccionado = ClienteSeleccionado;
             }
-        }
 
+        }
         private void CargarCombo()
         {
             string[] Año = Sico.Clases_Maestras.ValoresConstantes.Años;
@@ -66,7 +68,6 @@ namespace WebApplication1
                 cmbTransaccionNuevo.Items.Add(item);
             }
         }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             List<Sico.Entidades.Periodo> ListaPeriodo = new List<Sico.Entidades.Periodo>();
@@ -197,6 +198,7 @@ namespace WebApplication1
             cmbTransaccionNuevo.Visible = true;
             CargarCombo();
             lblNuevoPeriodo.Visible = true;
+            btnVolver.Visible = true;
         }
         private void LimpiarCamposCarga()
         {
@@ -253,6 +255,19 @@ namespace WebApplication1
         protected void ShowMessage(string Message, string type)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), System.Guid.NewGuid().ToString(), "ShowMessage('" + Message + "','" + type + "');", true);
+        }
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cuit = lblCuit.Text;
+                ///// Indico la funcion que esta enviando. En este caso esta queriendo generar un nuevo comprobante.
+                _clienteSeleccionado.Funcion = 1;
+                this.Session["usuarios"] = _clienteSeleccionado;
+                Response.Redirect("~/FacturacionWF.aspx");
+            }
+            catch (Exception ex)
+            { }
         }
     }
 }

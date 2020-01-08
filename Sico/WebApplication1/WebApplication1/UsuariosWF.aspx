@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="ConsultaClientesWF.aspx.cs" Inherits="WebApplication1.ConsultaClientesWF" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="UsuariosWF.aspx.cs" Inherits="WebApplication1.UsuariosWF" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="col-md-9 col-sm-9 col-xs-9">
@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
-                                <asp:Label ID="Label4" runat="server" Text="Listado de Clientes" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                                <asp:Label ID="Label4" runat="server" Text="Listado de Usuarios" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -34,24 +34,24 @@
                 <div class="col-sm-9">
                     <div class="row">
                         <div class="form-group">
-                            <asp:GridView ID="gvClientes" runat="server" Align="center" AllowPaging="true" AllowSorting="True"
+                            <asp:GridView ID="gvUsuarios" runat="server" Align="center" AllowPaging="true" AllowSorting="True"
                                 SkinID="grilla" PageSize="10" AutoGenerateColumns="False" BackColor="White" BorderWidth="1px"
-                                Width="100%" DataKeyNames="idCliente" OnRowCommand="gvClientes_RowCommand"
-                                OnPageIndexChanging="gvClientes_PageIndexChanging">
+                                Width="100%" DataKeyNames="idUsuarios" OnRowCommand="gvUsuarios_RowCommand"
+                                OnPageIndexChanging="gvUsuarios_PageIndexChanging">
                                 <Columns>
-                                    <asp:BoundField DataField="IdCliente" HeaderText="Nro.Identificador">
+                                    <asp:BoundField DataField="idUsuario" HeaderText="Nro.Identificador">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="150px" />
                                         <ItemStyle BorderColor="Black" CssClass="item_grilla" HorizontalAlign="left" Width="200px" />
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="NombreRazonSocial" HeaderText="Nombre/Razón Social">
+                                    <asp:BoundField DataField="Apellido" HeaderText="Apellido">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="1000px" />
                                         <ItemStyle BorderColor="Black" CssClass="item_grilla" HorizontalAlign="left" Width="200px" />
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="Cuit" HeaderText="Cuit">
+                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="200px" />
                                         <ItemStyle BorderColor="Black" CssClass="item_grilla" HorizontalAlign="left" Width="200px" />
                                     </asp:BoundField>
-                                    <asp:BoundField DataField="Actividad" HeaderText="Actividad">
+                                    <asp:BoundField DataField="Estado" HeaderText="Estado">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="500px" />
                                         <ItemStyle BorderColor="Black" CssClass="item_grilla" HorizontalAlign="left" Width="200px" />
                                     </asp:BoundField>
@@ -83,8 +83,7 @@
             </div>
             <div class="row">
                 <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 700px">
-                    <asp:Button ID="btnNuevoCliente" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Nuevo Cliente" Font-Size="Small" OnClick="btnNuevoCliente_Click"/>
-                    <%-- <asp:Button ID="btnFacturaB" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Factura B" Font-Size="Small" OnClick="btnFacturaB_Click" />--%>
+                    <asp:Button ID="btnNuevoUsuario" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Nuevo Cliente" Font-Size="Small" OnClick="btnNuevoUsuario_Click" />
                 </div>
             </div>
         </div>

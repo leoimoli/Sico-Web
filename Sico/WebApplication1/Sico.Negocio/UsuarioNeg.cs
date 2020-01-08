@@ -7,6 +7,7 @@ using Sico.Entidades;
 using System.Windows.Forms;
 using Sico.Dao;
 
+
 namespace Sico.Negocio
 {
     public class UsuarioNeg
@@ -30,6 +31,19 @@ namespace Sico.Negocio
             return _listaUsuarios;
         }
 
+        public static List<Usuario> BuscarUsuarios()
+        {
+            List<Usuario> _listaUsuarios = new List<Usuario>();
+            try
+            {
+                _listaUsuarios = UsuarioDao.BuscarUsuarios();
+            }
+            catch (Exception ex)
+            {
+             
+            }
+            return _listaUsuarios;
+        }
         public static List<CuentaEmailPorUsuario> BuscarCuentaEmailPorUsuario(int idusuarioLogueado)
         {
             List<CuentaEmailPorUsuario> _listaCuenta = new List<CuentaEmailPorUsuario>();
@@ -48,7 +62,6 @@ namespace Sico.Negocio
             }
             return _listaCuenta;
         }
-
         public static List<Usuario> LoginUsuario(string usuario, string contraseña)
         {
             List<Entidades.Usuario> lista = new List<Entidades.Usuario>();
@@ -59,7 +72,6 @@ namespace Sico.Negocio
             }
             return lista;
         }
-
         public static bool GuardarCuentaEmail(CuentaEmailPorUsuario _cuenta)
         {
             bool exito = false;
@@ -74,7 +86,6 @@ namespace Sico.Negocio
             }
             return exito;
         }
-
         private static void ValidarDatosCuentaEmail(CuentaEmailPorUsuario _cuenta)
         {
             if (String.IsNullOrEmpty(_cuenta.CuentaEmail))
@@ -238,6 +249,6 @@ namespace Sico.Negocio
 
             }
             return exito;
-        }
+        }    
     }
 }

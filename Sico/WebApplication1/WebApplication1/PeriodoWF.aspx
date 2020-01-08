@@ -168,7 +168,8 @@
                         </div>
                     </div>
                 </div>
-                <div style="padding-left: 250px">
+                <div style="padding-left: 200px">
+                      <asp:Button ID="btnVolver" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Volver" Font-Size="Small" Visible="false" OnClick="btnVolver_Click" />
                     <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Limpiar" Font-Size="Small" Visible="false" OnClick="btnLimpiar_Click" />
                     <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Guardar" Font-Size="Small" Visible="false" OnClick="btnGuardar_Click" />
                 </div>

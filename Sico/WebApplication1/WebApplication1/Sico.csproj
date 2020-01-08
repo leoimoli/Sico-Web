@@ -101,6 +101,7 @@
   <ItemGroup>
     <Content Include="AgregarClienteWF.aspx" />
     <Content Include="AgregarSubClienteWF.aspx" />
+    <Content Include="AgregarUsuarioWF.aspx" />
     <Content Include="App_Themes\imagenes\clip-sujetapapeles.png" />
     <Content Include="App_Themes\imagenes\editar.png" />
     <Content Include="App_Themes\imagenes\error%281%29.png" />
@@ -154,6 +155,7 @@
     <Content Include="scss\navs\global.scss" />
     <Content Include="scss\navs\sidebar.scss" />
     <Content Include="scss\navs\topbar.scss" />
+    <Content Include="UsuariosWF.aspx" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.js.map" />
     <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="vendor\bootstrap\js\bootstrap.js.map" />
@@ -1861,6 +1863,20 @@
     </Compile>
     <Compile Include="AgregarSubClienteWF.aspx.designer.cs">
       <DependentUpon>AgregarSubClienteWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarUsuarioWF.aspx.cs">
+      <DependentUpon>AgregarUsuarioWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuarioWF.aspx.designer.cs">
+      <DependentUpon>AgregarUsuarioWF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosWF.aspx.cs">
+      <DependentUpon>UsuariosWF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsuariosWF.aspx.designer.cs">
+      <DependentUpon>UsuariosWF.aspx</DependentUpon>
     </Compile>
     <Content Include="App_Code\IConfirmacionWUC.cs" />
     <Content Include="App_Code\IMensajeDeDialogo.cs" />

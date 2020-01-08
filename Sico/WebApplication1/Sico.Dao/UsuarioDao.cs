@@ -36,6 +36,42 @@ namespace Sico.Dao
             connection.Close();
             return exito;
         }
+
+        public static List<Usuario> BuscarUsuarios()
+        {
+            connection.Close();
+            connection.Open();
+            List<Entidades.Usuario> lista = new List<Entidades.Usuario>();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = connection;
+            DataTable Tabla = new DataTable();
+            MySqlParameter[] oParam = { };
+            string proceso = "BuscarUsuarios";
+            MySqlDataAdapter dt = new MySqlDataAdapter(proceso, connection);
+            dt.SelectCommand.CommandType = CommandType.StoredProcedure;
+            dt.SelectCommand.Parameters.AddRange(oParam);
+            dt.Fill(Tabla);
+            if (Tabla.Rows.Count > 0)
+            {
+                foreach (DataRow item in Tabla.Rows)
+                {
+                    Usuario listaUsuario = new Usuario();
+                    listaUsuario.IdUsuario = Convert.ToInt32(item["idUsuario"].ToString());
+                    listaUsuario.Apellido = item["Apellido"].ToString();
+                    listaUsuario.Nombre = item["Nombre"].ToString();
+                    listaUsuario.FechaDeNacimiento = Convert.ToDateTime(item["FechaNacimiento"].ToString());
+                    listaUsuario.Contraseña = item["Contrasenia"].ToString();
+                    listaUsuario.FechaUltimaConexion = Convert.ToDateTime(item["UltimoInicioSesion"].ToString());
+                    listaUsuario.FechaDeAlta = Convert.ToDateTime(item["FechadeAlta"].ToString());
+                    listaUsuario.Estado = item["Estado"].ToString();
+                    listaUsuario.Perfil = item["Perfil"].ToString();
+                    lista.Add(listaUsuario);
+                }
+            }
+            connection.Close();
+            return lista;
+        }
+
         public static List<CuentaEmailPorUsuario> BuscarCuentaEmailPorUsuario(int idusuarioLogueado)
         {
             connection.Close();

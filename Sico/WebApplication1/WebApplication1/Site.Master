@@ -13,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-        
+
     <%-- ////////////////Andres--%>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <%--  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">--%>
     <style type="text/css">
         .messagealert {
             width: 100%;
@@ -115,8 +115,8 @@
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Menú Usuarios:</h6>
-                            <a class="collapse-item" href="cards.html">Agregar</a>
-                            <a class="collapse-item" href="ConsultarUsuarioWF.aspx">Consultar</a>
+                            <a class="collapse-item" href="AgregarUsuarioWF.aspx">Agregar</a>
+                            <a class="collapse-item" href="UsuariosWF.aspx">Consultar</a>
                         </div>
                     </div>
                 </li>
