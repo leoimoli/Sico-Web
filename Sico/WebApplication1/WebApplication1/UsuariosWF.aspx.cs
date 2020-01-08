@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sico.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -24,7 +25,51 @@ namespace WebApplication1
                 }
             }
         }
+        protected void gvUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            try
+            {
+                gvUsuarios.DataSource = this.Session["usuarios"];
+                gvUsuarios.PageIndex = e.NewPageIndex;
+                gvUsuarios.SelectedIndex = -1;
+                gvUsuarios.DataBind(); ;
+            }
+            catch (Exception ex)
+            {
 
+            }
+        }
+        protected void gvUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            try
+            {
+                gvUsuarios.SelectedIndex = Convert.ToInt32(e.CommandArgument);
+                int idusuario = (int)gvUsuarios.SelectedValue;
+                switch (e.CommandName)
+                {
+                    case "Ver":
+                        this.Ver(Convert.ToInt32(e.CommandArgument)); break;
+                    case "Editar":
+                        this.Editar(Convert.ToInt32(e.CommandArgument)); break;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private void Editar(int posicion)
+        {
+            IList<Usuario> usuarios = Session["usuarios"] as IList<Usuario>;
+            this.Session["usuarios"] = usuarios[posicion];
+            Response.Redirect("");
+        }
+        private void Ver(int posicion)
+        {
+            IList<Usuario> usuarios = Session["usuarios"] as IList<Usuario>;
+            this.Session["usuarios"] = usuarios[posicion];
+            Response.Redirect("~/ClientesWF.aspx");
+        }
         protected void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
 

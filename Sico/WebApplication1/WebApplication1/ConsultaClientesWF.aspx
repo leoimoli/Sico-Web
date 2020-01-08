@@ -82,9 +82,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 700px">
-                    <asp:Button ID="btnNuevoCliente" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Nuevo Cliente" Font-Size="Small" OnClick="btnNuevoCliente_Click"/>
-                    <%-- <asp:Button ID="btnFacturaB" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Factura B" Font-Size="Small" OnClick="btnFacturaB_Click" />--%>
+                <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 750px">
+                    <asp:Button ID="btnNuevoCliente" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nuevo Cliente" Font-Size="Small" OnClick="btnNuevoCliente_Click" />
                 </div>
             </div>
         </div>

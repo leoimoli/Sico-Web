@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <asp:GridView ID="gvUsuarios" runat="server" Align="center" AllowPaging="true" AllowSorting="True"
                                 SkinID="grilla" PageSize="10" AutoGenerateColumns="False" BackColor="White" BorderWidth="1px"
-                                Width="100%" DataKeyNames="idUsuarios" OnRowCommand="gvUsuarios_RowCommand"
+                                Width="100%" DataKeyNames="IdUsuario" OnRowCommand="gvUsuarios_RowCommand"
                                 OnPageIndexChanging="gvUsuarios_PageIndexChanging">
                                 <Columns>
                                     <asp:BoundField DataField="idUsuario" HeaderText="Nro.Identificador">
@@ -82,8 +82,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 700px">
-                    <asp:Button ID="btnNuevoUsuario" class="btn btn-primary" Style="display: inline-block;" Width="100px" Height="61px" runat="server" Text="Nuevo Cliente" Font-Size="Small" OnClick="btnNuevoUsuario_Click" />
+                <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 750px">
+                    <asp:Button ID="btnNuevoUsuario" class="btn btn-primary" Style="display: inline-block;" Width="110px" Height="61px" runat="server" Text="Nuevo Usuario" Font-Size="Small" OnClick="btnNuevoUsuario_Click" />
                 </div>
             </div>
         </div>

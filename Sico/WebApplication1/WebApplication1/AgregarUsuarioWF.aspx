@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="lblNombre">Nombre:</label>
+                                <label for="lblNombre">Nombre:<span class="kv-reqd"> (*)</span></label>
                                 <asp:TextBox class="form-control" ID="txtNombre" runat="server" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
@@ -89,13 +89,13 @@
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="lblContraseña">Contraseña:</label>
+                                <label for="lblContraseña">Contraseña:(*)</label>
                                 <asp:TextBox class="form-control" ID="txtContraseña" runat="server" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <label for="lblRepitaContraseña">Repita Contraseña:</label>
+                                <label for="lblRepitaContraseña">Repita Contraseña:(*)</label>
                                 <asp:TextBox class="form-control" ID="txtRepitaContraseña" runat="server" Style="text-transform: uppercase"></asp:TextBox>
                             </div>
                         </div>

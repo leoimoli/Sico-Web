@@ -29,8 +29,9 @@ namespace WebApplication1
                 }
                 else
                 {
+                    //IList<Usuario> usuariLogin = Session["usuarios"] as IList<Usuario>;
                     HttpContext.Current.Session["loginUsuario"] = usuarios.First();
-                    Response.Redirect("InicioWF.aspx");
+                    Response.Redirect("~/InicioWF.aspx");
                 }
             }
             catch (Exception ex)
