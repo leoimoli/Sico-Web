@@ -90,13 +90,13 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblContraseña">Contraseña:(*)</label>
-                                <asp:TextBox class="form-control" ID="txtContraseña" runat="server" Style="text-transform: uppercase"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtContraseña" runat="server" Style="text-transform: uppercase" TextMode="Password"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label for="lblRepitaContraseña">Repita Contraseña:(*)</label>
-                                <asp:TextBox class="form-control" ID="txtRepitaContraseña" runat="server" Style="text-transform: uppercase"></asp:TextBox>
+                                <asp:TextBox class="form-control" ID="txtRepitaContraseña" runat="server" Style="text-transform: uppercase" TextMode="Password"></asp:TextBox>
                             </div>
                         </div>
                         <div class="col-sm-3">
@@ -109,8 +109,8 @@
         </div>
         <%--////// Botones--%>
         <div class="col-md-9 col-sm-9 col-xs-9" style="padding-left: 700px">
-            <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Limpiar" />
-            <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Guardar" />
+            <asp:Button ID="btnLimpiar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Limpiar" OnClick="btnLimpiar_Click" />
+            <asp:Button ID="btnGuardar" class="btn btn-primary" Style="display: inline-block;" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
         </div>
     </div>
 </asp:Content>

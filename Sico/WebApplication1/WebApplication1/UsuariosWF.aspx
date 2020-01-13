@@ -55,14 +55,14 @@
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="500px" />
                                         <ItemStyle BorderColor="Black" CssClass="item_grilla" HorizontalAlign="left" Width="200px" />
                                     </asp:BoundField>
-                                    <asp:TemplateField HeaderText="Ver">
+                                    <%--     <asp:TemplateField HeaderText="Ver">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="40px" />
                                         <ItemStyle BorderColor="Black" HorizontalAlign="Center" Width="40px" />
                                         <ItemTemplate>
                                             <asp:ImageButton ID="btnVer" runat="server" CommandArgument="<%# Container.DataItemIndex %>"
                                                 CommandName="Ver" ImageUrl="App_Themes/imagenes/lupa.png" />
                                         </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>--%>
                                     <asp:TemplateField HeaderText="Editar">
                                         <HeaderStyle CssClass="header_grilla" HorizontalAlign="Center" Width="40px" />
                                         <ItemStyle BorderColor="Black" HorizontalAlign="Center" Width="40px" />

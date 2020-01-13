@@ -20,7 +20,6 @@ namespace WebApplication1
                 CargarComboProvincia();
             }
         }
-
         #region Funciones
         //private void FuncionesBotonHabilitarBuscar()
         //{

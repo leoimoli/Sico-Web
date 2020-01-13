@@ -57,6 +57,7 @@ namespace Sico.Dao
                 {
                     Usuario listaUsuario = new Usuario();
                     listaUsuario.IdUsuario = Convert.ToInt32(item["idUsuario"].ToString());
+                    listaUsuario.Dni = item["Dni"].ToString();
                     listaUsuario.Apellido = item["Apellido"].ToString();
                     listaUsuario.Nombre = item["Nombre"].ToString();
                     listaUsuario.FechaDeNacimiento = Convert.ToDateTime(item["FechaNacimiento"].ToString());

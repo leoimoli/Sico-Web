@@ -10,6 +10,7 @@ namespace WebApplication1
 {
     public partial class UsuariosWF : System.Web.UI.Page
     {
+        public static Usuario UsuarioSeleccionado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -47,8 +48,6 @@ namespace WebApplication1
                 int idusuario = (int)gvUsuarios.SelectedValue;
                 switch (e.CommandName)
                 {
-                    case "Ver":
-                        this.Ver(Convert.ToInt32(e.CommandArgument)); break;
                     case "Editar":
                         this.Editar(Convert.ToInt32(e.CommandArgument)); break;
                 }
@@ -61,15 +60,19 @@ namespace WebApplication1
         private void Editar(int posicion)
         {
             IList<Usuario> usuarios = Session["usuarios"] as IList<Usuario>;
-            this.Session["usuarios"] = usuarios[posicion];
-            Response.Redirect("");
+            UsuarioSeleccionado = usuarios[posicion];
+            int idUsuario = usuarios[posicion].IdUsuario;
+            UsuarioSeleccionado.Funcion = 2;
+            UsuarioSeleccionado.IdUsuario = idUsuario;
+            this.Session["usuariosSeleccionado"] = UsuarioSeleccionado;
+            Response.Redirect("~/AgregarUsuarioWF.aspx");
         }
-        private void Ver(int posicion)
-        {
-            IList<Usuario> usuarios = Session["usuarios"] as IList<Usuario>;
-            this.Session["usuarios"] = usuarios[posicion];
-            Response.Redirect("~/ClientesWF.aspx");
-        }
+        //private void Ver(int posicion)
+        //{
+        //    IList<Usuario> usuarios = Session["usuarios"] as IList<Usuario>;
+        //    this.Session["usuarios"] = usuarios[posicion];
+        //    Response.Redirect("~/ClientesWF.aspx");
+        //}
         protected void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
 
