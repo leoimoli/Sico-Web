@@ -23,33 +23,44 @@ namespace WebApplication1
             UsuarioLogin = (Usuario)HttpContext.Current.Session["loginUsuario"];
             UsuarioSeleccionado = (Usuario)HttpContext.Current.Session["usuariosSeleccionado"];
             ///// Editar Usuario Seleccionado.
-            if (UsuarioSeleccionado.Funcion == 2 & !Page.IsPostBack)
+            if (UsuarioLogin != null)
             {
-                UsuarioLogin = (Usuario)HttpContext.Current.Session["loginUsuario"];
-                if (UsuarioLogin.Perfil == "OPERADOR")
+                if (UsuarioLogin.Funcion == 0 & !Page.IsPostBack)
                 {
-                    HabilitarCamposEditar(UsuarioSeleccionado);
-                    txtContraseña.Enabled = false;
-                    txtRepitaContraseña.Enabled = false;
+                    if (UsuarioSeleccionado != null)
+                    {
+                        lblTitulo.Text = "Editar Usuario";
+                        UsuarioLogin = (Usuario)HttpContext.Current.Session["loginUsuario"];
+                        if (UsuarioLogin.Perfil == "OPERADOR")
+                        {
+                            HabilitarCamposEditar(UsuarioSeleccionado);
+                            txtContraseña.Enabled = false;
+                            txtRepitaContraseña.Enabled = false;
+                        }
+                        if (UsuarioLogin.Perfil == "ADMINISTRADOR")
+                        {
+                            HabilitarCamposEditar(UsuarioSeleccionado);
+                            txtContraseña.Enabled = true;
+                            txtRepitaContraseña.Enabled = true;
+                        }
+                        _usuarioLoginSeleccionado = UsuarioLogin;
+                        //Session.Clear();
+                        // Or remove specific keys
+                        Session.Remove("usuariosSeleccionado");
+                    }
+                    else
+                    {
+                        ///// Crear nuevo Usuario.
+                        LimpiarCamposEscritos();
+                        if (UsuarioLogin.Perfil == "OPERADOR")
+                        {
+                            cmbPerfil.Items.Add("OPERADOR");
+                        }
+                        else { CargarComboPerfil(); }
+                        txtDNI.Focus();
+                        _usuarioLoginSeleccionado = UsuarioLogin;
+                    }
                 }
-                if (UsuarioLogin.Perfil == "ADMINISTRADOR")
-                {
-                    HabilitarCamposEditar(UsuarioSeleccionado);
-                    txtContraseña.Enabled = true;
-                    txtRepitaContraseña.Enabled = true;
-                }
-                _usuarioLoginSeleccionado = UsuarioLogin;
-            }
-            ///// Crear nuevo Usuario.
-            if (UsuarioSeleccionado.Funcion == 0 & !Page.IsPostBack)
-            {
-                if (UsuarioLogin.Perfil == "OPERADOR")
-                {
-                    cmbPerfil.Items.Add("OPERADOR");
-                }
-                else { CargarComboPerfil(); }
-                txtDNI.Focus();
-                _usuarioLoginSeleccionado = UsuarioLogin;
             }
         }
         private void HabilitarCamposEditar(Usuario usuarioSeleccionado)

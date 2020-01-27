@@ -37,7 +37,6 @@ C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin
 C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\Sico.csprojResolveAssemblyReference.cache
 C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Leo-Romi\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\Sico.csprojResolveAssemblyReference.cache
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\ApplicationInsights.config
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\roslyn\csc.exe
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -75,5 +74,6 @@ C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\M
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.ApplicationInsights.xml
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\Sico.csprojResolveAssemblyReference.cache
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\limoli\Source\Repos\Sico-Web\Sico\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

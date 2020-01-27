@@ -385,6 +385,7 @@ namespace Sico.Dao
             cmd.Parameters.AddWithValue("Dni_in", _subCliente.Dni);
             cmd.Parameters.AddWithValue("Direccion_in", _subCliente.Direccion);
             cmd.Parameters.AddWithValue("Periodo_in", _subCliente.Periodo);
+            cmd.Parameters.AddWithValue("Observacion_in", _subCliente.Observacion);
             MySqlDataReader r = cmd.ExecuteReader();
             while (r.Read())
             {
@@ -809,13 +810,11 @@ namespace Sico.Dao
             {
                 exitoGuardarImagenes = GuardarImagenesEnCarpeta(_subCliente);
             }
-
             int idNotaCredito = 0;
             int idUltimaFacturaSubCliente = 0;
             List<Entidades.Cliente> id = new List<Entidades.Cliente>();
             id = BuscarClientePorCuit(cuit);
             int idCliente = id[0].IdCliente;
-
             bool exito = false;
             connection.Close();
             connection.Open();
@@ -830,6 +829,7 @@ namespace Sico.Dao
             cmd.Parameters.AddWithValue("Dni_in", _subCliente.Dni);
             cmd.Parameters.AddWithValue("Direccion_in", _subCliente.Direccion);
             cmd.Parameters.AddWithValue("Periodo_in", _subCliente.Periodo);
+            cmd.Parameters.AddWithValue("Observacion_in", _subCliente.Observacion);
             MySqlDataReader r = cmd.ExecuteReader();
             while (r.Read())
             {

@@ -14,13 +14,19 @@ namespace WebApplication1
 {
     public partial class FacturaBWF : System.Web.UI.Page
     {
+        /// /////// Funciones
+        //// 0 = Guardar
+        //// 1 = Ver
+        //// 2 = Editar
+        //// 3 = Eliminar
+        //// 4 = Guardar Nota de Credito
         public static Cliente _clienteSeleccionado { get; set; }
         public Cliente ClienteSeleccionado { get; set; }
         public static decimal Total;
         protected void Page_Load(object sender, EventArgs e)
         {
             ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
-            if (ClienteSeleccionado.Funcion == 3)
+            if (ClienteSeleccionado.Funcion == 1)
             {
                 int idsubCliente = ClienteSeleccionado.idSubCliente;
                 List<SubCliente> _Factura = new List<SubCliente>();
@@ -39,31 +45,54 @@ namespace WebApplication1
 
                 if (_Factura.Count <= 0)
                 {
-                    //MessageBox.Show("La factura seleccionada no tiene un detalle cargado.");
-                    //TareaClienteWF _tarea = new TareaClienteWF(razonSocial, cuit);
-                    //_tarea.Show();
-                    //Close();
+
                 }
                 if (_Factura.Count > 0)
                 {
                     HabilitarCamposVer(_Factura);
                 }
             }
-            if (ClienteSeleccionado.Funcion != 3 & !IsPostBack)
+            if (ClienteSeleccionado.Funcion == 2)
             {
-                //ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
+                int idsubCliente = ClienteSeleccionado.idSubCliente;
+                List<SubCliente> _Factura = new List<SubCliente>();
+                _Factura = ClienteNeg.BuscarDetalleFacturaSubCliente(idsubCliente);
+                List<string> listaArchivos = new List<string>();
+                listaArchivos = Sico.Dao.ClienteDao.CargarArchivos(idsubCliente);
+                int contador = 0;
+                if (listaArchivos.Count > 0)
+                {
+                    if (listaArchivos.Count > contador)
+                    {
+                        txtAdjuntar.Text = listaArchivos[0].ToString();
+                        //txtAdjunto.Visible = true; btnAdjuntarFacturaElectronica.Visible = true; lblArchivo1.Visible = true; contador = 1;
+                    }
+                }
+
+                if (_Factura.Count <= 0)
+                {
+
+                }
+                if (_Factura.Count > 0)
+                {
+                    HabilitarCamposEditar(_Factura);
+                }
+            }
+
+            if (ClienteSeleccionado.Funcion == 0 & !IsPostBack)
+            {
                 lblCliente.Text = ClienteSeleccionado.NombreRazonSocial;
                 lblCuit.Text = ClienteSeleccionado.Cuit;
                 try
                 {
                     CargarComboPersonas();
                     CargarCombo();
-                    if (ClienteSeleccionado.Funcion == 1)
+                    if (ClienteSeleccionado.Funcion == 0)
                     {
                         string NroFactura = ClienteNeg.BuscarNroFactura(ClienteSeleccionado.Cuit);
                         txtFactura.Text = NroFactura;
                     }
-                    if (ClienteSeleccionado.Funcion == 2)
+                    if (ClienteSeleccionado.Funcion == 4)
                     {
                         string NroFactura = ClienteNeg.BuscarNuevoNroFacturaNotaDeCredito(ClienteSeleccionado.Cuit);
                         txtFactura.Text = NroFactura;
@@ -80,6 +109,59 @@ namespace WebApplication1
                 ClienteSeleccionado = (Cliente)HttpContext.Current.Session["usuarios"];
                 _clienteSeleccionado = ClienteSeleccionado;
             }
+        }
+
+        private void HabilitarCamposEditar(List<SubCliente> _Factura)
+        {
+            var Factura = _Factura.First();
+            cmbPersonas.Items.Add(Factura.ApellidoNombre);
+            lblDniEdit.Visible = true;
+            lblDireccionEdit.Visible = true;
+            lblObservacionesEdit.Visible = true;
+            lblDni.Visible = true;
+            lblDireccion.Visible = true;
+            lblObservacion.Visible = true;
+            btnNuevoPeriodo.Visible = true;
+            btnNuevo.Visible = true;
+            lblDniEdit.Text = Factura.Dni;
+            lblDireccionEdit.Text = Factura.Direccion;
+            lblObservacionesEdit.Text = Factura.Observacion;
+            txtFactura.Text = Factura.NroFactura;
+            txtFactura.Enabled = false;
+            //dtFecha.Text = Factura.Fecha;
+            //d.DataDespesa.ToString("yyyy-MM-dd")
+            DateTime fech = Convert.ToDateTime(Factura.Fecha);
+            dtFecha.Text = fech.ToString("dd-MM-yyyy");
+            txtTotal.Text = Convert.ToString(Factura.Monto);
+            if (Factura.Total1 > 0)
+                txtTotal1.Text = Convert.ToString(Factura.Total1);
+            if (Factura.Total2 > 0)
+                txtTotal2.Text = Convert.ToString(Factura.Total2);
+            if (Factura.Total3 > 0)
+                txtTotal3.Text = Convert.ToString(Factura.Total3);
+
+            if (Factura.Neto1 > 0)
+                txtNeto1.Text = Convert.ToString(Factura.Neto1);
+            if (Factura.Neto2 > 0)
+                txtNeto2.Text = Convert.ToString(Factura.Neto2);
+            if (Factura.Neto3 > 0)
+                txtNeto3.Text = Convert.ToString(Factura.Neto3);
+
+            if (Factura.Iva1 > 0)
+                txtIva1.Text = Convert.ToString(Factura.Iva1);
+            if (Factura.Iva2 > 0)
+                txtIva2.Text = Convert.ToString(Factura.Iva2);
+            if (Factura.Iva3 > 0)
+                txtIva3.Text = Convert.ToString(Factura.Iva3);
+
+            cmbTipoComprobante.Items.Add(Factura.TipoComprobante);
+            cmbCodigoOperacion.Items.Add(Factura.CodigoTipoOperacion);
+            cmbTipoMoneda.Items.Add(Factura.CodigoMoneda);
+            txtTipoCambio.Text = Factura.TipoDeCambio;
+            cmbPeriodo.Items.Add(Factura.Periodo);
+            txtAdjuntar.Visible = true;
+            /*btnAdjuntarFacturaElectronica.Visible = true; lblArchivo1.Visible = true;*/
+            //InhabilitarCampos();        
         }
         private void HabilitarCamposVer(List<SubCliente> _Factura)
         {
@@ -187,6 +269,9 @@ namespace WebApplication1
         private SubCliente CargarEntidad()
         {
             SubCliente _subCliente = new SubCliente();
+            _subCliente.Dni = lblDniEdit.Text;
+            _subCliente.Direccion = lblDireccionEdit.Text;
+            _subCliente.Observacion = lblObservacionesEdit.Text;
             _subCliente.ApellidoNombre = cmbPersonas.Text;
             string factura = txtFactura.Text;
             ///// Primera parte del numero
@@ -230,10 +315,10 @@ namespace WebApplication1
             if (!String.IsNullOrEmpty(txtIva3.Text))
                 _subCliente.Iva3 = Convert.ToDecimal(txtIva3.Text);
             _subCliente.Monto = Convert.ToDecimal(txtTotal.Text);
-            _subCliente.TipoComprobante = cmbTipoComprobante.Text;
-            _subCliente.CodigoMoneda = cmbTipoMoneda.Text;
+            _subCliente.TipoComprobante = cmbTipoComprobante.SelectedItem.Text;
+            _subCliente.CodigoMoneda = cmbTipoMoneda.SelectedItem.Text;
             _subCliente.TipoDeCambio = txtTipoCambio.Text;
-            _subCliente.CodigoTipoOperacion = cmbCodigoOperacion.Text;
+            _subCliente.CodigoTipoOperacion = cmbCodigoOperacion.SelectedItem.Text;
             _subCliente.Adjunto = txtAdjuntar.Text;
             _subCliente.Periodo = cmbPeriodo.Text;
             return _subCliente;
@@ -507,7 +592,7 @@ namespace WebApplication1
             {
                 string Cuit = lblCuit.Text;
                 Sico.Entidades.SubCliente _subCliente = CargarEntidad();
-                if (ClienteSeleccionado.Funcion == 1)
+                if (ClienteSeleccionado.Funcion == 0)
                 {
                     bool Exito = ClienteNeg.GuardarFacturaSubCliente(_subCliente, Cuit);
                     if (Exito == true)
@@ -520,7 +605,7 @@ namespace WebApplication1
 
                     }
                 }
-                if (ClienteSeleccionado.Funcion == 2)
+                if (ClienteSeleccionado.Funcion == 4)
                 {
                     bool Exito = ClienteNeg.GuardarNotaDeCredito(_subCliente, Cuit);
                     if (Exito == true)
@@ -535,16 +620,6 @@ namespace WebApplication1
                 }
             }
             catch (Exception ex) { }
-        }
-        private void MostrarMensajeDialogo(Clases_Maestras.Enumeraciones.TipoDeMensaje tipoDeMensaje, string mensaje)
-        {
-            //IMensajeDeDialogo mensajeDeDialogo = (IMensajeDeDialogo)this.Master.FindControl("form1").FindControl("MensajeDeDialogo");
-            //System.Web.UI.Control mensajeR = this.Master.FindControl("form1").FindControl("MensajeDeDialogo") as System.Web.UI.Control;
-            //if (mensajeR != null)
-            //{
-            //    mensajeR.Visible = true;
-            //}
-            //mensajeDeDialogo.MostrarMensajeDialogo(tipoDeMensaje, mensaje);
         }
         protected void btnNuevoPeriodo_Click(object sender, EventArgs e)
         {

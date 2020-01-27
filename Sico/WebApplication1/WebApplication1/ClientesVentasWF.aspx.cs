@@ -13,6 +13,11 @@ namespace WebApplication1
 {
     public partial class ClientesVentasWF : System.Web.UI.Page
     {
+        /// /////// Funciones
+        //// 0 = Guardar
+        //// 1 = Ver
+        //// 2 = Editar
+        //// 3 = Eliminar
         public static Cliente _clienteSeleccionado { get; set; }
         public Cliente ClienteSeleccionado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
@@ -60,14 +65,17 @@ namespace WebApplication1
         private void Editar(int posicion)
         {
             IList<SubCliente> Subclientes = Session["usuarios"] as IList<SubCliente>;
-            this.Session["usuarios"] = Subclientes[posicion];
-            Response.Redirect("");
+            int idSub = Subclientes[posicion].idSubCliente;
+            _clienteSeleccionado.Funcion = 2;
+            _clienteSeleccionado.idSubCliente = idSub;
+            this.Session["usuarios"] = _clienteSeleccionado;
+            Response.Redirect("~/FacturacionWF.aspx");
         }
         private void Ver(int posicion)
         {
             IList<SubCliente> Subclientes = Session["usuarios"] as IList<SubCliente>;
             int idSub = Subclientes[posicion].idSubCliente;
-            _clienteSeleccionado.Funcion = 3;
+            _clienteSeleccionado.Funcion = 1;
             _clienteSeleccionado.idSubCliente = idSub;
             this.Session["usuarios"] = _clienteSeleccionado;
             Response.Redirect("~/FacturacionWF.aspx");
@@ -125,7 +133,7 @@ namespace WebApplication1
         {
             string cuit = lblCuit.Text;
             ///// Indico la funcion que esta enviando. En este caso esta queriendo generar un nuevo comprobante.
-            _clienteSeleccionado.Funcion = 1;
+            _clienteSeleccionado.Funcion = 0;
             this.Session["usuarios"] = _clienteSeleccionado;
             Response.Redirect("~/FacturacionWF.aspx");
         }

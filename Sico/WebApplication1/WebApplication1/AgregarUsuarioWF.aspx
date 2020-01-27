@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <asp:Label ID="Label4" runat="server" Text="Nuevo Usuario" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
+                            <asp:Label ID="lblTitulo" runat="server" Text="Nuevo Usuario" Font-Size="XX-Large" ForeColor="Black"></asp:Label>
                         </div>
                     </div>
                     <div class="col-sm-4">
